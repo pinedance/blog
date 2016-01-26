@@ -5,17 +5,65 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
 
-# Site settings
-title: NowHere
-email: pinedance@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  삶의 단상들
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://pinedance.github.io" # the base hostname & protocol for your site
+# Site Info
+title:              "NowHere"
+description:        "삶의 단상들"
+#google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
+google_analytics:   UA-72863252-1 # Put your Google Analytics code
+url: "https://pinedance.github.io/blog" # the base hostname & protocol for your site
+
+# Author Info
+author_name:        "Junho"
+author_email:       pinedance@gmail.com
+author_gravatar:    fc746ff5d8579298993f87ac2bf84e48 # Gravatar md5 hash
 github_username: pinedance 
-github: [Repository metadata] # https://help.github.com/articles/using-jekyll-with-pages/
+
+# Site Settings
+baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
+permalink:          /notes/:title # Post permalink
+timezone:           Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
 # Build settings
 host: 0.0.0.0
 port: 8384
-markdown: kramdown
-# ref: 지킬로 깃허브에 무료 블로그 만들기(https://nolboo.github.io/blog/2013/10/15/free-blog-with-github-jekyll/)
+
+# Site Build
+#highlighter:        pygments
+#markdown:           redcarpet
+#redcarpet:
+#    extensions:     ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "highlight", "footnotes"]
+markdown:           kramdown
+kramdown:
+    input:          GFM
+sass:
+    style:          :compressed
+
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
+gems:
+  - jekyll-sitemap
+
+compress_html:
+    clippings:      all
+    ingore:
+        envs:       [ "test" ]
+
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"
+
+
