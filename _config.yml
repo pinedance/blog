@@ -11,6 +11,7 @@ description:        "삶의 단상들"
 #google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
 google_analytics:   UA-72863252-1 # Put your Google Analytics code
 url: "https://pinedance.github.io/blog" # the base hostname & protocol for your site
+#theme: "the plain (https://github.com/heiswayi/the-plain)"
 
 # Author Info
 author_name:        "Junho"
@@ -20,7 +21,7 @@ github_username: pinedance
 
 # Site Settings
 baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
-permalink:          /notes/:title # Post permalink
+permalink:          /:categories/:title # Post permalink
 timezone:           Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Build settings
