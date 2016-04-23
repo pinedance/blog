@@ -3,10 +3,14 @@ layout: default
 ---
 
 <section>
+	
+{% for category in site.categories %}
+
+	<h2>{{ category | first | capitalize }}</h2>
 	<ul>
-
-		{% for post in site.posts %}
-
+    {% for posts in category %}
+      {% for post in posts %}
+      
 		<li>
 			<div class="post-date">
 				<span>{{ post.date | date: "%b %d, %Y" }}</span>
@@ -15,8 +19,12 @@ layout: default
 				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 			</div>
 		</li>
-
-		{% endfor %}
+		
+      {% endfor %}
+    {% endfor %}
 
 	</ul>
+	
+{% endfor %}
+
 </section>
