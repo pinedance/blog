@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Jekyll and Static Page"
-categories: net jekyll
+categories: code
 ---
 
 Jekyll and Static Page
