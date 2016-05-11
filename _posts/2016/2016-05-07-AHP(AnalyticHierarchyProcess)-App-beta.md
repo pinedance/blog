@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AHP로 결정장애 극복해 보자!"
-categories: code
+categories: ZAYO-soft
 ---
 
 ![](http://s5.postimg.org/rpxwtq7hj/ahp_App.png)
