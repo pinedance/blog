@@ -6,11 +6,11 @@ categories: code
 
 ![](http://s5.postimg.org/rpxwtq7hj/ahp_App.png)
 
-[app 바로가기](https://pinedance.github.io/spa/ahp/ahp.html)
+[app 바로가기](https://pinedance.github.io/zayo-ahp/ahp.html)
 
 ### 야호~!
 
-전부터 만들고 싶었던 [ahp app](https://pinedance.github.io/spa/ahp/ahp.html)을 만들어 보았다. 바로 AHP (Analytic Hierarchy Process)로 결과를 도출해 주는 어플이다. 
+전부터 만들고 싶었던 [ahp app](https://pinedance.github.io/zayo-ahp/ahp.html)을 만들어 보았다. 바로 AHP (Analytic Hierarchy Process)로 결과를 도출해 주는 어플이다. 
 
 AHP는 선택지들을 쌍대비교(pairwise comparison)하여 최종적으로 내가 원하는 것이 무엇인지 찾아가는 결정 방법론 가운데 하나이다. 쌍대비교는 예전에 모 방송국에서 했던 "이상형 월드컵"을 떠올리면 쉽다. 여러개를 한 번에 비교하는 것이 아니라 둘 씩 짝지어 비교하는 것이다. 
 
