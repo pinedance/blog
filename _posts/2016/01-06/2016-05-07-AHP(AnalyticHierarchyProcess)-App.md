@@ -48,6 +48,9 @@ app에는 Criterias를 2번째 입력하게 되어 있으니 주의하자.
 * 7 : 아주 강하게 더 선호한다.
 * 9 : 절대적으로 더 선호한다.
 
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/jXm0mkNTh_0" frameborder="0" allowfullscreen></iframe>
+
 ### 부탁
 
 사실 AHP를 잘 알고 만든 것은 아니라 걱정이 되기는 하다. 계산 오류 등 app의 문제에 대해서는 [github issue](https://github.com/pinedance/spa/issues)로 알려주면 좋겠다. 
