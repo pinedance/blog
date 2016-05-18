@@ -6,7 +6,7 @@ layout: default
 	
 {% for category in site.categories %}
 
-	<h2>{{ category | first | capitalize }}</h2>
+	<h2 id="#{{ category | first | capitalize }}">{{ category | first | capitalize }}</h2>
 	<ul>
     {% for posts in category %}
       {% for post in posts %}
