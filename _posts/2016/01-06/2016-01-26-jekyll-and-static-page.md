@@ -32,3 +32,48 @@ jekyll theme
 ### Documentation
 
 * Documentation theme for Jekyll ([source](https://github.com/tomjohnson1492/documentation-theme-jekyll), [demo](http://idratherbewriting.com/documentation-theme-jekyll/mydoc/home.html))
+
+***
+
+jekyll theme 찾기
+==================
+
+http://jekyllthemes.org/page9/
+
+* [accent](http://jekyllthemes.org/themes/accent/)
+
+![](http://jekyllthemes.org/thumbnails/accent.png)
+
+* [good clean read](http://jekyllthemes.org/themes/good-clean-read/)
+
+![](http://jekyllthemes.org/thumbnails/good-clean-read.png)
+
+* [millikyl](http://jekyllthemes.org/themes/millikyl/)
+
+![](http://jekyllthemes.org/thumbnails/millikyl.png)
+
+* [simplest](http://jekyllthemes.org/themes/simplest/)
+
+![](http://jekyllthemes.org/thumbnails/simplest.png)
+
+
+* [Vitae](https://biomadeira.github.io/vitae/) : A simple and elegante personal resume.
+
+![](http://jekyllthemes.org/thumbnails/vitae.png)
+
+* [the plain](https://github.com/heiswayi/the-plain) : 현재 blog
+
+![](http://jekyllthemes.org/thumbnails/the-plain.png)
+
+* [Cool Concise High-end](https://github.com/Gaohaoyang/gaohaoyang.github.io) : 글의 tag로 접근할 수 있고, 글의 목차가 따로 표시된다는 것이 특징
+
+![](http://jekyllthemes.org/thumbnails/cool-concise-high-end.jpg)
+
+* [Tufte-Jekyll](https://github.com/clayh53/tufte-jekyll)
+
+![](http://jekyllthemes.org/thumbnails/tufte-jekyll.png)
+
+* [Type Theme](https://rohanchandra.github.io/project/type/)
+
+![](http://jekyllthemes.org/thumbnails/type-theme.png)
+
