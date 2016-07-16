@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "생활자동화: 동영상에서 필요한 부분만 잘라내 보자"
-categories: code 생활자동화
+title:  "동영상에서 필요한 부분만 잘라내 보자"
+categories: 생활자동화
 ---
 
 How to cut or split your video files on ubuntu (or mint)

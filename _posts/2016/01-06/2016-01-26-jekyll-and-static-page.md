@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Jekyll and Static Page"
-categories: code
+categories: 코딩삽질기
 ---
 
 Jekyll and Static Page
