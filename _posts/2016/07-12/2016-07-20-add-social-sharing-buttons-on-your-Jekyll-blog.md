@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "웹 페이지에 소셜 공유 링크를 넣어보자 <br>(특히 Jekyll Blog)"
+title:  "웹 페이지에 소셜 공유 링크를 넣어보자 <small>(특히 Jekyll Blog)</small>"
 categories: 코딩삽질기
 ---
 
@@ -35,7 +35,7 @@ categories: 코딩삽질기
 </a> 
 
 <!--linkedin-->
-<a href="http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}">
+<a href="http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}"  target="_blank">
 	<img src="{{ site.baseurl }}/assets/img/socialSharing/linkedin.png">
 </a> 
 ```
