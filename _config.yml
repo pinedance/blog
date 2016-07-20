@@ -21,7 +21,7 @@ github_username: pinedance
 
 # Site Settings
 baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
-permalink:          /:year/:month/:day/:title.html # Post permalink
+permalink:          /:year/:month/:day/:title # Post permalink
 timezone:           Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Build settings
