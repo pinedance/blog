@@ -16,6 +16,7 @@ Hillary Clinton vs Donald Trump
 ```
 
 ![Hillary Clinton vs Donald Trump]({{ site.url }}/assets/img/2016-11-08/Hillary_Clinton_vs_Donald_Trump.png)
+
 <small>Ref: Google Trends, 2016-11-08</small>
 
 ***
@@ -25,4 +26,5 @@ Clinton vs Trump
 ```
 
 ![Clinton vs Trump]({{ site.url }}/assets/img/2016-11-08/Clinton_vs_Trump.png)
+
 <small>Ref: Google Trends, 2016-11-08</small>
