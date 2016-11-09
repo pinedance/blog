@@ -28,3 +28,16 @@ Clinton vs Trump
 ![Clinton vs Trump]({{ site.url }}/assets/img/2016-11-08/Clinton_vs_Trump.png)
 
 <small>Ref: Google Trends, 2016-11-08</small>
+
+***
+
+덧글 : 2016-11-09 저녁
+
+[트럼프 승리](http://news.joins.com/article/20848556)
+
+
+	구글의 신탁은 위대하다! (주인장)
+
+
+
+
