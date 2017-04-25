@@ -108,7 +108,7 @@ span[data-note] {
   }
 }
 .logo {
-  margin: 0 auto 35px;
+  margin: 0 auto 25px;
   text-align: center;
   animation-duration: 0.7s;
   animation-fill-mode: both;
@@ -388,4 +388,17 @@ section {
     text-decoration: none;
     border-bottom: none;
   }
+}
+
+#search-window {
+
+}
+
+.gsc-control-cse .gsc-control-cse-ko {
+
+    padding-top: 0px;
+    border-top-width: 0px;
+    padding-bottom: 0px;
+    border-bottom-width: 0px;
+
 }
