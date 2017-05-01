@@ -4,7 +4,7 @@ title: About
 ---
 
 ```javascript
-var 인생
+var 인생 = []
 
 const 사건들 = [
 	{ "원인": "무지", "결과": "모르는 대상에 대한 두려움"},
@@ -26,4 +26,8 @@ while ( true ) {
 console.log( 인생 )
 
 delete 인생
+
+
+// contact : https://github.com/pinedance/blog/issues
+// copyright : Copyright © 2015. Junho. All rights reserved.
 ```
