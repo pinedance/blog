@@ -18,6 +18,21 @@ categories: 생활자동화
 * [ScanTailor DPI 결정하기](http://heunoni.tistory.com/entry/ScanTailor-DPI-%EA%B2%B0%EC%A0%95%ED%95%98%EA%B8%B0#.V3hhSIyRXxA)
 
 
+[djvu2pdf](http://0x2a.at/s/projects/djvu2pdf)
+
+
+
+[imagemagick](https://www.imagemagick.org/script/index.php)
+
+
+
+[PDFtk](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)
+
+
+
+[PDFSAM](http://www.pdfsam.org/)
+
+
 
 [Defraggler](http://www.piriform.com/defraggler) : 조각모음
 
