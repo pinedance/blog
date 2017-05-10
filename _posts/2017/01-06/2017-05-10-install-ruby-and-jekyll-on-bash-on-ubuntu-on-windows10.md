@@ -27,11 +27,68 @@ categories: 코딩삽질기
 
 ### 참고
 
+#### ruby-switch
+
 `ruby`, `node` 등을 설치할 때는 `rvm`, `nvm` 등 버전관리 프로그램을 통해 설치하는 것이 좋다. 설치하기도 비교적 용이하고 여러 버전이 설치되었을 때 정리하거나 사용하기도 쉽기 때문이다. 
 
 글을 보니 현재 윈도우 bash 환경에서는 `rvm`이 설치되지 않는다고 한다. 그래서 제안한 것이 `ruby-switch`라는 작은 프로그램이다. 
 
 버전관리 프로그램 없이 설치된 여러 버전의 ruby 가운데 어떤 것을 쓸 것인지 환경을 전환해 주는 프로그램 같다. 
+
+#### gem 설치 (sudo 없이 설치 & 실행)
+
+ruby를 시스템에 그대로 설치하면 생기는 문제는 gem을 설치할 때 sudo를 써야 한다는 점이다. 
+
+일단 아래 명령어로 gem path를 확인해 보자. `/var/lib/gems/2.3.0`아래와 `/home/<username>/.gem/ruby/2.3.0`와 같이 보통 2개가 보인다. 
+
+```bash
+gem env
+```
+
+그냥 `gem install jekyll`을 하면 전자 위치에 설치를 시도하기 때문에 권한 문제가 발생한다. 
+
+후자 위치에 설치하면 sudo 권한 없이 설치 실행이 가능하다. 
+
+그럼 어떻게 바꿔줄 수 있을까. 
+
+gem을 설치할 때 다음과 같이 하면 된다. 
+
+```bash
+gem install --user-install gem_name
+```
+
+매번 `--user-install` 옵션을 주는 것이 귀찮다면 다음과 같이 설정을 바꾸면 된다. 
+
+```bash
+echo "gem: --user-install" > ~/.gemrc 
+```
+
+이제 마지막으로 gem을 bash에서 실행시킬 수 있어야 한다. 지금 상태로는 찾을 수 없다며 실행되지 않는다. 
+
+아래 명령을 실행시켜 gem 폴더를 등록하자. 
+
+```bash
+echo "export PATH=$PATH:/home/<username>/.gem/ruby/2.3.0" > ~/.bashrc
+```
+
+#### jekyll 설치
+
+```bash
+gem install jekyll
+```
+
+계속 실폐다. 찾아보니 [여러가지 이유](https://github.com/jekyll/jekyll-help/issues/209)가 있을 수 있단다. 
+
+나의 경우에는 허탈하게도 `make` package가 설치되어 있지 않아서였다. 
+
+다음 명령으로 설치 후 jekyll을 설치할 수 있었다. 
+
+```bash
+sudo apt-get install make
+```
+
+
+
 
 ### 추가
 
