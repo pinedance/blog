@@ -13,6 +13,11 @@ categories: research
 - 단점  : normalization 공식이 탑재되어 있음
 - works : [density](http://pinedance.github.io/data/images/CheongKangEuiGam/ClusterDensity2.png), [cluster](http://pinedance.github.io/data/images/CheongKangEuiGam/Density2.png)
 
+관련자료
+
+* [A tutorial for vosviewer](https://seinecle.github.io/vosviewer-tutorials/generated-html/importing-en.html)
+
+
 ### [Gephi](http://gephi.github.io/)
 
 - 장점 : 무료, 높은 완성도, 그림 좋음

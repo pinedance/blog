@@ -54,6 +54,8 @@ categories: 보고듣고
 * [R을 이용한 기초 통계 처리](http://www.kocw.net/home/search/kemView.do?kemId=332938)
 * [기업정보시스템](http://www.kocw.net/home/search/kemView.do?kemId=1121042)
 
+[K-MOOC](http://www.kmooc.kr/)
+
 [방송대학TV](http://oun.knou.ac.kr/index.jsp)
 
 [어벤져스쿨](https://avengerschool.com/)
