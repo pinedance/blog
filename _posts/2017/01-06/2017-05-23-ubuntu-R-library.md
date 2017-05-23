@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ubuntu에서 사용하던 R이 library 설치 후 멈추다"
-categories: 코딩삽질기, R
+categories: 코딩삽질기 R
 ---
 
 문제의 발단
