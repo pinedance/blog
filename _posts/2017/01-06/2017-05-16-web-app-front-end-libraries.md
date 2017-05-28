@@ -14,3 +14,5 @@ Editor
 * [CodeMirror](http://codemirror.net/)
 
 * [Slate](http://slatejs.org/)
+
+8 [ORY Editor](https://github.com/ory/editor)
