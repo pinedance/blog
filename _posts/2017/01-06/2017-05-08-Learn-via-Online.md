@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "온라인 강의로 배워보자"
-categories: 보고듣고
+categories: 보고듣고 research
 ---
 
 최초의 교육은 엘리트 교육이었다. 먹고 사는데 지장이 없는 사람들이 자신의 자녀를 이름난 학자에게 보내 곁에서 배우게 했었다. 잘하는 사람 옆에서 몸으로 익히는 도제식 교육은 지금도 가장 유효한 방법이다. 
@@ -24,9 +24,15 @@ categories: 보고듣고
 
 * [Text Mining and Analytics by ChengXiang Zhai](https://www.youtube.com/playlist?list=PLLssT5z_DsK8Xwnh_0bjN4KNT81bekvtt)
 
+[Udemy](https://www.udemy.com/)
+
+
+### 고급, 전문
+
+
 [Coursera](https://www.coursera.org/)
 
-[Udemy](https://www.udemy.com/)
+[Stanford Online](http://online.stanford.edu/courses)
 
 
 ### code 특화
