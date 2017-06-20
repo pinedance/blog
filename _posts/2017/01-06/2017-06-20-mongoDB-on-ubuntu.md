@@ -108,7 +108,7 @@ mongDB는 원칙적으로 같은 localhost에서 접근하도록 되어 있다. 
 
 네트워크가 열리고 mongoDB 설정이 허락하면 이론적으로 누구나 mongoDB에 접근할 수 있다. 따라서 권한이 있는 user만 사용할 수 있도록 user를 만들어 둔다. 
 
-특정 db 별로 user를 생성하고 싶다면 mongo shall 환경에서 다음과 같이 생성한다. 
+특정 db 별로 user를 생성하고 싶다면 mongo shell 환경에서 다음과 같이 생성한다. 
 
 
 ```
@@ -122,7 +122,7 @@ db.createUser({
 })
 ```
 
-모든 db에 admin 권한으로 접근할 user를 만들고자 한다면 mongo shall 환경에서 다음과 같이 생성한다. 
+모든 db에 admin 권한으로 접근할 user를 만들고자 한다면 mongo shell 환경에서 다음과 같이 생성한다. 
 
 ```
 use admin
@@ -166,7 +166,7 @@ sudo systemctl restart mongodb
 
 ## test
 
-이제 원격으로 접근해 보자. 참고로 현재 machine에도 mongo shall이 설치되어 있어야 한다. 
+이제 원격으로 접근해 보자. 참고로 현재 machine에도 mongo shell이 설치되어 있어야 한다. 
 
 
 ```
