@@ -5,11 +5,11 @@ categories: 코딩삽질기
 ---
 
 
-ubuntu library 업데이트를 하다가 mongoDB가 멈췄다. 아.... ubuntu를 이용하면서 가장 난처한 경우이다. 
+ubuntu library 업데이트를 하다가 mongoDB가 멈췄다. 아.... [ubuntu를 이용하면서 가장 난처한 경우이다](http://pinedance.github.io/blog/2017/06/19/web-and-my-own-server). 
 
-이참에 mongoDB만 돌아가는 서버를 만들고, 이 서버에 원격으로 접근하는 방식을 취해야 겠다고 생각했다. 
+이참에 mongoDB만 돌아가는 서버를 만들고, 이 서버에 원격으로 접근하는 방식을 취해야겠다고 생각했다. 
 
-그런데, mongoDB 공식페이지에서 설명한 방식으로 설치했더니 `service mongod status`가 작동하지 않는다. 
+그런데, [mongoDB 공식문서에서 설명한 방식](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)으로 설치했더니 `service mongod start`가 작동하지 않는다. 
 
 검색 끝에 다음 두 글을 참고하여 완수할 수 있었다. 그 내용을 요약해 본다. 
 
@@ -34,6 +34,7 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 ```
 
+여기까지는 공식문서에서 설명한 것과 같다.
 
 # Service 등록
 
@@ -46,7 +47,7 @@ sudo service mongod stop  # 정지
 sudo service mongod status   # 상태보기
 ```
 
-그런데, ubuntu 16.04에서는 `unit file` 형식으로 service로 등록해 주어야 했다. 정확히 차이는 잘 모르겠다. 
+그런데, ubuntu 16.04에서는 [`unit file` 형식](http://manpages.ubuntu.com/manpages/zesty/man5/systemd.unit.5.html)으로 service로 등록해 주어야 했다. 정확히 차이는 잘 모르겠다. 
 
 방법은 아래와 같다. 
 
@@ -136,7 +137,7 @@ db.createUser({
 
 ## mongoDB 환경 변경
 
-이제 다음과 같이 mongoDB 설정파일을 바꾸어 localhost 이외에서도 접근할 수 있도록 하자. 
+이제 다음과 같이 mongoDB 설정파일(`/etc/mongod.conf`)을 바꾸어 localhost 이외에서도 접근할 수 있도록 하자. 
 
 ```
 sudo vim /etc/mongod.conf
@@ -149,7 +150,7 @@ net:
 #  bindIp: 127.0.0.1  <- comment out this line
 ```
 
-`security` 부분에 다음과 같이 입력해 둔다.
+조금 아래 `security` 부분에는 다음과 같이 입력해 둔다.
 
 ```
 security:
@@ -175,6 +176,6 @@ mongo -u userName -p userPassword 192.168.12.345/dbName
 admin 계정을 만들었다면 다음과 같이도 접근 가능하다. 
 
 ```
-mongo -u userName -p userPassword 192.168.12.345
+mongo -u userName -p userPassword 192.168.12.345/admin
 ```
 
