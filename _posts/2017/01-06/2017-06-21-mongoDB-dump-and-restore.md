@@ -9,7 +9,7 @@ test용 cloud에서 돌고 있던 mongoDB에 app을 물려 쓰고 있었다. 이
 mongoDB를 다시 설치하고 문제가 해결 되었지만, 앞으로 이런 문제를 해결하기 위해 기존 cloud는 테스트용으로만 쓰고 서비스용 데이터는 별도의 mongoDB 전용 서버에 옮기기로 했다. 
 
 
-1. remote server 준비
+remote server 준비
 -------------------------
 
 remote server (이사갈 mongoDB server)에 접근 가능하도록 세팅을 끝낸다. [이렇게](http://pinedance.github.io/blog/2017/06/20/mongoDB-on-ubuntu) 했다.
@@ -36,7 +36,7 @@ db.createUser({
 })
 ```
 
-2. Dump Local DB
+Dump Local DB
 ---------------------
 
 dump를 한다. 방법은 간단하다. 
@@ -51,7 +51,7 @@ mongodump --host localhost --db people
 해당 폴더에 `dump` 디렉토리가 생긴 것을 확인할 수 있다. 
 
 
-3. Restore bson to remote server
+Restore bson to remote server
 ------------------------------------
 
 여기서 부터가 고생이었다. 처음에는 admin user로 아래와 같이 접근해 보았다. 
@@ -79,7 +79,6 @@ DB를 한 번에 restore 하지 못할 상황이어서 collection 별로 따로�
 ```
 # local bash
 mongorestore --host 192.168.12.345 --username jone --password 'goodjob' dump/people/men.bson --db people --collection men --drop
-
 mongorestore --host 192.168.12.345 --username jone --password 'goodjob' dump/people/women.bson --db people --collection women --drop
 ```
 
