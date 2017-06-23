@@ -6,41 +6,38 @@ categories: 코딩삽질기
 
 
 python
+-------
 
+학습에 필요한 urls
+
+```
 http://cool.kaist.ac.kr/python/
-
 182.216.161.204:7782
-
 https://repl.it/languages
-
 http://dnjswns2942.tistory.com/m/post/43
 http://youtu.be/-73cDPqlYeA
-
 http://exercism.io/
-***
+```
 
-https://slides.com/
+***
 
 python 메모
 --------------
 
-[variable mutable과 immutable의 차이](http://ledgku.tistory.com/54)
-
-[PYTHON OBJECTS: MUTABLE VS. IMMUTABLE](https://codehabitude.com/2013/12/24/python-objects-mutable-vs-immutable/)
-
-[Immutability in Ruby Part 1: Data Structures](http://blog.deveo.com/immutability-in-ruby-part-1-data-structures/)
-
-[Immutability in Ruby Part 2: Domain Models](http://blog.deveo.com/immutability-in-ruby-part-2-domain-models/)
+* [variable mutable과 immutable의 차이](http://ledgku.tistory.com/54)
+* [PYTHON OBJECTS: MUTABLE VS. IMMUTABLE](https://codehabitude.com/2013/12/24/python-objects-mutable-vs-immutable/)
+* [Immutability in Ruby Part 1: Data Structures](http://blog.deveo.com/immutability-in-ruby-part-1-data-structures/)
+* [Immutability in Ruby Part 2: Domain Models](http://blog.deveo.com/immutability-in-ruby-part-2-domain-models/)
 
 
 ruby와 python의 차이점
 ---------------------------
 
-* https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/to-ruby-from-python/
-* http://c2.com/cgi/wiki?PythonVsRuby
-* http://mitsuhiko.pocoo.org/pythonruby.html
-* http://stackoverflow.com/questions/4769004/learning-python-from-ruby-differences-and-similarities
-* http://blog.nacyot.com/articles/2014-12-17-diffrence-of-ruby-and-python/
+* [to ruby from python](https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/to-ruby-from-python/)
+* [python vs ruby](http://c2.com/cgi/wiki?PythonVsRuby)
+* [python and ruby](http://mitsuhiko.pocoo.org/pythonruby.html)
+* [learning python from ruby differences and similarities](http://stackoverflow.com/questions/4769004/learning-python-from-ruby-differences-and-simila)rities
+* [diffrence of ruby and python](http://blog.nacyot.com/articles/2014-12-17-diffrence-of-ruby-and-python/)
 
 boolean
 
@@ -73,8 +70,6 @@ p a     # [3,4,1,2]
 
 python의 `sort` == ruby의 `sort!`
 
-***
-
 문자열 뒤에서 끝까지 자르려면?
 
 `-`를 이용한 offset으로 끝에서 부터 인텍싱 할 수 있다.
@@ -103,14 +98,14 @@ dic.setdefault( 'c', 0 )  # 초기값을 설정하기 위해서는
 dic = {a: 1, b: 2}
 dic[:c] # nil
 dic[:c] ||= 0
-***
+```
 
 python의 특별 기능
 ----------------------
 
 ### list comprehension
 
-* https://blog.engineyard.com/2014/ruby-list-comprehension
+* [ruby list comprehension](https://blog.engineyard.com/2014/ruby-list-comprehension)
 
 ```python
 [k*k for k in range(10) if k%2]
