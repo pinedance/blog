@@ -15,4 +15,18 @@ Editor
 
 * [Slate](http://slatejs.org/)
 
-8 [ORY Editor](https://github.com/ory/editor)
+* [ORY Editor](https://github.com/ory/editor)
+
+
+
+Router & Framework
+---------
+
+* [frontexpress](https://github.com/camelaissani/frontexpress/blob/master/README.md)
+
+
+
+Chart & Visualization
+------
+
+* [echarts](https://github.com/ecomfe/echarts/blob/master/README.md)
