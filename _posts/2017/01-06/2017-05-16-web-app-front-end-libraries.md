@@ -30,3 +30,12 @@ Chart & Visualization
 ------
 
 * [echarts](https://github.com/ecomfe/echarts/blob/master/README.md)
+
+
+Image
+--------
+
+* [Resemble.js](https://huddle.github.io/Resemble.js/) : image diff
+
+* [Jimp.js](https://github.com/oliver-moran/jimp) : image manipulation
+

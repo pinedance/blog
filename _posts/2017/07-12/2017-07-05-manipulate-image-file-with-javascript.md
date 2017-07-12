@@ -40,6 +40,10 @@ image file은 RGB 정보를 담고 있고, 컴퓨터는 이 정보를 읽어 색
 
 node와 jimp를 이용하여 이를 구현해 봤다. [여기](https://github.com/pinedance/snippets/tree/master/BlackAndWhite)
 
+![before](https://pinedance.github.io/blog/assets/img/2016-06-10/before.jpg)
+
+![after](https://lh3.googleusercontent.com/PGuCAxLti0lJuGbbPoAoFcmTMWItOwpi4O8NTaxlolSYeL63qHtnmjTNnwFEoa8ht7oA95SOCMKCKBiYm-JGkvlVdowbCHN3YnUqJFKO35fsrIn4BHDeRsZAmzjD0-zzCVHfBu2tWzku6VkxUBW_qbym52ljzAGbK92jrqSfZYnIi8-vJZQ_1KGZC0dgZ7HnmQvwm1vFB_jNfH9dSgXqRV0bbQGdJeZ-mbHTYzSFyuD0R5iU424ywBMMFVMz01Ousuqvgybk5wwoaEi08bVBdVsG7XV2q_Pf-tap0bfHLlc0xfBQBvaVmMgFQcYcXDjdTtmbUQETmxoYTyneTsfUBz8BygdZTRWwW1jY82uCmvTnuwk25vELCVMXPQ0wXoB1FKhlbDFgn1Uo2zFGN1KQiC0qobTkOtTx-m5AAg24CJikJdvORXqYHgbhXuSWcGI5Go1hO3zzuinlw9QvlAod3LxwwxmlQ5GlC-7TX7MFAs3X_ULY2R9GhrD60qP8TpW1ARF_i9mK9_TYfFRFRQOJ2tEMQjawQE0eB4mDLF8-vP3Mk9KoOH-tQXOTNVQHzPXTvxFrgpZdxsdMhrucuTMxep2czyuU4ChC9SqnAjSYQslBfBGXg-Z6rv34m9RyFVe6LqL-rHdRZ4bL9JASekOXzNSxFziX3ZmV29iDQLBWmDge4J0=w1024-h683-no)
+
 안타깝게도 사진으로 찍은 자료에 그림자가 있어 밝기가 서로 다른 경우에는 결과가 그리 좋지 못하다. 밝은 곳과 어두운 곳의 cutoff value를 다르게 줄 수 있다면 해결할 수 있을 것 같은데, 생각보다 피곤한 작업이 될 것 같아 그만 두었다.
 
 시간 날 때 시도해 봐야 겠다.
