@@ -17,6 +17,11 @@ Editor
 
 * [ORY Editor](https://github.com/ory/editor)
 
+* [Pell](https://github.com/jaredreich/pell/blob/master/README.md)
+
+* [Quills](https://quilljs.com/)
+
+* [MediumEditor](https://yabwe.github.io/medium-editor/)
 
 
 Router & Framework
