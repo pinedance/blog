@@ -58,6 +58,10 @@ Kotlin을 익히기 위해 참고할만 한 자료를 정리해 본다.
 
 [Kotlin Language Documentation](https://www.gitbook.com/book/jetbrains/kotlin-reference-for-kindle/details)
 
+[Get Started with Kotlin on Android](https://developer.android.com/kotlin/get-started.html)
+
+[Resources to Learn Kotlin](https://developer.android.com/kotlin/resources.html)
+
 ### Book
 
 [Kotlin in Action](https://github.com/panxl6/Kotlin-in-action/raw/master/ebook/Kotlin_in_Action_v12_MEAP.pdf)
@@ -78,10 +82,24 @@ Kotlin을 익히기 위해 참고할만 한 자료를 정리해 본다.
 
 [Kotlin Tutorial / YOUTUBE](https://www.youtube.com/playlist?list=PLsyeobzWxl7rooJFZhc3qPLwVROovGCfh)
 
+[Android Kotlin Programing / YOUTUBE](https://www.youtube.com/playlist?list=PLaoF-xhnnrRUEbF6cvk4-CeBAEOSbp8sS)
+
+[Kotlin Tutorial for Beginners: Basics and Fundamentals for Android / YOUTUBE](https://www.youtube.com/playlist?list=PLlxmoA0rQ-LwgK1JsnMsakYNACYGa1cjR)
+
+[Using Project Kotlin for Android](https://goo.gl/mzRDx3)
+
+### Post
+
 [안드로이드 공식 언어가 된 Kotlin을 알아보자](https://academy.realm.io/kr/posts/kotlin-official-android-language/)
 
 * [안녕하세요. 코틀린 #1](https://goo.gl/MrzMx3)
 * [예제로 배우는 아름다운 코틀린의 기능들:Ready for Production](https://academy.realm.io/kr/posts/kotlin-let-run-apply-lateinit/)
 * [안드로이드 공식 언어 : 코틀린(Kotlin) 시작하기](https://www.udemy.com/the_next_android_kotlin/?couponCode=B-ARTICLE279933)
+
+### Resources
+
+[awesome-kotlin / github](https://github.com/mcxiaoke/awesome-kotlin)
+
+[Kotlin link](https://kotlin.link/)
 
 
