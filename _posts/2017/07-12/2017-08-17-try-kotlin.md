@@ -54,7 +54,7 @@ Kotlin을 익히기 위해 참고할만 한 자료를 정리해 본다.
 
 ### Official
 
-[Get Started with Kotlin on Android](https://developer.android.com/kotlin/get-started.html)
+[Kotlin Language Documentation Tutorial](https://kotlinlang.org/docs/tutorials/)
 
 [Kotlin Language Documentation](https://www.gitbook.com/book/jetbrains/kotlin-reference-for-kindle/details)
 
