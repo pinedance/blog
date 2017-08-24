@@ -5,6 +5,8 @@ categories: 코딩삽질기
 description: Microservices, Serverless architecture, AWS lambda, Google apps script
 ---
 
+Microservices, Serverless architecture, AWS lambda, Google apps script
+
 ## ♬
 
 웹을 활용하다 보면, 대부분 static하게 정해진 부분들이다. 그래서static page로 만들 여지가 생각보다 많다. 사용자의 요구에 반응해야 하는 경우라면 front end에서 javascript를 사용하여 이를 상당부분 충족시킬 수 있다. 
