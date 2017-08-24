@@ -2,6 +2,7 @@
 layout: post
 title:  "Microservices & Serverless architecture"
 categories: 코딩삽질기
+description: Microservices, Serverless architecture, AWS lambda, Google apps script
 ---
 
 ## ♬
@@ -34,7 +35,7 @@ microservice를 활용하자면 서버 자원이 더 비효율적으로 관리�
 
 ## ♬
 
-[AWS lambda ](https://aws.amazon.com/ko/lambda/details/)
+[AWS lambda](https://aws.amazon.com/ko/lambda/details/)
 
 * 소개 : AWS Lambda와 API Gateway를 통한 Serverless Architecture 특집 (윤석찬) :: AWS 월간 웨비나 [YOUTUBE](https://www.youtube.com/watch?v=pJNXS_BYEUU), [SLIDE](https://goo.gl/LMzDqv)
 * Library : [Cloudia.js](https://claudiajs.com/), [Serverless.js](https://serverless.com/)
