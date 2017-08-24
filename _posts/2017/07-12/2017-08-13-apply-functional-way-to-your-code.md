@@ -16,7 +16,7 @@ ruby
 
 내가 처음 자발적으로 배운 언어이기 때문에 ruby에 애착이 많다. 최근에 science 계통에서는 경쟁관계에 있는 python이 강세고, ruby를 널리 알린 web programming 분야에서는 node가 급격히 성장했다. 그래서 ruby 커뮤니티는 좀 정체된 상태 같다. 
 
-하지만 성능 뭐 이런 걸 다 떠나서 문법이 정말 아름답다. 일관성도 뛰어나고 예측가능하다. OOP에 대한 개념을 잡는 데도 좋다. chaining에 익숙해 지면 상당히 코딩 길이도 무척 짧아진다.  
+하지만 성능 뭐 이런 걸 다 떠나서 문법이 정말 아름답다. 일관성도 뛰어나고 예측가능하다. OOP에 대한 개념을 잡는 데도 좋다. chaining에 익숙해 지면 코딩 길이도 무척 짧아진다.  
 
 아무튼, ruby도 FP 방식으로 운용 가능하다. ruby community에서는 for loop 보다도 each를 많이 쓰는데, map을 알고 나면
  상당히 많은 each 용례를 쓸모 없는 변수를 빼고 map으로 구현할 수 있다.
@@ -33,7 +33,9 @@ python
 
 python 커뮤니티는 정말 크다. 그래서 computer science의 개념들을 설명할 때 python으로 예제 코드가 짜여져 있는 경우가 많다. 
 
-python을 약간 배우기는 했지만, 함수 호출 방식에서 일관성이 떨어지는 점이 불만이다. 또 코드가 닫히는 부분도 indentation으로 처리되는데, 층차가 많아지면 꽤 혼란스럽다. 
+python을 약간 배우기는 했지만, 함수 호출 방식에서 일관성이 떨어지는 점이 불만이다. 또 코드가 닫히는 부분도 indentation으로 처리되는데, 층차가 많아지면 꽤 혼란스럽다. 역시 개인의 기호는 서로 다른 듯하다. 
+
+당연히, python도 FP 방식으로 활용 가능하다. 
 
 * [An introduction to functional programming](https://codewords.recurse.com/issues/one/an-introduction-to-functional-programming)
 
@@ -52,6 +54,8 @@ javascript 커뮤니티가 커지다 보니 관련된 글들도 가장 많은 �
 * [Functional JavaScript: Function Composition For Every Day Use.](https://hackernoon.com/javascript-functional-composition-for-every-day-use-22421ef65a10)
 * [Rethinking JavaScript: Death of the For Loop](https://hackernoon.com/rethinking-javascript-death-of-the-for-loop-c431564c84a8)
 * [Rethinking JavaScript: The if statement](https://hackernoon.com/rethinking-javascript-the-if-statement-b158a61cd6cb)
+* [Functional programming in JavaScript @ Youtube](https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
+
 
 그 밖에 글들도 유용하다. 
 
