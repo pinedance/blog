@@ -40,7 +40,7 @@ microservice를 활용하자면 서버 자원이 더 비효율적으로 관리�
 [AWS lambda](https://aws.amazon.com/ko/lambda/details/)
 
 * 소개 : AWS Lambda와 API Gateway를 통한 Serverless Architecture 특집 (윤석찬) :: AWS 월간 웨비나 [YOUTUBE](https://www.youtube.com/watch?v=pJNXS_BYEUU), [SLIDE](https://goo.gl/LMzDqv)
-* Library : [Cloudia.js](https://claudiajs.com/), [Serverless.js](https://serverless.com/)
+* Library : [Cloudia.js](https://claudiajs.com/), [Serverless.js](https://serverless.com/), [up](https://medium.freecodecamp.org/up-b3db1ca930ee)
 
 [Google apps script](https://developers.google.com/apps-script/)
 
