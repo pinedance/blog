@@ -13,3 +13,9 @@ Headless browser
 
 * [browse automation with ruby](https://jbodah.github.io/blog/2014/11/12/browser-automation-with-ruby/)
 
+
+
+[HTTP client library](https://www.twilio.com/blog/2017/08/http-requests-in-node-js.html)
+
+* [request](https://github.com/request/request)
+* [r2](https://github.com/mikeal/r2/blob/master/README.md)

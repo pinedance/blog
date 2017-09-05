@@ -52,3 +52,4 @@ Image
 
 * [Jimp.js](https://github.com/oliver-moran/jimp) : image manipulation
 
+* [lozad.js](https://github.com/ApoorvSaxena/lozad.js/blob/master/README.md) : Advanced performant Lazy Loader using Intersection Observer API. [demo](https://apoorv.pro/lozad.js/demo/index.html)
