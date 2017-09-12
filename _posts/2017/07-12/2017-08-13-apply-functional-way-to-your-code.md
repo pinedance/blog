@@ -39,7 +39,7 @@ python을 약간 배우기는 했지만, 함수 호출 방식에서 일관성이
 
 * [An introduction to functional programming](https://codewords.recurse.com/issues/one/an-introduction-to-functional-programming)
 
-
+* [Functional Programming in Python](http://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
 
 javascript
 ------------
