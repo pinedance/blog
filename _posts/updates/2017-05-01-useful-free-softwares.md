@@ -17,7 +17,7 @@ File Search : [Everything](https://www.voidtools.com/ko-kr/)
 
 Disk Defragmentation : [Defraggler](http://www.piriform.com/defraggler)
 
-Disk Overview : [TreeSize](http://www.jam-software.com/treesize_free/)
+Disk Overview : [TreeSize](http://www.jam-software.com/treesize_free/), [CrystalDiskInfo](https://crystalmark.info/software/CrystalDiskInfo/index-e.html)
 
 Software Update Monitor : [SUMo](https://www.kcsoftwares.com/?sumo)
 
@@ -25,10 +25,20 @@ Maintenance : [CCleaner](http://www.piriform.com/ccleaner)
 
 Sync : [Insync](https://www.insynchq.com/)†, [GoodSync](https://www.goodsync.com/)†, [FreeFileSync](https://www.freefilesync.org/)
 
+File Renamer : [ReNamer](https://www.den4b.com/products/renamer)
+
+Macro : [Gmacro](http://gmacro.co.kr/macro/)
+
+Copy Files : [Teracopy](http://www.codesector.com/teracopy)
+
+CD/DVD burning : [InfraRecorder](http://infrarecorder.org/)
+
+Mount Image (ISO) : [WinMount](http://www.winmount.com/)
+
 
 ### Online
 
-Browser : [Chrome](https://www.google.com/chrome/browser/desktop/index.html)
+Browser : [Chrome](https://www.google.com/chrome/browser/desktop/index.html), [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en)
 
 Mail : [Thunderbird](https://www.mozilla.org/en-US/thunderbird/)
 
@@ -64,9 +74,20 @@ Media Player : [Potplayer ](https://potplayer.daum.net/)
 
 video transcoder : [HandBrake](https://handbrake.fr/downloads.php)
 
+CD Audio Converter : [Easy CD-DA Extractor](https://www.poikosoft.com/)
+
+
+
+### Development
+
+Bootstrap builder and editor : [Pingendo](https://pingendo.com/)
+
+
 ### ETC
 
+Dictionary : [Stardict](http://www.stardict.org/)
 
+Android emulator : [Leapdroid](http://www.leapdroid.com/)
 
 ### 추가자료
 
