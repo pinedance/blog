@@ -69,7 +69,8 @@ c.NotebookApp.port = 8282
 
 `c.NotebookApp.password`에 입력할 값은 python shell에서 아래와 같이 입력한 뒤 password를 입력하고 난 다음 받은 hash 값이다. 
 
-```
+```python
+# python shell
 from notebook.auth import passwd ; passwd()
 ```
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "동영상에서 필요한 부분만 잘라내 보자"
+title:  "동영상에서 필요한 부분만 잘라내 보자 (feat ffmpeg)"
 categories: 생활자동화
 ---
 
