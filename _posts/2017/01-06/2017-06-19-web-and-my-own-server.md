@@ -4,6 +4,7 @@ title:  "Web 바다를 항해하기 위한 돋단배, 개인 Server"
 categories: 코딩삽질기
 ---
 
+> Digital Nomad의 시작, private cloud server 
 
 Web은 정말 멋진 세계이다. 어떠한 진입장벽도 없이(?) 누구나 자신의 의견을 내 놓을 수 있고 다른 사람들의 의견을 볼 수 있다. 
 
