@@ -75,7 +75,7 @@ from notebook.auth import passwd ; passwd()
 
 ## jupyter notebook을 server system service로 등록
 
-이 부분은 [Ubuntu 16.04 system service 등록하기](https://goo.gl/rhcbbE)를 참조할 것 
+이 부분은 [Ubuntu 16.04 system service 등록하기](https://goo.gl/HnjkbC)를 참조할 것 
 
 
 
