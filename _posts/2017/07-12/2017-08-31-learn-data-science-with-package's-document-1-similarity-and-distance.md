@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Package 공식문서로 배우는 Data Science 01 : similarity and distance"
-categories: Research
+categories: research
 ---
 
 > Package의 Official Document를 단서로 Data Science를 배워보자. 
