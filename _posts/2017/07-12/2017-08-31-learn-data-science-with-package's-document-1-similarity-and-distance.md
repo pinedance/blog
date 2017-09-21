@@ -75,3 +75,12 @@ sklean > metrics > [sklearn.metrics.pairwise](http://scikit-learn.org/stable/mod
 
 
 다소 간략한 편이다. [manhattan_distances](https://goo.gl/LgHvKh), [cosine_distances](https://goo.gl/9aXazS), [euclidean_distances](https://goo.gl/AKDct1) 이렇게 3가지를 지원한다. 
+
+
+## Summary
+
+우선 distance나 similarity를 논하려면 주어진 data를 Vector Space Model로 어떻게 바꿀 것인가를 먼저 고민해야 한다. 이 때 생성한 vector의 element 들이 binary인지 numeric인지 확인해야 한다. 
+
+측정에 있어서는 Distance( dissimilarity )라면 Euclidean이, Similarity는 Cosine을 기본 출발점으로 삼아 본다. 
+
+결과가 예상과 차이가 크다면 domain의 성격에 따라 data의 smoothing, normalize, weighting 등을 고려해 본다. 
