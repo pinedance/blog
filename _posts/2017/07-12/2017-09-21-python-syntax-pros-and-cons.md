@@ -4,7 +4,10 @@ title:  "Python 문법의 장점과 단점 (내 기준)"
 categories: 코딩삽질기
 ---
 
-python 문법, `{"pros" : "list comprehension", "cons": "so many parenthesis"} `
+```python
+{"pros" : "list comprehension", "cons": "so many parenthesis"} 
+```
+
 
 Background
 -------------
@@ -42,7 +45,7 @@ list_filtered = [  it for it in mylist if it % 2 == 0 ]    # [2, 4]
 
 처음에는 불편했었는데, debugging을 해 보니 생각이 바뀌었다. Ruby나 JS 같은 경우에는 error을 발생시키지 않고 결과를 내 주기 때문에 오류가 있어도 인지하기 어렵다. 심지어 잘못된 결과가 나와도 믿게 되는 경우가 있다. 하지만 python은 확실이 error을 내 주기 때문에 문제가 된 지점을 알 수 있다. 
 
-```pytho
+```python
 mydict = {"a": 1, "b": 2, "c": 3}
 mydict["d"]            #  KeyError: 'd'
 mydict.get("d", "") # ""
@@ -58,7 +61,7 @@ mydict[:d]            # nil
 다소 불편한 점이 있다면 초기 값이 있는지 없는지 모를 때이다. 이 때문에 `setdefault`나 defaultdict package를 사용해 줘야 한다.
 
 
-```
+```python
 mydict = {"a": 1, "b": 2, "c": 3}
 # mydict["d"]  = mydict["d"] + 2          #  KeyError: 'd'
 mydict.setdefault( 'b', 0 ) 
