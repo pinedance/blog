@@ -26,6 +26,8 @@ jupyter에서 ruby를 사용하는 outline은 다음과 같이 간단하다.
 
 IRuby 설치는 [공시 페이지](https://github.com/SciRuby/iruby)에 잘 정리되어 있다. 
 
+`jupyter kernelspec list`로 설치가 되었는지 확인해 보자. 
+
 하지만 실제로 하면서 몇가지 문제가 생겼다. 
 
 설치를 마치고 jupyter notebook에서 ruby kernel이 열리기는 하였지만 다음과 같은 메시지를 내 뿜으며 작동하지 않았다. 

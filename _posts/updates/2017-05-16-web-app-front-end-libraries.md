@@ -42,8 +42,11 @@ Framework
 Chart & Visualization
 ------
 
+* [Google chart tools](https://developers.google.com/chart/)
+
 * [echarts](https://github.com/ecomfe/echarts/blob/master/README.md)
 
+* [billboard.js](https://github.com/naver/billboard.js/blob/master/README.md) based on D3 v4+.
 
 Image
 --------
