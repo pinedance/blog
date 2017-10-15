@@ -14,3 +14,8 @@ Javascript 배우기
 
 [Modern JavaScript Cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet/blob/master/readme.md)
 
+regular express : [regexly](https://regexly.chipto.io/)
+
+Async
+
+* [Await and Async Explained with Diagrams and Examples](http://nikgrozev.com/2017/10/01/async-await/)

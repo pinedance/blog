@@ -23,6 +23,8 @@ Editor
 
 * [MediumEditor](https://yabwe.github.io/medium-editor/)
 
+* [prosemirror](http://prosemirror.net/)
+
 
 Framework
 ---------
@@ -47,6 +49,8 @@ Chart & Visualization
 * [echarts](https://github.com/ecomfe/echarts/blob/master/README.md)
 
 * [billboard.js](https://github.com/naver/billboard.js/blob/master/README.md) based on D3 v4+.
+
+* [Taucharts One](https://blog.taucharts.com/taucharts-one/)
 
 Image
 --------
