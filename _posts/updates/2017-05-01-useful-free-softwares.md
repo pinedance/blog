@@ -59,6 +59,8 @@ PDF Editor : [PDFSAM](http://www.pdfsam.org/), [PDFtk](https://www.pdflabs.com/t
 
 Text Editor : [notepad ++](https://notepad-plus-plus.org/)
 
+Markdown editor : [Typora](https://typora.io/)
+
 Scan File Editor : [ScanTailor](http://scantailor.org/)
 
 * [ScanTailor DPI 결정하기](http://heunoni.tistory.com/entry/ScanTailor-DPI-%EA%B2%B0%EC%A0%95%ED%95%98%EA%B8%B0#.V3hhSIyRXxA)

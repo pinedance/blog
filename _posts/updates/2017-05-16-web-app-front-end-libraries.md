@@ -52,6 +52,8 @@ Chart & Visualization
 
 * [Taucharts One](https://blog.taucharts.com/taucharts-one/)
 
+* [Frappé Charts](https://frappe.github.io/charts/)
+
 Image
 --------
 

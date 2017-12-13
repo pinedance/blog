@@ -6,15 +6,19 @@ categories: 코딩삽질기
 
 Javascript를 더 깊이 사용하기 위해 도움이 되는 자료 목록을 정리해 둔다. 
 
+
 Javascript 배우기
 
-[eloquent javascript](http://eloquentjavascript.net/)
+* [eloquent javascript](http://eloquentjavascript.net/)
 
-[Top 10 ES6 features by example](https://blog.pragmatists.com/top-10-es6-features-by-example-80ac878794bb)
+* [Top 10 ES6 features by example](https://blog.pragmatists.com/top-10-es6-features-by-example-80ac878794bb)
 
-[Modern JavaScript Cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet/blob/master/readme.md)
+
+Cheatsheet : [Modern JavaScript Cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet/blob/master/readme.md), [ES2015+ cheatsheet](https://devhints.io/es6)
+
 
 regular express : [regexly](https://regexly.chipto.io/)
+
 
 Async
 
