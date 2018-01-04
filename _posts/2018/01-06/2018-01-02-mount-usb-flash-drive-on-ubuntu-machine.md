@@ -24,3 +24,8 @@ sudo umount /dev/sdh1
 # partition 문제가 있다면, 다음 GUI tool을 이용하여 정리한 다음 위의 과정을 다시 수행한다. 
 sudo gparted
 ```
+
+REF
+
+* [Ubuntu에 대용량 USB 외장하드디스크 연결하여 사용하기](http://blog.saltfactory.net/mount-external-harddisk-on-ubuntu/)
+
