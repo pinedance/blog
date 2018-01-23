@@ -16,3 +16,4 @@ convert yourimage.djvu newimage.pdf
 ref : [how to convert djvu to pdf](https://answers.launchpad.net/ubuntu/+source/firefox-3.0/+question/55029)
 
 
+Windows라면 [DjVu Converter](http://www.djvuconverter.com/)라는 프로그램을 사용할 수 있다. 
