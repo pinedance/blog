@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "알리오 올리오 파스타"
-categories: 먹고
+categories: 먹고살자
 ---
 
 
