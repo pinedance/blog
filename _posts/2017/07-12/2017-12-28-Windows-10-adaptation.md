@@ -101,4 +101,18 @@ A : 간혹 영미권에서 만들어진 프로그램을 설치하다보면 설�
 
 간단한 그림을 편집할 때 가장 많이 사용했던 프로그램이 MS Office Picture Manager였다. 그런데 Office 2013 이후로 이 프로그램이 더 이상 지원되지 않는다. 사실 이 프로그램의 기능들은 power point 등 각 프로그램에 모두 스며들어 있어서 독립적인 프로그램으로 배포할 필요가 없어졌기 때문인지 모르겠다. 하지만 여전히 그림 파일을 자르고 다른 크기나 형태로 저장하는데는 매우 유용한 프로그램이다. 
 
-그래서 찾아봤다. 다행히 관련된 [안내](https://support.office.com/en-us/article/where-is-picture-manager-58837c3e-34db-4904-95e8-4eca7b7c5730)가 있었다. [SharePoint Designer 2007 배포판](https://www.microsoft.com/en-us/download/details.aspx?id=21581)에 포함된 부가 기능 중에 MS Office Picture Manager가 여전히 지원되고 있었다. 설치 할 때 무조건 "다음(Continue)"을 누르지 말고, "Customize" 메뉴를 이용해 설치할 프로그램을 고르는 메뉴로 들어간다. 여기에서 `Office Tools`에 있는 `Microsoft Office Picture Manager`를 선택하여 설치하면 된다. 
+그래서 찾아봤다. 다행히 관련된 [안내](https://support.office.com/en-us/article/where-is-picture-manager-58837c3e-34db-4904-95e8-4eca7b7c5730)가 있었다. [SharePoint Designer 2007 배포판](https://www.microsoft.com/en-us/download/details.aspx?id=21581)에 포함된 부가 기능 중에 MS Office Picture Manager가 여전히 지원되고 있었다. 설치 할 때 무조건 "다음(Continue)"을 누르지 말고, "Customize" 메뉴를 이용해 설치할 프로그램을 고르는 메뉴로 들어간다. 여기에서 `Office Tools`에 있는 `Microsoft Office Picture Manager`를 선택하여 설치하면 된다.
+
+
+### Q : CPU 코어 수를 조절하여 빠른 부팅을 해볼까? 
+
+요즘 CPU는 multi-core process가 기본이다. 하지만 대부분의 어플리케이션(프로그램)은 1 core를 사용할 뿐이다. 
+
+( 잘은 모르지만 멀티코어를 모두 사용하도록 프로그래밍 하는 것은 매우 복잡하다고 들었다.  )
+
+윈도우의 경우, 사용하는 코어를 조절하여 보다 빠르게 부팅 시킬 수 있다. 
+
+`msconfig`에 있는 `부팅 > 고급옵션`에서 `프로세스 수`를 조정해 주면 된다. 
+
+자세한 내용은 [CPU 코어 조절로 부팅 속도 상승(UP)방법](http://cooltime.tistory.com/567)을 참고하자. 
+
