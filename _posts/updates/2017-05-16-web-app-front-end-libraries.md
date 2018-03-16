@@ -17,7 +17,7 @@ Editor
 
 * [ORY Editor](https://github.com/ory/editor)
 
-* [Pell](https://github.com/jaredreich/pell/blob/master/README.md)
+* [Pell](https://github.com/jaredreich/pell/)
 
 * [Quills](https://quilljs.com/)
 
@@ -53,6 +53,9 @@ Chart & Visualization
 * [Taucharts One](https://blog.taucharts.com/taucharts-one/)
 
 * [Frappé Charts](https://frappe.github.io/charts/)
+
+* [Tui.chart](https://github.com/nhnent/tui.chart)
+
 
 Image
 --------
