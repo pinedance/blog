@@ -5,7 +5,7 @@ categories: 코딩삽질기
 ---
 
 
-## 설치
+## Elasticseach 설치
 
 [ElasticSearch 설치 설명 문서](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)가 매우 잘 되어 있다. 그대로 따라하면 될 정도이다. 여기에서는 몇가지만 기록해 두고자 한다.
 
@@ -17,7 +17,7 @@ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.3.de
 sudo dpkg -i elasticsearch-5.4.3.deb
 ```
 
-브라우저에서 다운로드 할 경우에는 [Past Releases](https://www.elastic.co/downloads/past-releases) 페이지에서 해당되는 버전을 다운로드 받아 설치한다. 
+브라우저에서 다운로드 할 경우에는 [Past Releases](https://www.elastic.co/downloads/past-releases) 페이지에서 해당되는 버전을 다운로드 받아 설치한다.
 
 ElasticSearch도 하나의 동립된 Server이기 때문에 부딩될 때 자동실행되어야 한다. 이에 대해서는 OS 상황에 따라 방법이 다르다. `ps -p 1`를 실행시켜 `init`이라고 나오는지 `systemd`라고 나오는지에 따라 아래와 같이 실행시켜 준다. elasticsearch 구동 방법도 양자가 다르다. 부팅 시 자동실행에 대해서는 [이 글]({{site.baseurl}}/{% post_url 2017-09-12-Ubuntu-16.04-system-service-등록하기 %})을 참고.
 
@@ -46,11 +46,13 @@ sudo systemctl status elasticsearch.service
 
 설치와 실행이 잘 되었는지 확인해 보자.
 
-```
+```bash
 # systemd의 경우, system demon 상태 확인
 sudo systemctl status elasticsearch.service
 # systemd의 경우, log 확인
 sudo journalctl --unit elasticsearch
+# init의 경우, service 상태 확인
+sudo -i service elasticsearch status
 # server 동작 확인
 curl -v localhost:9200
 ```
