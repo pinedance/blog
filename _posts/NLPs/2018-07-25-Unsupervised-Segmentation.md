@@ -7,12 +7,12 @@ categories: NLP
 
 ## Branching Entropy를 이용한 방법
 
-* [Cohesion score + L-Tokenizer / lovit](https://lovit.github.io/nlp/2018/04/09/cohesion_ltokenizer/)
+* [Accessor Variety & Branching Entropy / lovit](https://lovit.github.io/nlp/2018/04/09/branching_entropy_accessor_variety/)
 * ["Branching Entropy"  / ratsgo's blog](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/06/BranchingEntropy/)에 잘 설명되어 있다.
 
 ## Cohesion Probability를 이용한 방법.
 
-* [Accessor Variety & Branching Entropy / lovit](https://lovit.github.io/nlp/2018/04/09/branching_entropy_accessor_variety/)
+* [Cohesion score + L-Tokenizer / lovit](https://lovit.github.io/nlp/2018/04/09/cohesion_ltokenizer/)
 * ["Cohesion Probability"  / ratsgo's blog](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/05/cohesion/)에 잘 설명되어 있다.
 
 ## Accessor Variety
