@@ -38,6 +38,7 @@ categories: NLP
 
 #### PCA (principal component analysis), unsupervised learning
 
+* [PCA / 데이터사이언스스쿨](https://datascienceschool.net/view-notebook/f10aad8a34a4489697933f77c5d58e3a/)
 * [R을 활용한 주성분 분석(principal component analysis) 정리 :: Data 쿡북](http://datacookbook.kr/35)
 
 #### LDA (Linear Discriminant Analysis, Fisher’s LDA), supervised learning
