@@ -17,7 +17,7 @@ categories: NLP
 * 교재 : [Gilbert Strang, Linear Algebra and Its Applications](http://www.math.hcmus.edu.vn/~bxthang/Linear%20algebra%20and%20its%20applications.pdf)
 
 선형대수학 / 성균관대학교 설한국
-* [KOCW](http://www.kocw.or.kr/home/m/search/kemView.do?kemId=704693
+* [KOCW](http://www.kocw.or.kr/home/m/search/kemView.do?kemId=704693)
 
 선형대수 / 이상구
 * [교재](http://matrix.skku.ac.kr/2015-Album/BigBook-LinearAlgebra-2015.pdf)

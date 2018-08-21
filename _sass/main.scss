@@ -14,7 +14,19 @@ h3,
 h4,
 h5 {
   margin: 45px 0 25px;
+  line-height: 1;
 }
+
+h2 {
+  border-bottom: 2px solid currentColor;
+  line-height: 0.85;
+}
+
+h3 {
+  border-bottom: 1px solid currentColor;
+  line-height: 0.85;
+}
+
 img {
   max-width: 100%;
 }
@@ -183,13 +195,13 @@ iframe {
 }
 ul,
 ol {
-  margin: 40px 0;
-  padding-left: 50px;
+  margin: 10px 0;
+  padding-left: 20px;
   li {
     word-wrap: break-word;
   }
   img {
-    margin: 40px 0;
+    margin: 24px 0;
     border-radius: 5px;
   }
 }
