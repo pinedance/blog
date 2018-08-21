@@ -16,43 +16,57 @@ categories: NLP
 
 ## Segmentation
 
+### N-gram
+
 ### Dictionary based Tokenization
 
 ### Unsupervised  Segmentation
 
 ☞ [Unsupervised  Segmentation]({{site.baseurl}}/{% post_url 2018-07-25-Unsupervised-Segmentation %})
 
+
 ## Matrix
 
 ### Term-Document Matrix
 
-
 ### Term-Co-occurence Matrix
 
-
-### 차원축소
+### 차원축소 (Dimensionality Reduction)
 
 * [SVD와 PCA, 그리고 잠재의미분석(LSA)](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/04/06/pcasvdlsa/)
+* [Dimensionality Reduction (PCA, LDA) / SanghyukChun's Blog](http://sanghyukchun.github.io/72/)
+
+#### PCA (principal component analysis), unsupervised learning
 
 * [R을 활용한 주성분 분석(principal component analysis) 정리 :: Data 쿡북](http://datacookbook.kr/35)
 
+#### LDA (Linear Discriminant Analysis, Fisher’s LDA), supervised learning
+
+#### LSA (Latent semantic analysis)
+
+#### LDA (Latent Dirichelt Allocation)
 
 
 ## Models
 
-### Vector space model
+### Bag of words
 
-* [idea of statistical semantics](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/10/frequency/)
-
-### Word Weighting
+#### Word Weighting
 
 * [Word Weighting(1)](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/28/tfidf/)
 
 * [Word Weighting(2)](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/04/14/wordweighting/)
 
+
+### Vector space model
+
+* [idea of statistical semantics](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/10/frequency/)
+
 #### Similarity
 
 * [문서 유사도 측정](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/04/20/docsim/)
+
+#### Distance
 
 
 ### Generative model
@@ -94,16 +108,43 @@ categories: NLP
 * [Comparing Corpuses by Word Use](http://sappingattention.blogspot.com/2011/10/comparing-corpuses-by-word-use.html)
 
 
-## Scoring
+## Score
 
-### log-likelihood ratio G2
+### Probability
+
+#### T-score
+
+#### Z-score
+
+#### Chi-Square Statistic (χ2)
+
+관찰값과 기대값 사이의 거리(Distance)
+
+![Chi-Square Statistic formula](http://www.geography-site.co.uk/pages/skills/fieldwork/statimage/chisqu.gif)
+
+#### log-likelihood ratio G2
 
 * [Log-likelihood for comparing texts](http://wordhoard.northwestern.edu/userman/analysis-comparewords.html)
+
+### Information Theory
+
+* [Information Theory / SanghyukChun's Blog](http://sanghyukchun.github.io/62/) Entropy, KL divergence, Mutual information
+
+#### Entropy
+
+#### KL divergence
+
+#### MI (Mutual information)
+
+* [Mutual information / Scholarpedia](http://www.scholarpedia.org/article/Mutual_information)
+
+
 
 
 ## Visualization
 
 ☞ [Data Visualization]({{site.baseurl}}/{% post_url 2018-04-07-data-visualization %})
+
 
 
 ## Lectures
