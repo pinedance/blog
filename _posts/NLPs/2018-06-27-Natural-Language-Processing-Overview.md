@@ -2,6 +2,7 @@
 layout: post
 title:  "Natural Language Processing Overview"
 categories: NLP
+use_math: True
 ---
 
 
@@ -121,7 +122,10 @@ categories: NLP
 
 관찰값과 기대값 사이의 거리(Distance)
 
-![Chi-Square Statistic formula](http://www.geography-site.co.uk/pages/skills/fieldwork/statimage/chisqu.gif)
+$$
+\chi^2=\sum_{k=1}^{n} \frac{(O_k - E_k)^2}{E_k}
+$$
+
 
 #### log-likelihood ratio G2
 

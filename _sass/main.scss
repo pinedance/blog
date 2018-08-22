@@ -31,9 +31,10 @@ img {
   max-width: 100%;
 }
 a {
-  color: inherit;
+  color: #008080;
   text-decoration: none;
-  border-bottom: 1px solid #555;
+  /* color: inherit; */
+  /* border-bottom: 1px solid #555; */
   &.image {
     display: block;
     text-align: center;
@@ -286,6 +287,7 @@ article {
     margin: 30px 0;
   }
   p {
+	margin: 20px 0px 0px 0px;
     font-size: 15px;
     line-height: 1.9em;
     word-wrap: break-word;

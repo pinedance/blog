@@ -30,6 +30,9 @@ layout: compress
 
 		{% include search.html %}
 
+		{% if page.use_math %}
+		{% include _mathjax_support.html %}
+		{% endif %}
 	</body>
 
 </html>

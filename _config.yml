@@ -17,7 +17,7 @@ url: "https://pinedance.github.io/blog" # the base hostname & protocol for your 
 author_name:        "Junho"
 author_email:       pinedance@gmail.com
 author_gravatar:    fc746ff5d8579298993f87ac2bf84e48 # Gravatar md5 hash
-github_username: pinedance 
+github_username: pinedance
 
 # Site Settings
 baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
@@ -46,7 +46,7 @@ gems:
   - jekyll-sitemap
 
 ## https://help.github.com/articles/search-engine-optimization-for-github-pages/
-plugins:
+plugins_dir:
   - jekyll-seo-tag
 
 compress_html:
@@ -70,5 +70,3 @@ defaults:
       type:         "posts"
     values:
       layout:       "post"
-
-
