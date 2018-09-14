@@ -6,7 +6,12 @@ categories: NLP
 
 ## python
 
+[gensim](https://radimrehurek.com/gensim/)
+
+
 ## R
+
+[text2vec](http://text2vec.org/)
 
 ## javascript
 
