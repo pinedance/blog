@@ -8,7 +8,7 @@ categories: 생활자동화
 유용한 무료 소프트웨어들을 잘 사용해 보자!
 
 
-Windows 
+Windows
 ---------
 
 ### Machine
@@ -94,7 +94,7 @@ Android emulator : [Leapdroid](http://www.leapdroid.com/)
 ### 추가자료
 
 * [신년특집 - 윈도우 최고의 프로그램을 모아봤습니다](http://sergeswin.com/1059)
-
+* ["구관이 명관" 여전히 유용한 윈도우 10용 무료 유틸리티 10선](http://www.itworld.co.kr/slideshow/110704)
 
 ***
 
@@ -107,7 +107,7 @@ Linux (Ubuntu)
 
 Sync : [Insync](https://www.insynchq.com/)†, [FreeFileSync](https://www.freefilesync.org/)
 
-Containers : [kinematic](https://kitematic.com/) 
+Containers : [kinematic](https://kitematic.com/)
 
 ### Online
 
@@ -136,7 +136,7 @@ Media (MKV)
 
 
 
-Appendix 
+Appendix
 ----------
 
 ```
