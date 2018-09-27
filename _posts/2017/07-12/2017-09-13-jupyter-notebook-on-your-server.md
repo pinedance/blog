@@ -47,14 +47,12 @@ python -m ipykernel install
 
 ### local이 아닌 외부에서 접근할 수 있도록 설정
 
-
+아래와 같이 하면 config file 위치가 표시된다. 이 파일을 열어 내용을 조정한다.
 
 ```
 jupyter notebook --generate-config
 # 보통 `~/.jupyter/jupyter_notebook_config.py `에 위치한다.
 ```
-
-위와 같이 하면 config file 위치가 표시된다. 이 파일을 열어 내용을 조정한다.
 
 외부에서 접근하려면 대략 아래와 같은 것들이 입력되어야 한다.
 
@@ -78,11 +76,12 @@ from notebook.auth import passwd ; passwd()
 
 이 부분은 [Ubuntu 16.04 system service 등록하기](https://goo.gl/HnjkbC)를 참조할 것
 
+## 현재 실행 중인 notebook app 확인
 
-
-
-
-
+```bash
+# bash
+cat /home/ubuntu/.jupyter/jupyter_notebook_config.py | egrep ^c.NotebookApp
+```
 
 ## Summary
 
