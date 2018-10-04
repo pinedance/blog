@@ -77,4 +77,4 @@ gitbook mobi
 github page를 이용하여 만들어진 html ebook을 공개할 수 있다.
 
 * [깃헙 Pages에 깃북 배포하기](https://beomi.github.io/2017/11/20/Deploy-Gitbook-to-Github-Pages/)
-* [윈도우에서 깃북 제작 및 깃헙 페이지로 호스팅하기]((https://blog.psangwoo.com/coding/2018/01/31/gitbook-on-windows.html)
+* [윈도우에서 깃북 제작 및 깃헙 페이지로 호스팅하기](https://blog.psangwoo.com/coding/2018/01/31/gitbook-on-windows.html)
