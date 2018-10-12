@@ -49,7 +49,7 @@ activate myenv
 pip install selenium
 ```
 
-Tip : 회사 같은 경우 사내 ssl이 있다면 pip로 package 설치가 용이하지 않다. 이런 경우에는 `--trusted-host pypi.python.org` option을 달아 주었다. [여기](참조)
+Tip : 회사 같은 경우 사내 ssl이 있다면 pip로 package 설치가 용이하지 않다. 이런 경우에는 `--trusted-host pypi.org --trusted-host files.pythonhosted.org` option을 달아 주었다. [여기](http://pinedance.github.io/blog/2017/11/02/how-to-bypass-SSL)
 
 ### python script 작성
 

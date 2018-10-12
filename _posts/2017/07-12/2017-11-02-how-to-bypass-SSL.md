@@ -24,14 +24,14 @@ categories: 코딩삽질기
 해당 app들에서 인증기능을 비활성화 시키는 방법을 기록해 둔다.
 
 
-git
+### git
 
 ```
 git config --global http.sslVerify false
 ```
 
 
-python package
+### python package
 
 더 자세한 내용은 [여기](https://stackoverflow.com/a/29751768) 참고
 
@@ -39,14 +39,28 @@ python package
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org <package_name>
 ```
 
+anaconda python `conda` command
 
-node package
+```
+# anaconda prompt
+conda config --set ssl_verify false
+```
+
+### node package
 
 ```
 npm config set strict-ssl false
 ```
 
-Curl : with `-k` flag
+atom package (`apm`)
+
+```
+apm config set strict-ssl false
+```
+
+### Curl
+
+with `-k` flag
 
 ```
 curl -o- <url> -k
