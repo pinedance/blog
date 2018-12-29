@@ -13,3 +13,9 @@ categories: NLP
 * [Extending the Log Likelihood Measure to Improve Collocation Identification](http://www.d.umn.edu/~tpederse/Pubs/bridget-thesis.pdf)
 
 * [Collocations](http://text2vec.org/collocations.html) with text2vec
+
+Association measures
+
+python nltk > [bigram_measures](http://www.nltk.org/howto/collocations.html#association-measures)
+
+Student's t, Chi-square, Likelihood ratios, Pointwise Mutual Information
