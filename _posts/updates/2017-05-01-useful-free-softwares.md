@@ -11,32 +11,46 @@ categories: 생활자동화
 Windows
 ---------
 
-### Machine
+### Native Apps
 
-File Search : [Everything](https://www.voidtools.com/ko-kr/)
+#### Utiles for Hardware
+
+Hardware info : [HWInfo](https://www.hwinfo.com/)
 
 Disk Defragmentation : [Defraggler](http://www.piriform.com/defraggler)
 
 Disk Overview : [TreeSize](http://www.jam-software.com/treesize_free/), [CrystalDiskInfo](https://crystalmark.info/software/CrystalDiskInfo/index-e.html)
 
-Sync : [Insync](https://www.insynchq.com/)†, [GoodSync](https://www.goodsync.com/)†, [FreeFileSync](https://www.freefilesync.org/), [SyncFolders](http://www.syncfolders.elementfx.com/)
+#### Utiles for Software ( Apps )
+
+Maintenance or Software Update Monitor
+
+* [CCleaner](http://www.piriform.com/ccleaner)
+* [Iobit Uninstaller](https://www.iobit.com/en/advanceduninstaller.php)
+* [SUMo](https://www.kcsoftwares.com/?sumo)
+
+#### Utiles for Files
+
+File Search : [Everything](https://www.voidtools.com/ko-kr/)
 
 File Renamer : [ReNamer](https://www.den4b.com/products/renamer)
 
-Macro : [Gmacro](http://gmacro.co.kr/macro/)
+Sync : [Insync](https://www.insynchq.com/)†, [GoodSync](https://www.goodsync.com/)†, [FreeFileSync](https://www.freefilesync.org/), [SyncFolders](http://www.syncfolders.elementfx.com/)
 
 Copy Files : [Teracopy](http://www.codesector.com/teracopy)♪
+
+Zip : [반디집](https://www.bandisoft.co.kr/bandizip/)
+
+#### Utiles for IO
+
+Macro : [Gmacro](http://gmacro.co.kr/macro/)
 
 CD/DVD burning : [InfraRecorder](http://infrarecorder.org/)
 
 Mount Image (ISO) : [WinMount](http://www.winmount.com/)♪~[Mount ISO on Windows 10](https://www.windowscentral.com/how-mount-or-unmount-iso-images-windows-10)
 
-Software Update Monitor : [SUMo](https://www.kcsoftwares.com/?sumo)
 
-Maintenance : [CCleaner](http://www.piriform.com/ccleaner)
-
-
-### Online
+### Utiles for Online
 
 Browser : [Chrome](https://www.google.com/chrome/browser/desktop/index.html), [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en)
 
@@ -46,8 +60,6 @@ Downloader : [orbit downloader](http://www.orbitdownloader.com/), [Jdownloader](
 
 
 ### Files
-
-Zip : [반디집](https://www.bandisoft.co.kr/bandizip/)
 
 Image Viewer : [HV3 Viewer](https://kippler.com/multi/hv3v/)
 
@@ -78,7 +90,9 @@ video transcoder : [HandBrake](https://handbrake.fr/downloads.php)
 
 CD Audio Converter : [Easy CD-DA Extractor](https://www.poikosoft.com/)♪~[Rip a CD in Windows 10](https://www.easytechguides.com/rip-a-cd-in-windows.html)
 
+[HITFILM](https://fxhome.com/)
 
+[OBS Studio](https://obsproject.com/)
 
 ### Development
 
@@ -130,7 +144,7 @@ Media (MKV)
 * [MakeMKV](http://www.makemkv.com/download/) : DVD to MKV
 
 
-### ECT  
+### ECT
 
 
 
