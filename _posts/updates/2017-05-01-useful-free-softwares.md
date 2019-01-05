@@ -11,9 +11,7 @@ categories: 생활자동화
 Windows
 ---------
 
-### Native Apps
-
-#### Utiles for Hardware
+### Utiles for Hardware
 
 Hardware info : [HWInfo](https://www.hwinfo.com/)
 
@@ -21,7 +19,7 @@ Disk Defragmentation : [Defraggler](http://www.piriform.com/defraggler)
 
 Disk Overview : [TreeSize](http://www.jam-software.com/treesize_free/), [CrystalDiskInfo](https://crystalmark.info/software/CrystalDiskInfo/index-e.html)
 
-#### Utiles for Software ( Apps )
+### Utiles for Software ( Apps )
 
 Maintenance or Software Update Monitor
 
@@ -29,7 +27,7 @@ Maintenance or Software Update Monitor
 * [Iobit Uninstaller](https://www.iobit.com/en/advanceduninstaller.php)
 * [SUMo](https://www.kcsoftwares.com/?sumo)
 
-#### Utiles for Files
+### Utiles for Files
 
 File Search : [Everything](https://www.voidtools.com/ko-kr/)
 
@@ -41,7 +39,7 @@ Copy Files : [Teracopy](http://www.codesector.com/teracopy)♪
 
 Zip : [반디집](https://www.bandisoft.co.kr/bandizip/)
 
-#### Utiles for IO
+### Utiles for IO
 
 Macro : [Gmacro](http://gmacro.co.kr/macro/)
 
@@ -49,6 +47,10 @@ CD/DVD burning : [InfraRecorder](http://infrarecorder.org/)
 
 Mount Image (ISO) : [WinMount](http://www.winmount.com/)♪~[Mount ISO on Windows 10](https://www.windowscentral.com/how-mount-or-unmount-iso-images-windows-10)
 
+Computer screen : [f.lux](https://justgetflux.com/)
+
+Clipboard
+* [Ditto Clipboard Manager](https://ditto-cp.sourceforge.io/)
 
 ### Utiles for Online
 
@@ -59,19 +61,13 @@ Mail : [Thunderbird](https://www.mozilla.org/en-US/thunderbird/)
 Downloader : [orbit downloader](http://www.orbitdownloader.com/), [Jdownloader](http://jdownloader.org/)
 
 
-### Files
+### Utiles for Media
+
+#### Image
 
 Image Viewer : [HV3 Viewer](https://kippler.com/multi/hv3v/)
 
 Image Tool, Capture : [PicPick](http://ngwin.com/kr)
-
-PDF Viewer : [Foxit reader](https://www.foxitsoftware.com/pdf-reader/)
-
-PDF Editor : [PDFSAM](http://www.pdfsam.org/), [PDFtk](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)
-
-Text Editor : [notepad ++](https://notepad-plus-plus.org/)
-
-Markdown editor : [Typora](https://typora.io/)
 
 Scan File Editor : [ScanTailor](http://scantailor.org/)
 
@@ -84,15 +80,30 @@ Scan Tool : [NAPS2](https://www.naps2.com/)♪~[Scan Document in Windows 10](htt
 * Optional command-line interface (CLI) for automation and scripting
 * Portable archives available
 
+#### PDF
+
+PDF Viewer : [Foxit reader](https://www.foxitsoftware.com/pdf-reader/)
+
+PDF Editor : [PDFSAM](http://www.pdfsam.org/), [PDFtk](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)
+
+#### TEXT
+
+Text Editor : [notepad ++](https://notepad-plus-plus.org/)
+
+Markdown editor : [Typora](https://typora.io/)
+
 Media Player : [Potplayer](https://potplayer.daum.net/), [1gramPlayer](http://1gram.net/)
 
 video transcoder : [HandBrake](https://handbrake.fr/downloads.php)
 
 CD Audio Converter : [Easy CD-DA Extractor](https://www.poikosoft.com/)♪~[Rip a CD in Windows 10](https://www.easytechguides.com/rip-a-cd-in-windows.html)
 
-[HITFILM](https://fxhome.com/)
+Video Editor
+* [HITFILM](https://fxhome.com/)
+* [Davinci Resolve](https://www.blackmagicdesign.com/ca/products/davinciresolve/)
 
-[OBS Studio](https://obsproject.com/)
+Broadcast
+* [OBS Studio](https://obsproject.com/)
 
 ### Development
 
