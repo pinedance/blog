@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bash에서 text(string) 다루기 Cookbook"
-categories: 코딩삽질기
+categories: NLP
 ---
 
 #### 폴더 속에 있는 텍스트 파일의 글자 길이를 알아보자.
