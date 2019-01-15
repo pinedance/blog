@@ -14,6 +14,8 @@ use_math: True
 
 ### Hypothesis
 
+분산 가설(distributional hypothesis)
+
 > You shall know a word by the company it keeps
 
 Firth, 1957 (Studies in Linguistic Analysis)
@@ -30,7 +32,11 @@ Various extensions…
 * Similar contexts will have similar meanings
 * Names that occur in similar contexts will refer to the same underlying person
 
-Ref:[(Ted Pedersen)Language Independent Methods of Clustering Similar Contexts](https://www.youtube.com/watch?v=nW6KjSw8G5c)
+Ref
+* [(Ted Pedersen)Language Independent Methods of Clustering Similar Contexts](https://www.youtube.com/watch?v=nW6KjSw8G5c)
+* [aclwiki/Distributional_Hypothesis](https://aclweb.org/aclwiki/Distributional_Hypothesis)
+* [M Sahlgren. The distributional hypothesis. Italian Journal of Linguistics. 2008;20:33-53.](http://www.diva-portal.org/smash/get/diva2:1041938/FULLTEXT01.pdf)
+* [ratsgo's blog for textmining/idea of statistical semantics](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/10/frequency/)
 
 ### Contexts
 
