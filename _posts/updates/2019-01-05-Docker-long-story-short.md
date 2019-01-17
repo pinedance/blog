@@ -48,22 +48,33 @@ sudo service docker restart
 
 ### 전형적인 용례
 
+Image 받아와서 Container로 실행시키기
+
 ```bash
-# Image 받아와서 Container로 실행시키기
 docker pull continuumio/anaconda3
 sudo docker run -i -t continuumio/anaconda3 /bin/bash
+```
 
-# Container 내부에서 어떤 설치 및 작업 후 Image로 저장하기
+Container 내부에서 어떤 설치 및 작업 후 Image로 저장하기
+
+```bash
 docker ps -a
 ## docker commit <CONTAINER ID> myNewName:myNewTag
 docker commit <CONTAINER ID> mlearn:0.0.1
 sudo docker run -i -t myNewName:myNewTag
 
-# mount host folder
+```
+
+mount host folder
+
+```bash
 ## sudo docker run -i -t -v <hostFolderPath>:<containerFolderPath> myNewName:myNewTag
 sudo docker run -i -t -v /c/Users/user/sample:/sample mlearn:0.0.1
+```
 
-# Copy file from host to container
+Copy file from host to container
+
+```bash
 ## sudo docker cp <hostFolderPath> <container name>:<containerFilePath>
 ## sudo docker cp <container name>:<containerFilePath> <hostFolderPath>
 sudo docker cp ./input.txt myContainer:/home/project
