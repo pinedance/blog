@@ -70,6 +70,16 @@ sudo docker cp ./input.txt myContainer:/home/project
 sudo docker cp myContainer:/home/project/output.txt ./
 ```
 
+jupyter notebook을 실행하기
+
+```bash
+docker run -i -t \
+	-v /home/${USER}/Labs:/home/notebooks \
+	-p 8888:8888 \
+	IMAGENAME /bin/bash \
+	-c "/opt/conda/bin/jupyter notebook --notebook-dir=/home/notebooks --ip='*' --port=8888 --no-browser --allow-root "
+```
+
 
 ### 더 보기
 

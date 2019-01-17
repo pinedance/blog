@@ -14,6 +14,8 @@ categories: NLP
 
 * [Collocations](http://text2vec.org/collocations.html) with text2vec
 
+* [A Comparison of Co-occurrence and Similarity Measures as Simulations of Context](https://www.researchgate.net/publication/221628921_A_Comparison_of_Co-occurrence_and_Similarity_Measures_as_Simulations_of_Context)
+
 Association measures
 
 python nltk > [bigram_measures](http://www.nltk.org/howto/collocations.html#association-measures)
