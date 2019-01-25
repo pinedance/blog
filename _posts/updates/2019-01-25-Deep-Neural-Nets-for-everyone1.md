@@ -7,38 +7,68 @@ use_math: True
 
 김성훈 교수님의 "모두를 위한 머신러닝/딥러닝 강의(시즌1)"를 듣고 내용을 정리해 둔다. 문서 가장 아래 적어 둔다.
 
+이제부터 야자체로 적을거야. 내가 강의를 들으면서 생각한 것들 말이야. 전공도 아니고 공부도 짧아. 틀리는 내용도 좀 있을거야. 만약 보게된다면 주의해 주기 바래.
+
 ## Introduction
+
+보통 어떤 분야를 시작하기 전에 그 분야가 뭘 하는 것인지, 무엇을 위한 것인지, 누가 어떻게 만들었고 발전해 왔는지를 알면 큰 줄기를 알 수 있어.
 
 ### What is Machine learning
 
-> Field of study that gives computers the ability to learn without being explicitly programmed
-> _ Arthur Samuel (1959)
+> Field of study that gives computers the ability to learn without being explicitly programmed _ Arthur Samuel (1959)
 
-※ 머신러닝의 목적 : 예측(predict)!
+Machine Learning（ML）은 뭘 하는 것일까. 이 개념을 처음 만든 사람이 Arthur Samuel이라는 사람이야. 없던 개념을 만들거나 모호한 개념을 확정한다는 것은 대단한 식견이 있어야 가능한거야. 그래서 나는 이런 사람들은 개념을 만든 것 자체만으로도 대단한 업적을 남긴 것이라고 생각해.
 
-> In general, a learning problem considers a set of n samples of data and then tries to predict properties of unknown data
-> _ [An introduction to machine learning with scikit-learn](https://scikit-learn.org/stable/tutorial/basic/tutorial.html)
+처음 시작은 이런 거야. 컴퓨터에게 일을 시키고 싶은데, 이녀석이 단순해서 일일이 하나하나 설명해 줘야만 하는거야. 하지만 내가 편하려고 쓰는 건데 일일이 설명해 주려니 싫지. 니가 좀 알아서 해주면 얼마나 좋겠어. 그래서 생각해 낸 것이 ML이야. 난 귀찮으니까 내가 데이터만 넣어줄께. 그러면 너 혼자 익혀서 일 좀 하라는 거지.
+
+> In general, a learning problem considers a set of n samples of data and then tries to predict properties of unknown data _ [An introduction to machine learning with scikit-learn](https://scikit-learn.org/stable/tutorial/basic/tutorial.html)
+
+현실 세계에서 ML은 무엇을 위해 사용될까. 잘 몰랐던 사실을 발견하거나 새로운 인사이트를 얻는 등의 목적도 있지만, 가장 중요한 목적은 바로 예측이야. 새로운 값이 주어졌을 때 적당한 답을 말해주고, 과거와 현재를 바탕으로 미래에 대해 이야기해 달라는거지. 우리가 ML이라는 분야를 공부하는 것이 바로 예측을 하기 위해서라는 거지.
+
+예측을 하면 뭐가 좋은데? 예측할 수 있게 되면 두려워하지 않아도 되고 통제할 수 있게 되지. 사실 인류가 철학을, 종교를, 과학을 발전시켰던 이유도 따지고 보면 예측하고 이해해서 마지막에는 통제하고 싶어서야. 따지고 보면 ML도 통제라는 인간의 근본적인 욕구의 발현 가운데 하나인 셈이지.
+
+자, ML은 예측을 위한 거야. 그러기 위해 기계 스스로 학습했으면 좋겠어. 그게 ML이야. 그런데 그냥 학습해 하고 말하고 끝내면 좋겠지만, 아무리 생각해도 학습할 데이터 정도는 주고 시켜야 할 것 같아. 그리고 어떤 식으로 배우라는 것도 이야기 해 주어야겠지.
 
 ### What is learning
 
-Supervised Learning : learninig with labeled examples ( training set )
+▶ Supervised Learning : learninig with labeled examples ( training set )
 * Regression
 * binary Classification
 * multi-label Classification
 
-Unsupervised Learning : learning with un-labeled data
+▶ Unsupervised Learning : learning with un-labeled data
 * clustering
 * density estimation
 * dimension reduction
 
-## Machine Learning
+구분을 이렇게 하기는 하는데, 고급기술들은 대부분 Supervised Learning에 대한 것이야. Unsupervised Learning은 답안이 없는 연습 문제와 같은거지. 풀어도 맞는지 틀리는지 알 수가 없어. 그래서 평가를 못해. 난처하지. 그래서 예측 보다는 데이터를 관찰하는데 더 많이 쓰이는 것 같아.
+
+### Data
+
+우리가 만나는 데이터는 대부분 수치형 데이터나 범주형 데이터야. 그러니까 수치를 예측하는 문제가 있을 수 있고, 범주를 예측하는 문제가 있을 수 있어. 전자가 `Regression`이고 후자가 `Classification`이야.
+
+데이터 측면에서 따져보자. 우선 학습을 위해 정답이 있는 학습 데이터가 필요해. `training set`이라고 해. 일종의 연습문제 같은거야. 그리고 본래 궁금한 물음이 있겠지. `test set`이라고 해. 본시험 같은 거지. 하지만 연구에서는 학습 성능을 따져보기 위해 test set도 정답을 가지고 있는 경우가 많아.
+
+학습은 어떤 조건에 대한 답을 찾아내는 거야. 조건은 주어지는 거고 답은 찾아낼 대상이지. 함수에서 `독립변수` `종속변수` 하는 거랑 같은거야. 그래서 전자를 `x`, 후자를 `y`라고 해. 때때로 후자를 `target`이라거나 `label`이라고 하기도 해.
 
 |  Data Set    |  입력값   |  관찰값   |  출력값<small>（예측값）</small>   |
 |:------------:|:--------:|:--------:|:---------:|
 | Training Set | $X$      | $Y$      | $\bar{Y}$ |
 | Test Set     | $X$      | $Y$      | $\bar{Y}$ |
 
+## How Do Machines Learn
 
+![]({{site.imgurl}}/2019-01-25/002MLsummary.png)
+
+자, 이제 학습 방법에 대해 살펴볼꺼야. 먼저 큰 그림을 보자.
+
+학습을 할 때는 크게 학습 대상에 대한 와꾸가 짜여져 있어야 해. 농구를 배우는 거랑 피아노를 배우는 거랑은 다르지. 수학을 공부하는 거랑 영어를 공부하는 것도 달라. 하지만 영어를 잘 배워 놓으면 독일어를 더 편하게 배울 수 있어. 이처럼 배움에는 어떤 틀이 필요하지. 이걸 `Model`이라고 해. 예를 들어 1, 2, 3 다음에 뭐지? 했을 때 4라고 한다면 이건 `선형 모델`로 와꾸를 짜고 있어서 그런거야. 현실 세계에 수치형 데이터들은 선형모델에 적합한 경우가 많아. 그래서 ML에서 선형모델을 기본으로 하고 있지. 이게 데이터가 이런 와꾸를 가지고 있다는 `가정`이기도 하기 때문에 아래에서는 `Hypothesis`라고 할꺼야.
+
+다음으로 중요한 것은 일단 해보고, 정답과 맞춰보고, 차이를 줄여 다시 해 보고, 다시 정답과 맞춰보고 .... 이런 과정을 반복하는 거지. 기계도 비슷해. 그럼 정답과의 `차이`를 정량화 할 수 있어야해. 그리고 이것을 모니터링 하면서 줄여나가는 방향으로 학습을 진행해야 하지. 이 차이는 함수를 함수로 구현한 것을 `Loss Function` 또는 `Cost Function`이라고 해. 학습의 목적이 된다고 해서 `Objective Function`이라고도 하지. 아래 설명에서는 같은 것을 가리킨다고 봐도 좋아.
+
+정리하면 이런거야. 먼저 데이터가 어떤 식으로 변해 갈거라는 가정（`Hypothesis`）이 필요해. 그 가정을 통해 수식을 만들어 값을 예측해 낼거야. 그러면 처음의 수식을 개선하기 위해 예측해 낸 값（$\bar{y}$）과 실제값（$y$）의 차이를 측정해야 해（`Loss Function`）.  그러면 우리는 이 차이를 좁혀나가는 방식으로 예측하는 수식을 개선해 나가는거야. 수식을 개선한다는 것은 정해진 와꾸가 있기 때문에 사실상 상수값을 조정하는 거야.
+
+주어진 데이터와 예측 목적에 따라 이 `Hypothesis`와 `Cost Function`이 조금씩 달라져. 이걸 중심으로 방법들을 살펴보자. 
 
 ### Linear Regression
 
@@ -286,9 +316,6 @@ $$
 \acute{cost} = cost + \lambda \sum W^2
 $$
 
-## Sumary
-
- ![]({{site.imgurl}}/2019-01-25/002MLsummary.png)
 
 
 ## Acknowledgement
