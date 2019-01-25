@@ -52,7 +52,9 @@ Image 받아와서 Container로 실행시키기
 
 ```bash
 docker pull continuumio/anaconda3
-sudo docker run -i -t continuumio/anaconda3 /bin/bash
+# docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+sudo docker run -i -t --name testbed continuumio/anaconda3 /bin/bash
+# --name: container name으로 지정된다. 이름으로 만든 이유를 설명해 놓으면 관리하기 편한다.
 ```
 
 Container 내부에서 어떤 설치 및 작업 후 Image로 저장하기
@@ -119,6 +121,12 @@ sudo docker ps -a
 # Container 실행하기
 sudo docker start hello
 
+# Container 실행된 Container에 들어가기
+sudo docker attach hello
+
+# Container 실행하고 동시에 들어가기
+sudo docker start -a hello
+
 # Container 다시실행하기 (≒리부팅)
 sudo docker restart hello
 
@@ -127,6 +135,9 @@ sudo docker stop hello
 
 # Container 삭제하기
 sudo docker rm hello
+
+# Container 이름 바꾸기
+sudo docker rename hello hello-world
 ```
 
 #### Container 사용
