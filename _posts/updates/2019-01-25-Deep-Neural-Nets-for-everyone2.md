@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "Deep Learning 기초2 (Neural Net 기초)"
-categories: MachineLearning
+categories: ML
+use_math: True
 ---
 
 김성훈 교수님의 "모두를 위한 머신러닝/딥러닝 강의(시즌1)"를 듣고 내용을 정리해 둔다. 문서 가장 아래 적어 둔다.
