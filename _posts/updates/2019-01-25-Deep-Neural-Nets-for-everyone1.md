@@ -72,7 +72,7 @@ $$
 * 이것이 `Gradiant descent algorithm`이다.
 * 여기서 $\alpha$가 `learning rate`이 된다. 보통 0.01로 시작한다.
 
-![](assets/img/2019-01-25/001convex.png)
+![]({{site.imgurl}}/2019-01-25/001convex.png)
 
 $$
 \begin{matrix}
@@ -288,7 +288,7 @@ $$
 
 ## Sumary
 
- ![](assets/img/2019-01-25/002MLsummary.png)
+ ![]({{site.imgurl}}/2019-01-25/002MLsummary.png)
 
 
 ## Acknowledgement

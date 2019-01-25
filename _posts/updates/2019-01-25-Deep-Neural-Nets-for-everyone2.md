@@ -11,7 +11,7 @@ use_math: True
 
 ### Perceptron
 
-![](assets/img/2019-01-25/003perceptron.png)
+![]({{site.imgurl}}/2019-01-25/003perceptron.png)
 
 ```python
 # tensorflow example
