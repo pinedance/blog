@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Linked Data, LOD"
-categories: research
+categories: Data_Science
 ---
 
 
@@ -85,9 +85,8 @@ Tools
 
 개발자는 [open knowledge Korea](http://okfn.kr/)
 
-### 기타 
+### 기타
 
 [국내 LOD 서비스 리스트](https://goo.gl/3oMDhk)
 
 [A Website's Structured Data Success Story](http://www.seoskeptic.com/a-websites-structured-data-success-story/)
-

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Deep Learning 기초2 (Neural Net 기초)"
-categories: ML
+categories: Data_Science
 use_math: True
 ---
 
