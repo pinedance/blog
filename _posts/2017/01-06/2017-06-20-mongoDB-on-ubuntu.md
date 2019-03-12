@@ -92,6 +92,11 @@ sudo systemctl status mongod
 sudo systemctl enable mongod
 ```
 
+최초에 `sudo service mongod start`가 성공했다면 다음과 같이 한다.
+
+```
+sudo systemctl enable mongod.service
+```
 
 
 # 원격으로 접속하기
@@ -147,7 +152,7 @@ sudo vim /etc/mongod.conf
 # network interfaces
 net:
   port: 27017
-#  bindIp: 127.0.0.1  <- comment out this line
+  bindIp: ::,0.0.0.0
 ```
 
 조금 아래 `security` 부분에는 다음과 같이 입력해 둔다.
