@@ -1,8 +1,15 @@
 ---
 layout: post
 title:  "Bash에서 text(string) 다루기 Cookbook"
-categories: NLP
+categories: NLP, bash
 ---
+
+#### 기초
+
+* [텍스트 자료 처리를 위한 bash 명령어1 : 텍스트 내용 살펴보기](https://pinedance.github.io/blog/2016/08/24/bash-functions-to-view-text)
+
+* [텍스트 자료 처리를 위한 bash 명령어2 : 텍스트 조물거리기](https://pinedance.github.io/blog/2016/08/25/bash-functions-to-manipulate-text)
+
 
 #### 폴더 속에 있는 텍스트 파일의 글자 길이를 알아보자.
 
@@ -49,5 +56,4 @@ tr ' ' '\n' < $1 |		# 입력파일($1)을 받아 공백을 모두 개행으로 �
 
 REF
 * [sbos/AdaGram.jl](https://github.com/sbos/AdaGram.jl/blob/master/utils/dictionary.sh)
-*
-[incodom/Linux 기본명령어 awk](http://www.incodom.kr/Linux/%EA%B8%B0%EB%B3%B8%EB%AA%85%EB%A0%B9%EC%96%B4/awk)
+* [incodom/Linux 기본명령어 awk](http://www.incodom.kr/Linux/%EA%B8%B0%EB%B3%B8%EB%AA%85%EB%A0%B9%EC%96%B4/awk)

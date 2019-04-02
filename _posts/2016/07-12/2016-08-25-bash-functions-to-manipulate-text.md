@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "텍스트 자료 처리를 위한 bash 명령어2 : 텍스트 조물거리기"
-categories: 코딩삽질기
+categories: NLP, bash
 ---
 
 
-Bash functions to manipulate text 
+Bash functions to manipulate text
 ===========================
 
 
@@ -16,7 +16,7 @@ wc
 
 ```bash
 # 라인 수
-wc -l your_text.txt 
+wc -l your_text.txt
 ```
 
 grep
@@ -26,7 +26,7 @@ grep
 
 ```bash
 # 빈 라인 제거
-grep -v '^$' your_text.txt > your_text_without_empty_lines.txt 
+grep -v '^$' your_text.txt > your_text_without_empty_lines.txt
 ```
 
 
@@ -43,7 +43,7 @@ tr [<option>] <집합b> [<집합a>]
 
 ```bash
 # 모든 대문자를 소문자로 교체
-tr 'A-Z' 'a-z' < your_text.txt 
+tr 'A-Z' 'a-z' < your_text.txt
 
 # 공백을 기준으로 개행
 tr ' ' '\n' < your_text.txt
@@ -141,5 +141,5 @@ paste list freq > sample_text_token_freq.txt
 sort -k2,2nr -k1,1 sample_text_token_freq.txt > sample_text_token_freq_sort.txt
 ```
 
-ref : 이도길. 자료 처리를 위한 리눅스 명령어 사용법 (자료집). 2016
-
+REF
+* 이도길. 자료 처리를 위한 리눅스 명령어 사용법 (자료집). 2016
