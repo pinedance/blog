@@ -107,9 +107,17 @@ sudo docker pull ubuntu:latest
 
 # host에 있는 Image list 보기
 sudo docker images
+# docker로 실행했던 모든 Image list 보기
+sudo docker image ls
 
 # 가져왔던 Image 삭제하기
 sudo docker rmi ubuntu:latest
+
+# Image를 file로 저장하기
+sudo docker save ubuntu:latest > ubuntu.latest.tar
+
+# file로 저장된 Image 불러오기
+sudo docker load --input ubuntu.latest.tar
 ```
 
 #### Container 관리
@@ -179,6 +187,7 @@ REF
 * [가장 빨리 만나는 Docker 3장 Docker 사용해보기](http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter03)
 * [생활코딩 Docker feat 이재홍](https://www.youtube.com/watch?v=Bhzz9E3xuXY&t=8s)
 * [머신러닝, 딥러닝 실전 개발 입문 1강 - Docker 환경 구성](https://www.youtube.com/watch?v=vGrd5bSoBs8)
+* [AWS docker basics](https://docs.aws.amazon.com/ko_kr/AmazonECS/latest/developerguide/docker-basics.html)
 
 Tutorials
 

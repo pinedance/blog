@@ -58,6 +58,11 @@ build HTML
 
 ```bash
 gitbook help
+```
+
+```bash
+# 책을 만들 폴더 안으로 이동
+gitbook init
 gitbook build
 # gitbook build ./mybook --gitbook=2.0.1
 gitbook serve

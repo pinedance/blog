@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bash에서 text(string) 다루기 Cookbook"
-categories: NLP, bash
+categories: NLP
 ---
 
 #### 기초

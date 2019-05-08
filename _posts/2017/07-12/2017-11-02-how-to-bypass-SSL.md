@@ -48,8 +48,13 @@ conda config --set ssl_verify false
 
 ### node package
 
-```
+```bash
 npm config set strict-ssl false
+```
+
+```bash
+export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist
+nvm install 10.15.3
 ```
 
 atom package (`apm`)
@@ -65,3 +70,8 @@ with `-k` flag
 ```
 curl -o- <url> -k
 ```
+
+
+## REF
+
+* [Node Version Manager and failing certificate verification](https://juffalow.com/other/node-version-manager-and-failing-certificate-verification)

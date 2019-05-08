@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "텍스트 자료 처리를 위한 bash 명령어1 : 텍스트 내용 살펴보기 "
-categories: NLP, bash
+categories: NLP
 ---
 
 

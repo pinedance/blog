@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "텍스트 자료 처리를 위한 bash 명령어2 : 텍스트 조물거리기"
-categories: NLP, bash
+categories: NLP
 ---
 
 
