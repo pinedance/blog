@@ -19,10 +19,13 @@ Disk Defragmentation : [Defraggler](http://www.piriform.com/defraggler)
 
 Disk Overview : [TreeSize](http://www.jam-software.com/treesize_free/), [CrystalDiskInfo](https://crystalmark.info/software/CrystalDiskInfo/index-e.html)
 
+* HDD Health alert : 갑자기 하드드라이브가 멈춰서 데이터를 모두 잃게 되지 않으려면 HDD의 건강에 관심을 가져야 한다. 위의 CrystalDiskInfo를 설치하고 mail 셋팅을 해 두면, HDD에 문제가 생겼을 때 자동으로 메일이 전송된다. 방법은 [Alert Mail](https://crystalmark.info/en/software/crystaldiskinfo/crystaldiskinfo-alert-mail/)에 설명되어 있다.
+
 ### Utiles for Software ( Apps )
 
 Maintenance or Software Update Monitor
 
+* [구라제거기](https://teus.me/556)
 * [CCleaner](http://www.piriform.com/ccleaner)
 * [Iobit Uninstaller](https://www.iobit.com/en/advanceduninstaller.php)
 * [SUMo](https://www.kcsoftwares.com/?sumo)
@@ -133,6 +136,8 @@ Linux (Ubuntu)
 Sync : [Insync](https://www.insynchq.com/)†, [FreeFileSync](https://www.freefilesync.org/)
 
 Containers : [kinematic](https://kitematic.com/)
+
+Test hard drives : [Smartmontools](https://help.ubuntu.com/community/Smartmontools)
 
 ### Online
 
