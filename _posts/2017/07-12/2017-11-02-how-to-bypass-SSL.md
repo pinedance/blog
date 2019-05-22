@@ -63,6 +63,22 @@ atom package (`apm`)
 apm config set strict-ssl false
 ```
 
+### Ruby Gem
+
+package source를 https에서 http로 수정하면 된다. ☞ [ref](https://stackoverflow.com/a/20400761)
+
+```bash
+gem install rails --source http://rubygems.org
+```
+
+아예 설정 자체를 바꾸어 두면 편하다. 
+
+```bash
+gem sources --add http://rubygems.org
+gem sources --remove https://rubygems.org
+gem sources --list
+```
+
 ### Curl
 
 with `-k` flag

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Bash에서 text(string) 다루기 Cookbook"
-categories: NLP
+title:  "[Cookbook] Bash에서 text(string) 다루기, 이럴 때 이렇게 한다."
+categories: [NLP, Cookbook]
 ---
 
 #### 기초
@@ -10,10 +10,56 @@ categories: NLP
 
 * [텍스트 자료 처리를 위한 bash 명령어2 : 텍스트 조물거리기](https://pinedance.github.io/blog/2016/08/25/bash-functions-to-manipulate-text)
 
+#### 여러 파일을 separator를 추가하여 합쳐보자.
+
+```bash
+# append a newline after each file
+sed -s '$G' *.txt > all.txt
+# append a line of 8 dashes and a newline after each file
+sed -s '$a--------' *.txt
+```
+
+```bash
+# Insert a line of dashes before each file:
+sed -s '1i--------' *.txt
+# Do the same, but without a newline after the dashes:
+sed -s '1s/^/--------/' *.txt
+# Put a line of dashes on the end of the last line of each file:
+sed -s '$s/$/--------/' *.txt
+# Surround each file with curly braces:
+sed -s -e '1i{' -e '$a}' *.txt
+```
+
+REF
+* [Superuser/How can one join files with seperating data in bash?](https://superuser.com/a/103585)
+
+
+#### 파일에서 어떤 부분을 지워보자
+
+빈줄을 지워보자.
+
+```bash
+sed '/^$/d' text.txt
+```
+
+특정 패턴을 지워보자
+
+```bash
+# 정규식으로 "((OR))"로 시작하는 줄만 지워보자
+sed -r '/^\(\((OR)\)\)/d' org.txt > rst.txt
+```
+
+특정 패턴만 남기고 지워보자
+
+```bash
+# 정규식으로 "((OR))"로 시작하는 줄만 남기고 지워보자
+sed -r '/^\(\((OR)\)\)/!d' org.txt > rst.txt
+```
+
 
 #### 폴더 속에 있는 텍스트 파일의 글자 길이를 알아보자.
 
-```
+```bash
 ls | xargs wc -c
 ```
 
