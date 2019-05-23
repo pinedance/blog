@@ -33,7 +33,7 @@ Data Manipulation은 주로 R이나 python 등 프로그래밍 언어를 통해 
 
 - 장점 : normalization 공식이 탑재되어 있음. density view, cluster view 등 직관적인 이미지 제공
 - 단점 : normalization 공식이 탑재되어 있음
-- works : [density](http://pinedance.github.io/data/images/CheongKangEuiGam/ClusterDensity2.png), [cluster](http://pinedance.github.io/data/images/CheongKangEuiGam/Density2.png)
+- works : [density](https://pinedance.github.io/research/data/images/CheongKangEuiGam/Density.png), [cluster](https://pinedance.github.io/research/data/images/CheongKangEuiGam/ClusterDensity.png)
 
 관련자료
 
