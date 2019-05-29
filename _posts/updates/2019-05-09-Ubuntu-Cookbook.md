@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Ubuntu Cookbook"
-categories: 코딩삽질기
+title:  "[Cookbook] Ubuntu, 이럴 때 이렇게 한다."
+categories: [코딩삽질기, Cookbook]
 ---
 
 ## 디스크 및 파티션
