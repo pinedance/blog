@@ -19,7 +19,7 @@ Anaconda python, 다운로드가 잘 안될 때가 있다. mirror page에서 다
 
 `pip`로 library 설치시 permission error시 `--user` flag를 붙여 준다.
 
-```
+```bash
 pip install --upgrade <libraryname> --user
 ```
 
@@ -33,7 +33,8 @@ ananconda python을 사용한다면, python package를 설치할 때 pip보다 c
 
 다만 기본 repository에서는 설치할 수 없는 package들이 많다. 따라서 새로운 conda-forge와 같은 새로운 repository를 추가해 줄 필요가 있다. 다음과 같이 말이다.
 
-```conda shell
+```bash
+# conda shell
 conda config --add channels conda-forge
 conda install <package-name>
 ```
@@ -42,7 +43,8 @@ conda install <package-name>
 
 `conda install`에서 requirements.txt 파일에 적혀 있는 package들을 일과적으로 설치하고 싶을 때가 있다. 이런 경우에는 다음과 같이 할 수 있다.
 
-```conda shell
+```bash
+# conda shell
 conda install --yes --file requirements.txt
 ```
 
