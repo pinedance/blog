@@ -9,7 +9,29 @@ categories: [코딩삽질기, Cookbook]
 ```bash
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR="$( cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"
 ```
 
 REF
 * [Get the source directory of a Bash script from within the script itself](https://stackoverflow.com/a/246128)
+
+### Bash 스크립트에서 환경변수 설정하기
+
+```file
+CURRENTDIR="$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"
+LIBDIR="/LIB"
+
+echo $CURRENTDIR
+export PYTHONPATH=${PYTHONPATH}:${HOME}:${CURRENTDIR}${LIBDIR}
+echo ${PYTHONPATH}
+```
+
+
+```bash
+# use this
+. activate_env_var.sh
+# or this
+source activate_env_var.sh
+# but this is not working
+./activate_env_var.sh
+```

@@ -14,6 +14,33 @@ Anaconda python, 다운로드가 잘 안될 때가 있다. mirror page에서 다
 
 [Anaconda python mirror](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)
 
+## 환경 변수 설정하기
+
+bash를 사용하려면 [여기](https://pinedance.github.io/blog/2019/05/09/Ubuntu-Cookbook)를 참조한다.
+
+windows에서는 다음과 같이 한다.
+
+```cmd
+set PYTHONPATH=%cd%\packages
+```
+
+python code 안에서는 아래와 같이 한다.
+
+```python
+import os, sys
+
+file_path = os.path.realpath( __file__  )
+dir_path = os.path.dirname( file_path )
+os.chdir( dir_path )
+print( "# Current Working Path:", os.getcwd() )
+my_path = os.path.abspath( os.path.dirname( __file__ ) )
+
+package_path = "packages"
+package_abspath = os.path.join( my_path, package_path )
+print( "# Append packag path:", package_abspath )
+sys.path.append( package_abspath )
+```
+
 
 ## Python Tip
 
