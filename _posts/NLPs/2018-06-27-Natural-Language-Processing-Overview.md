@@ -53,7 +53,7 @@ windows(n size), 문장, 문단, 문서 etc
 
 #### Unsupervised Segmentation
 
-☞ [Unsupervised  Segmentation]({{site.baseurl}}/{% post_url 2018-07-25-Unsupervised-Segmentation %})
+☞ [Unsupervised  Segmentation](https://pinedance.github.io/blog/2018/07/25/Unsupervised-Segmentation)
 
 #### Co-occurrences
 
@@ -136,7 +136,7 @@ Measuring Similarity
 
 ###  Word Embedding
 
-☞ [Word Embedding]({{site.baseurl}}/{% post_url 2018-08-05-Word-Embedding %})
+☞ [Word Embedding](https://pinedance.github.io/blog/2018/08/05/Word-Embedding)
 
 
 ### Sequence-to-Sequence
@@ -149,7 +149,7 @@ Measuring Similarity
 
 ### Collocations
 
-☞ [Collocations]({{site.baseurl}}/{% post_url 2018-02-03-Collocations %})
+☞ [Collocations](https://pinedance.github.io/blog/2018/02/03/Collocations)
 
 
 ### Topic Modeling
@@ -225,10 +225,10 @@ $$
 ## Visualization
 
 
-☞ [Data Visualization]({{site.baseurl}}/{% post_url 2018-04-07-data-visualization %})
+☞ [Data Visualization](https://pinedance.github.io/blog/2018/04/07/data-visualization)
 
 ***
 
 ## Lectures
 
-☞ [자연어처리 강의들]({{site.baseurl}}/{% post_url 2018-08-07-Lectures-about-NLP %})
+☞ [자연어처리 강의들](https://pinedance.github.io/blog/2018/08/07/Lectures-about-NLP)

@@ -19,7 +19,7 @@ sudo dpkg -i elasticsearch-5.4.3.deb
 
 브라우저에서 다운로드 할 경우에는 [Past Releases](https://www.elastic.co/downloads/past-releases) 페이지에서 해당되는 버전을 다운로드 받아 설치한다.
 
-ElasticSearch도 하나의 동립된 Server이기 때문에 부딩될 때 자동실행되어야 한다. 이에 대해서는 OS 상황에 따라 방법이 다르다. `ps -p 1`를 실행시켜 `init`이라고 나오는지 `systemd`라고 나오는지에 따라 아래와 같이 실행시켜 준다. elasticsearch 구동 방법도 양자가 다르다. 부팅 시 자동실행에 대해서는 [이 글]({{site.baseurl}}/{% post_url 2017-09-12-Ubuntu-16.04-system-service-등록하기 %})을 참고.
+ElasticSearch도 하나의 동립된 Server이기 때문에 부딩될 때 자동실행되어야 한다. 이에 대해서는 OS 상황에 따라 방법이 다르다. `ps -p 1`를 실행시켜 `init`이라고 나오는지 `systemd`라고 나오는지에 따라 아래와 같이 실행시켜 준다. elasticsearch 구동 방법도 양자가 다르다. 부팅 시 자동실행에 대해서는 [이 글](https://pinedance.github.io/blog/2017/09/12/Ubuntu-16.04-system-service-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0)을 참고.
 
 ```bash
 # init의 경우

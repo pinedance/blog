@@ -52,7 +52,7 @@ MediaWiki 1.29.x and 1.30.x require ElasticSearch 5.3.x or 5.4.x.
 MediaWiki 1.31.x requires ElasticSearch 5.5.x or 5.6.x.
 ```
 
-따라서 최신판을 기준으로 설치하면 안되고, 이전 버전을 다운로드 받아 수동으로 설치하는 순서를 밟아야 한다. ElasticSearch 설치에 대해서는 [관련 포스트]({{site.baseurl}}/{% post_url 2018-08-06-install-elasticseach %})를 참고하자.
+따라서 최신판을 기준으로 설치하면 안되고, 이전 버전을 다운로드 받아 수동으로 설치하는 순서를 밟아야 한다. ElasticSearch 설치에 대해서는 [관련 포스트](https://pinedance.github.io/blog/2018/08/06/install-elasticseach)를 참고하자.
 
 MediaWiki 버전, Extension 설치 여부는 MediaWiki 특수 페이지에서 확인이 가능하다.
 
