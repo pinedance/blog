@@ -14,4 +14,5 @@ body {
 
 pre[class*="language-"].line-numbers {
 	padding-left: 2.8em;
+	border-radius: 0.4em;
 }
