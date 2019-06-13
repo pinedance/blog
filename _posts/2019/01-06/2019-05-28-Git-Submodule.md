@@ -289,6 +289,8 @@ git config alias.supdate 'submodule update --remote --merge'
 
 ### 코드 다루기
 
+sub project는 일반적인 git repository를 관리하는 방식과 완전히 같은 방식으로 관리하면 된다. 따라서 아래 코드들은 main project에서 주로 사용하게 될 명령을  요약해 적어 본다. 
+
 Clone
 
 ```bash
@@ -302,14 +304,28 @@ Update
 
 ```bash
 # in main project
-submodule update --remote --merge
+git submodule update --remote --merge
 ```
+
+Update submodule
+
+* check code fetched or pulled in sub project
+* update code in sub project ... 
+* commit and push sub project like any other git project
+
+Commit
+
+```bash
+# in main project
+git commit -am "update main project"
+```
+
 
 Push
 
 ```bash
 # in main project
-push --recurse-submodules=check
+git push --recurse-submodules=check
 ```
 
 
