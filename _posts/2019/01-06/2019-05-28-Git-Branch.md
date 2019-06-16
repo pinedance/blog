@@ -5,13 +5,16 @@ categories: [코딩삽질기]
 tags: [git]
 ---
 
-> 데이터 조작은 사본(copy)을 사용한다. 코드 수정은 git branch를 사용한다.
+> 데이터 조작은 사본(copy)을 사용한다.
+> 코드 수정은 git branch를 사용한다.
+
+## branch란?
 
 기존에 개발하고 있는 project에 새로운 기능을 추가하거나, 이미 있는 기능을 개선하고 싶을 때가 있다. 하지만 수정은 항상 되돌릴 여지를 주어야 한다. 수정 후의 결과가 좋을지 좋지 않을지 예상하기 어렵기 때문이다. 그렇다면 git에서는 어떻게 해야 할까. git의 핵심 기능인 brach를 사용해야 한다.
 
-branch는 말 그대로 '가지'이다. 가지를 하나 내어 코드를 수정하는 방법이다. 그 결과가 좋으면 '본류'에 합치면 되고, 그 결과가 좋지 않으면 가지를 잘라내 버리면 그만이다. branch는 안전하고 쉬운 코드 수정 방법이다. 때문에 git에서는 코드 수정을 branch를 통해 하는 방법을 권장한다.
+branch는 말 그대로 '가지'이다. 가지를 하나 내어 코드를 수정하는 방법이다. 그 결과가 좋으면 '본류'에 합치면 되고, 그 결과가 좋지 않으면 가지를 잘라내 버리면 그만이다. branch는 안전하고 쉬운 코드 수정 방법이다. 때문에 git에서는 코드 수정 시 branch 사용을 권장하고 있다.
 
-사실 git의 모든 코드들은 branch 안에 속해 있다. local의 코드를 Upstream의 코드와 합칠 때 다음과 같은 방법을 따르는데, 이를 풀어 보면 Upstream의 해당 branch를 가져다가 현재의 branch와 merge한다는 의미이다!
+사실 git의 모든 코드들은 branch 안에 속해 있다. ([Detached HEAD](http://sunphiz.me/wp/archives/2266)의 경우는 예외이다.) local의 코드를 Upstream의 코드와 합칠 때 다음과 같은 방법을 따르는데, 이를 풀어 보면 Upstream의 해당 branch를 가져다가 현재의 branch와 merge한다는 의미이다!
 
 ```bash
 # Upstream(origin)의 branch를 당겨 받아(fetch)
@@ -20,7 +23,11 @@ git fetch origin
 git merge origin/master
 ```
 
+위의 코드는 `git pull origin master`라고 축약해 쓸 수 있다. 이 경우 origin remote repository이 master branch를 당겨오겠다는 의미가 된다.
+
 모든 git에는 최소 1개 이상의 branch를 가지고 있다. 최초의 branch는 master라는 이름의 branch가 된다.
+
+## Branch 사용
 
 코드를 수정할 때, git branch를 활용하는 작업 순서는 보통 다음과 같다.
 
@@ -83,6 +90,12 @@ git merge hotfix
 
 ### branch 정리하기
 
+현재 프로젝트의 branch들은 다음과 같이 확인할 수 있다.
+
+```bash
+git branch -v
+```
+
 보통 이런 절차를 끝내고 나면 hotfix branch는 더 이상 필요 없게 된다. 다음과 같이 삭제할 수 있다.
 
 ```bash
@@ -97,21 +110,25 @@ git branch -b hotfix
 git branch -D hotfix
 ```
 
-### 기타
+## 심화
 
-현재 프로젝트의 branch들은 다음과 같이 확인할 수 있다. merge를 끝냈거나 보관할 필요가 없는 branch들은 적절히 삭제해 주자.
+### merge after rebase
 
-```bash
-git branch -v
-```
+merge하기 전에 git log를 정리하기 위해 git의 `rebase`를 사용하기도 한다. rebase는 "한 브랜치에서 변경된 사항을 다른 브랜치에 적용하는 방법"이다. 이에 대해서는 [이 글](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0)을 참고하도록 하자. rebase는 유용한 방법이지만 아래 주의사항은 반드시 지키자.
 
+* Push로 내보낸 커밋에 대해서는 절대 Rebase 하지 말라!
 
+pull을 할 때 rebase를 적용하려면 '[Git Pull시에 자동으로 Rebase적용하기](http://theeye.pe.kr/archives/1980)'를 참고한다.
+
+### workflow with branch
+
+협업에서 branch를 사용하는 일반적인 방법에 대해서는 [브랜치 워크플로](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C)을 참고하라.
 
 ### REF
 
 * [git-scm.com/3.1 Git 브랜치](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80)
 
-이해를 더 깊게 하고 싶다면 [생활코딩](https://www.youtube.com/channel/UCvc8kv-i5fvFTJBFAk6n1SA)의 관련 부분을 참고하자. 
+이해를 더 깊게 하고 싶다면 [생활코딩](https://www.youtube.com/channel/UCvc8kv-i5fvFTJBFAk6n1SA)의 관련 부분을 참고하자.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PmWPdYkAMg4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

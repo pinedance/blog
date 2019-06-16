@@ -13,7 +13,7 @@ tags: [git]
 
 이런 방식은 이미 많은 개발 상황에서 사용되고 있다. 예를 들어 node를 이용하여 웹서버를 개발한다고 해보자. 이를 위해 우리는 여러가지 node package들을 활용한다. 이 때 우리가 개발하고 있는 웹서버가 main project이고, 사용하려는 node package들이 sub project가 된다. 우리는 우리가 개발하고 있는 웹서버 코드만 관리하면 되고, node package들은 패키지 관리자를 통해 연결해 두었다가 가져다 쓰게 된다.
 
-구체적으로 보자. `npm`을 이용해 package를 다운로드 받으면, `package.json` 파일에 해당 package 이름과 버전이 명시되고 웹서버 폴더 속에 있는 `node_modules` 폴더에 차례로 다운로드 받아지게 된다. 하지만 우리는 웹서버 코드를 관리할 때 이 `node_modules` 폴더를 `.gitignore`에 넣고 관리하지 않는다. 우리가 개발하는 웹서버에서 수정할 수 있는 파일도 아니며, 필요하면 `package.json`을 통해 다시 다운로드 받으면 되기 때문이다.
+구체적으로 보자. `npm`을 이용해 package를 다운로드 받으면, `package.json` 파일에 해당 package 이름과 버전이 명시되고 웹서버 폴더 속에 있는 `node_modules` 폴더에 차례로 다운로드 받아지게 된다. 하지만 우리는 웹서버 코드를 관리할 때 이 `node_modules` 폴더를 `.gitignore`에 넣어 관리에서 제외시킨다. 우리가 개발하는 웹서버에서 수정할 수 있는 파일도 아니며, 필요하면 `package.json`을 통해 다시 다운로드 받으면 되기 때문이다.
 
 이를 정리해 보면 다음과 같다.
 
@@ -73,9 +73,9 @@ git submodule update
 git submodule foreach git checkout master
 ```
 
-※ `(*)` 명령은, 각 sub project를 master branch로 checkout 하기 위한 것이다. 처음 `submodule update`를 통해 sub project를 받으면, sub project는 `detached HEAD` 상태로 어떤 branch에도 속하지 않는 상태이기 때문이다.
+※ 마지막 명령은, 각 sub project를 master branch로 checkout 하기 위한 것이다. 처음 `submodule update`를 통해 sub project를 받으면, sub project는 `detached HEAD` 상태로 어떤 branch에도 속하지 않는 상태이기 때문이다.
 
-※ sub project에 대한 접근권한이 없다면 clone을 수행할 수 없으므로 유의하자. 또 remote repo 주소가 https로 되어 있는 경우에는 login에 필요한 정보를 요구할 수 있다. 일일이 입력하기 힘들다면 [Git Credential](https://pinedance.github.io/blog/2019/05/28/Git-Cookbook#id-password를-넣지-않고-pull이나-push-하기)을 참고하자.
+※ remote repo 주소가 https로 되어 있는 경우에는 login에 필요한 정보를 요구할 수 있다. 일일이 입력하기 힘들다면 [Git Credential](https://pinedance.github.io/blog/2019/05/28/Git-Cookbook#id-password를-넣지-않고-pull이나-push-하기)을 참고하자.
 
 #### Clone Main and Sub Project at the same time
 
@@ -289,7 +289,7 @@ git config alias.supdate 'submodule update --remote --merge'
 
 ### 코드 다루기
 
-sub project는 일반적인 git repository를 관리하는 방식과 완전히 같은 방식으로 관리하면 된다. 따라서 아래 코드들은 main project에서 주로 사용하게 될 명령을  요약해 적어 본다. 
+sub project는 일반적인 git repository를 관리하는 방식과 완전히 같은 방식으로 관리하면 된다. 따라서 아래 코드들은 main project에서 주로 사용하게 될 명령을  요약해 적어 본다.
 
 Clone
 
@@ -310,7 +310,7 @@ git submodule update --remote --merge
 Update submodule
 
 * check code fetched or pulled in sub project
-* update code in sub project ... 
+* update code in sub project ...
 * commit and push sub project like any other git project
 
 Commit
