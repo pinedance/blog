@@ -99,7 +99,7 @@ git branch -v
 보통 이런 절차를 끝내고 나면 hotfix branch는 더 이상 필요 없게 된다. 다음과 같이 삭제할 수 있다.
 
 ```bash
-git branch -b hotfix
+git branch -d hotfix
 ```
 
 만약 hotfix의 수정 내용이 마음에 들지 않아 버리고 싶다면 다음과 같이 삭제하면 된다.

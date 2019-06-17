@@ -5,6 +5,8 @@ categories: [코딩삽질기]
 tags: [git]
 ---
 
+자주 쓰는 명령은 [summary](#summary) 항목에 있다. 
+
 ## 배경
 
 예를 들어 main project가 sub project에 의존하고 있다고 하자. main project와 sub project 모두 git으로 버전을 관리해야 한다면, 이 파일들을 어떻게 관리해야 할까.
@@ -291,42 +293,78 @@ git config alias.supdate 'submodule update --remote --merge'
 
 sub project는 일반적인 git repository를 관리하는 방식과 완전히 같은 방식으로 관리하면 된다. 따라서 아래 코드들은 main project에서 주로 사용하게 될 명령을  요약해 적어 본다.
 
-Clone
+#### Clone or update submodules
+
+
+로컬 저장소에 새로 가져와야 할 경우에는 clone을 수행한다. 
 
 ```bash
+# If you need new submodule repo in local machine,
+# You should clone the main project repo.
 # in main project
 git submodule init
 git submodule update
 git submodule foreach git checkout master
 ```
 
-Update
+이미 clone 되어 있는 subdmoule project가 있다면, 작업하기 전에 최신 변경 사항을 반영해 주어야 한다. 
 
 ```bash
+# If you have submodule repo in local machine,
+# You should apply all updates before editing. 
 # in main project
 git submodule update --remote --merge
 ```
 
-Update submodule
+#### Commit and push sub projects
 
-* check code fetched or pulled in sub project
-* update code in sub project ...
-* commit and push sub project like any other git project
+여러 sub project의 내용을 일괄 변경 하려면, main project에서 `git submodule foreach`를 사용하여 일괄 처리 해 주는 것이 편리하다. 
 
-Commit
+※ 일괄 수정이 아니고 특정 sub project만 수정한다면, 해당 repo로 이동하여 일반적인 git project처럼 수정 후 commit과 push를 수행한다. 
+
+
+* Checkout new branch in sub projects ...
+
+```bash
+# make new branch and checkout 
+# in main project
+git submodule foreach git checkout -b newfeature
+```
+
+* Update code in sub projects ...
+
+* Commit code in sub projects ...
+
+```bash
+# commit and merge
+# in main project
+git submodule foreach git add -A .
+git submodule foreach git commit -am "replacing a to b"
+git submodule foreach git checkout master
+git submodule foreach git merge newfeature
+```
+
+* push sub projects like any other git project
+
+```bash
+# in main project
+git submodule foreach git push
+```
+
+
+#### Commit and push main project
+
+sub project에 새로운 commit이 생겨나면, main project에서 바라보고 있는 sub project의 commit도 바뀌어야 한다. 따라서 sub project를 모두 수정하고 push까지 완료하고 나면, main project를 commit 한 뒤에 push 한다. 
+
+※ 이 때 주의할 점은 sub project를 먼저 push 하고 나서 main project를 push 해야 한다는 점이다. 
 
 ```bash
 # in main project
 git commit -am "update main project"
-```
-
-
-Push
-
-```bash
-# in main project
 git push --recurse-submodules=check
 ```
+
+
 
 
 ## REF
