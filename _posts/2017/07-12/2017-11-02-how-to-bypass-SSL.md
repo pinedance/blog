@@ -122,7 +122,19 @@ gem sources --remove https://rubygems.org
 gem sources --list
 ```
 
+bundler의 경우에도 source를 아래와 같이 바꾸어 줄 수 있다.
 
+```bash
+bundle config source http://rubygems.org
+# bundle config
+```
+
+또한 `Gemfile`의 첫머리를 다음과 같이 바꾸어 준다.
+
+```
+# Gemfile
+source "http://rubygems.org"
+```
 
 ## REF
 
