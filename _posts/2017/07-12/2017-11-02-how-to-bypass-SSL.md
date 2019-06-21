@@ -19,34 +19,69 @@ categories: 코딩삽질기
 
 그러나 만약 내용도 깊이 모르고 네트워크 관리자 권한도 없다면 약간의 위험을 감수하고 해당 software의 인증기능을 비활성화 시키는 것이 정신건강에 좋다.
 
-나는 주로 git과 pip에서 이런 문제를 만났다.
-
 해당 app들에서 인증기능을 비활성화 시키는 방법을 기록해 둔다.
 
 
+## Bash apps
+
 ### git
 
-```
+```bash
 git config --global http.sslVerify false
 ```
 
+### Curl
+
+아래 option을 사용하면 insecure mode로 사용할 수 있다.
+
+* `-k` or `--insecure` : https 사이트를 SSL certificate 검증없이 연결한다.
+
+```bash
+curl -k -O <url>
+```
+
+curl을 통해 모든 연결을 insecure mode로 실행시키려면 아래와 같이 curl에 대한 설정파일을 별도로 만들어 주면 된다.
+
+```bash
+# set curl as insecure mode
+echo insecure >> ~/.curlrc
+```
+
+### wget
+
+아래 option을 사용하면 insecure mode로 사용할 수 있다.
+
+* `--no-check-certificate`: https 사이트를 SSL certificate 검증없이 연결한다.
+
+
+## python
 
 ### python package
 
 더 자세한 내용은 [여기](https://stackoverflow.com/a/29751768) 참고
 
-```
+```bash
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org <package_name>
 ```
 
 anaconda python `conda` command
 
-```
+```bash
 # anaconda prompt
 conda config --set ssl_verify false
 ```
 
-### node package
+## Node
+
+
+### Node itself
+
+Node는 권한 문제 때문에 [nvm](https://github.com/nvm-sh/nvm)을 이용하여 설치하는 것이 편리하다. 그런데 nvm은 curl으로 설치 스크립트를 받아와 실행시키기 때문에 ssl 내부 보안이 걸려 있는 경우 파일을 다운로드 받지 못하게 된다.
+
+이런 경우에는 아래 curl에 대한 설명을 보고 `-k` option을 사용하거나 `.curlrc` 파일을 만들어준 뒤에 nvm을 사용하면 된다.
+
+
+### Node package
 
 ```bash
 npm config set strict-ssl false
@@ -59,9 +94,17 @@ nvm install 10.15.3
 
 atom package (`apm`)
 
-```
+```bash
 apm config set strict-ssl false
 ```
+
+## Ruby
+
+### Ruby itself
+
+Ruby는 권한 문제 때문에 [rvm](https://rvm.io/)을 이용하여 설치하는 것이 편리하다. 그런데 RVM은 내부적으로 curl로 파일을 받아오기 때문에 ssl 내부 보안이 걸려 있는 경우 파일을 다운로드 받지 못하게 된다.
+
+이런 경우에는 아래 curl에 대한 설명을 보고 `.curlrc` 파일을 만들어준 뒤에 rvm을 사용하면 된다.
 
 ### Ruby Gem
 
@@ -71,7 +114,7 @@ package source를 https에서 http로 수정하면 된다. ☞ [ref](https://sta
 gem install rails --source http://rubygems.org
 ```
 
-아예 설정 자체를 바꾸어 두면 편하다. 
+아예 설정 자체를 바꾸어 두면 편하다.
 
 ```bash
 gem sources --add http://rubygems.org
@@ -79,15 +122,9 @@ gem sources --remove https://rubygems.org
 gem sources --list
 ```
 
-### Curl
-
-with `-k` flag
-
-```
-curl -o- <url> -k
-```
 
 
 ## REF
 
 * [Node Version Manager and failing certificate verification](https://juffalow.com/other/node-version-manager-and-failing-certificate-verification)
+* [How to ignore invalid and self signed ssl connection errors with curl](https://www.cyberciti.biz/faq/how-to-curl-ignore-ssl-certificate-warnings-command-option/)

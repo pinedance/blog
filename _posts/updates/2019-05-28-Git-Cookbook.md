@@ -19,6 +19,26 @@ git은 프로젝트를 버전에 따라 관리할 수 있도록 도와주는 유
 
 ***
 
+## Clone single branch only
+
+작업 과정에서 오류를 줄이기 위해 local에 작업 branch만을 받아오고 싶을 때가 있다. 예를 들어 작업 branch가 `develop`이라면, master branch 없이 develop branch만 local에 받아와 작업하고 push와 pull을 하면 좋을 것이다. 이런 경우에는 clone을 할 때 해당 branch만 받아 올 수 있다. [ref](https://stackoverflow.com/questions/1911109/how-to-clone-a-specific-git-branch)
+
+```bash
+# remote:   http://www.myrepo.git
+# * origin/master
+# * origin/develop
+git clone --single-branch --branch develop http://www.myrepo.git
+git push -u origin develop
+```
+
+## File names with non ASCII characters
+
+한글로 쓰여진 파일 이름이 decoding 상태로 표시되는 경우에는 다음과 같이 설정을 변경시켜 준다.
+
+```bash
+git config --global core.quotepath false
+```
+
 ## id, password를 넣지 않고 Pull이나 Push 하기
 
 git을 사용하다보면 github, bitbucket 등의 remote repository를 사용하게 된다. 이 때 remote repo의 주소가 ssl로 되어 있다면 상관 없지만, https로 되어 있는 경우에는 clone, push, pull 등 동작마다 remote repo에 접근하기 위한 로그인 정보를 입력해 주어야 한다. 관리해야할 repo가 많거나, 어플리케이션을 통해 컨트롤 해야 하는 경우에 이러한 과정을 생략하고 싶을 때가 있다.
