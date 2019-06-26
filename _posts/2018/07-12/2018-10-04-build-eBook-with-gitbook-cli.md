@@ -21,18 +21,21 @@ gitbook-cli는 흡사 [jekyll](https://jekyllrb.com/)과 같이 markdown으로 �
 
 ## Gitbook-cli 및 Calibre 설치
 
-install [gitbook-cli](https://github.com/GitbookIO/gitbook-cli)
+### install [gitbook-cli](https://github.com/GitbookIO/gitbook-cli)
+
+먼저 gitbook-cli를 설치한다.
 
 ```bash
 npm install -g gitbook-cli
+gitbook install
 ```
 
-install [Calibre](https://calibre-ebook.com/)
+### install Calibre
 
-```bash
-# https://calibre-ebook.com/download_linux
-sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
-```
+다음으로 gitbook-cli가 의존하고 있는 Calibre를 설치한다.
+
+[install Calibre](https://pinedance.github.io/blog/2018/10/04/Calibre-Cookbook#install) 참조
+
 
 ※ 참고
 
