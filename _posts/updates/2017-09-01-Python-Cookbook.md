@@ -4,19 +4,84 @@ title:  "[Cookbook] Python, 이럴 때 이렇게 한다."
 categories: [코딩삽질기, Cookbook]
 ---
 
-Python을 더 깊이 사용하기 위해 도움이 되는 자료 목록을 정리해 둔다.
+Python을 사용하면서 얻은 잔기술들을 기록해 둔다.
 
-[Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+## Install python
 
-[Awesome Functional Python](https://github.com/sfermigier/awesome-functional-python/blob/master/README.md)
+ubuntu를 기준으로 설명한다. 보통 이미 설치되어 있다. 하지만 다양한 버전이 필요하거나 관리의 편의를 의해 버전관리 도구를 통해 설치하는 것이 유리할 수 있다. 이런 경우 Anaconda python을 사용하자. [Anaconda python 홈페이지](https://www.anaconda.com/distribution/#linux)에서 설치 프로그램을 다운로드 받아 설치하면 된다.
 
-Anaconda python, 다운로드가 잘 안될 때가 있다. mirror page에서 다운로드 받을 수 있다.
+가끔 다운로드가 잘 안될 때가 있다.[Anaconda python mirror](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)에서 다운로드 받을 수 있다.
 
-[Anaconda python mirror](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)
+## Use package
 
-## 환경 변수 설정하기
+python의 가장 큰 강점 중의 하나는 막강한 user community이다. 이 커뮤니티에서 생산된 수많은 package들은 거의 모든 작업을 가능하도록 도와주는 든든한 지원군이다.
 
-bash를 사용하려면 [여기](https://pinedance.github.io/blog/2019/05/09/Ubuntu-Cookbook)를 참조한다.
+### Install package
+
+이미 만들어져 공개된 package들을 가져와 사용하려는 어떻게 해야 할까.
+
+#### Install package via pip ( pip3 )
+
+python의 package 설치 프로그램인 `pip`를 이용해 설치하는 것이 정석이다. 다만 다음과 같은 문제가 발생할 수 있다.
+
+```bash
+pip install <libraryname>
+```
+
+`pip install <package-name>`을 했더니 `pip`가 없다는 메시지가 나타날 수 있다. 이런 경우는 `pip3`로 대신해 보자. python2와 python3가 함께 설치되어 있을 때, 전자가 python와 pip, 후자가 python3와 pip3로 연결되어 있는 경우가 많기 때문이다.
+
+`pip`로 library 설치시 permission error가 나타나면 `--user` flag를 붙여 준다.
+
+```bash
+pip install --upgrade <libraryname> --user
+```
+
+SSL 문제로 연결이 되지 않을 수 있다. 이 때는 [여기](https://pinedance.github.io/blog/2017/11/02/how-to-bypass-SSL)를 참고하라.
+
+#### Install packages via anaconda
+
+ananconda python을 사용한다면, python package를 설치할 때 pip보다 conda를 먼저 시도해 보는 것이 좋다. python package는 c로 작성되어 있는 것이 많은데, pip로 설치하면 설치 시 컴파일 과정에서 에러가 나는 경우가 많기 때문이다. 특히 windows 시스템의 경우 컴파일 에러가 빈번하게 발생한다. `conda install`로 설치를 시도하면 이러한 번거로움을 피할 수 있다.
+
+다만 기본 repository에서는 설치할 수 없는 package들이 많다. 따라서 새로운 conda-forge와 같은 새로운 repository를 추가해 줄 필요가 있다. 다음과 같이 말이다.
+
+```bash
+# conda shell
+conda config --add channels conda-forge
+conda install <package-name>
+```
+
+#### Install packages with requirements.txt
+
+python project에서는 통상 `requirements.txt` 파일에 의존하고 있는 package들을 적어 두고 일괄적으로 관리한다.
+
+이 파일에 명시된 package들을 일과적으로 설치하려면 다음과 같이 한다.
+
+```bash
+pip install -r requirements.txt
+```
+
+만약 `anaconda python`을 이용해 일괄 설치를 하려면 `conda install`을 통해 다음과 같이 할 수 있다.
+
+```bash
+# conda shell
+conda install --yes --file requirements.txt
+```
+
+#### Build requirements.txt
+
+`requirements.txt` 파일은 내 개발 환경에서 설치된 package들을 참조해 작성하기 마련이다. 손으로 일일이 작성하기 보다는 다음과 같이 시작해 보자.
+
+```bash
+pip freeze > requirements.txt
+```
+
+### 환경 변수 설정하기
+
+python로 project를 진행할 때 스스로 package(`.py` 파일)를 만들어 project 안에서 참조해야 하는 경우가 발생할 수 있다. 참조 대상이 되는 custom package 파일이 같은 폴더나 하위 폴더에 있는 파일일 경우에는 상대 주소를 통해 참조가 가능하지만 상위 폴더나 형제 폴더의 경우에는 그렇게 할 수 없다. 이런 경우에는 프로젝트 내에서 package를 어디서 참조해야 하는지 환경변수를 통해 지정해 주어야 한다.
+
+현재 프로젝트 폴더에 있는 `packages` 폴더에 작성한 파일들을 넣고 참조한다고 가정해 보자.
+
+ubuntu에서는 bash를 사용한다. [Bash-스크립트에서-환경변수-설정하기](https://pinedance.github.io/blog/2019/05/09/Bash-Cookbook#bash-스크립트에서-환경변수-설정하기)를 참조한다.
 
 windows에서는 다음과 같이 한다.
 
@@ -24,7 +89,7 @@ windows에서는 다음과 같이 한다.
 set PYTHONPATH=%cd%\packages
 ```
 
-python code 안에서는 아래와 같이 한다.
+python code 안에서 선언할 수도 있다. 좀 복잡하지만 아래와 같이 한다.
 
 ```python
 import os, sys
@@ -41,41 +106,9 @@ print( "# Append packag path:", package_abspath )
 sys.path.append( package_abspath )
 ```
 
+## Input and output
 
-## Python Tip
-
-`pip`로 library 설치시 permission error시 `--user` flag를 붙여 준다.
-
-```bash
-pip install --upgrade <libraryname> --user
-```
-
-## anaconda python
-
-### Conda Shell
-
-#### install packages via anaconda
-
-ananconda python을 사용한다면, python package를 설치할 때 pip보다 conda를 먼저 시도해 보는 것이 좋다. python package는 c로 작성되어 있는 것이 많은데, pip로 설치하면 설치 과정에서 에러가 나는 경우가 많기 때문이다. 특히 windows 시스템의 경우 컴파일 에러가 빈번하게 발생한다. `conda install`로 설치를 시도하면 이러한 번거로움을 피할 수 있다.
-
-다만 기본 repository에서는 설치할 수 없는 package들이 많다. 따라서 새로운 conda-forge와 같은 새로운 repository를 추가해 줄 필요가 있다. 다음과 같이 말이다.
-
-```bash
-# conda shell
-conda config --add channels conda-forge
-conda install <package-name>
-```
-
-#### install packages with requirements.txt
-
-`conda install`에서 requirements.txt 파일에 적혀 있는 package들을 일과적으로 설치하고 싶을 때가 있다. 이런 경우에는 다음과 같이 할 수 있다.
-
-```bash
-# conda shell
-conda install --yes --file requirements.txt
-```
-
-## print 결과를 파일에 출력하기
+### Print 결과를 파일에 출력하기
 
 `stdout`으로 출력하는 print와 file에 적는 write는 그 결과에서 차이가 있다.
 
@@ -99,6 +132,21 @@ sys.stdout = sys.__stdout__
 
 ***
 
+## Packages
+
+### Natural Language Processing
+
+[nltk](http://www.nltk.org/api/nltk.html)
+
+### Network Analysis
+
+[NetworkX](https://networkx.github.io/)
+* [overview ppt by Salvatore Scellato](https://www.cl.cam.ac.uk/~cm542/teaching/2011/stna-pdfs/stna-lecture11.pdf)
+* [backbone_extractor.py](https://gist.github.com/brianckeegan/8846206)
+* [NetworkX를 이용한 네트워크 분석 / PYCON Korea 2014](https://www.pycon.kr/2014/program/7)
+
+***
+
 ## python 정보들 강좌들 (초급 탈출?)
 
 * [파이썬(Python) 초급부터 고급까지](https://www.youtube.com/playlist?list=PLRx0vPvlEmdD8u2rzxmQ-L97jHTHiiDdy)
@@ -109,11 +157,9 @@ sys.stdout = sys.__stdout__
 
 ***
 
-## Libraries
+## Deep Dive
 
-[NetworkX](https://networkx.github.io/)
-* [overview ppt by Salvatore Scellato](https://www.cl.cam.ac.uk/~cm542/teaching/2011/stna-pdfs/stna-lecture11.pdf)
-* [backbone_extractor.py](https://gist.github.com/brianckeegan/8846206)
-* [NetworkX를 이용한 네트워크 분석 / PYCON Korea 2014](https://www.pycon.kr/2014/program/7)
+Python을 더 깊이 사용하기 위해 도움이 되는 자료 목록을 정리해 둔다.
 
-[nltk](http://www.nltk.org/api/nltk.html)
+* [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+* [Awesome Functional Python](https://github.com/sfermigier/awesome-functional-python/blob/master/README.md)
