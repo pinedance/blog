@@ -16,8 +16,14 @@ categories: 코딩삽질기
 * [How do you add a certificate authority (CA) to Ubuntu?](https://superuser.com/questions/437330/how-do-you-add-a-certificate-authority-ca-to-ubuntu)
 * [How do I install a root certificate?](http://askubuntu.com/questions/73287/how-do-i-install-a-root-certificate)
 
+그럼에도 불구하고 소프트웨어(어플리케이션, 라이브러리, 패키지 등등)를 설치할 때 `error certificate verify failed`과 같은 에러 메시지를 만난다면 SSL 문제가 해결되지 않은 것이다. 에러 메시지들은 대략 다음과 같다.
 
-그러나 만약 내용도 깊이 모르고 네트워크 관리자 권한도 없다면 약간의 위험을 감수하고 해당 software의 인증기능을 비활성화 시키는 것이 정신건강에 좋다.
+* node: `ERROR: cannot verify 192.168.0.0's certificate`
+* python : `error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed`
+* curl : `SSL Certificate: Invalid certificate chain`
+
+
+내용도 깊이 모르고 네트워크 관리자 권한도 없다면 약간의 위험을 감수하고 해당 software의 인증기능을 비활성화 시키는 것이 정신건강에 좋다.
 
 해당 app들에서 인증기능을 비활성화 시키는 방법을 기록해 둔다.
 
