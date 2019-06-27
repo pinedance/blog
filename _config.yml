@@ -26,7 +26,7 @@ timezone:           Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_databa
 imgurl:             "/blog/assets/img"
 
 # Build settings
-host: 0.0.0.0
+host: localhost
 port: 8384
 
 # Site Build
