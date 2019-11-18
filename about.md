@@ -3,6 +3,11 @@ layout: page
 title: About
 ---
 
+
+feel free to Contact me : [Issues](//github.com/pinedance/pinedance.github.io/issues)
+
+* [Github](https://github.com/pinedance) Reopsitory
+
 ```javascript
 var 인생 = []
 
@@ -19,7 +24,7 @@ function 삽질하기( 사건들 ){
 	return 사건들[ Math.floor(Math.random() * 사건들.length) ]
 }
 
-while ( true ) { 
+while ( true ) {
 	인생.push( 삽질하기() );
 }
 
