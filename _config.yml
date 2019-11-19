@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site Info
-title:              "NowHere Blog"
+title:              "지금의 흔적"
 description:        "생각격리실. 머리 속에 떠오르는 생각들, 피할 수 없었던 삽질들을 잊지 않도록 기록해 둔다."
 #google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
 google_analytics:   UA-72863252-1 # Put your Google Analytics code
