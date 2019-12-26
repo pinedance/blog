@@ -83,6 +83,48 @@ gs -sDEVICE=pdfwrite  \
    -f input.pdf
 ```
 
+## PDF를 image(jpg, png)로
+
+DEVICE options
+* `png16m`: 24-bit RGB color
+  * `png256`: 8-bit color
+  * `png16`: 4-bit color
+* `pnggray`: grayscale
+  * `pngmono`: black-and-white for special needs
+* `pngalpha`: 32-bit RGBA color with transparency indicating pixel coverage. (The background is transparent unless it has been explicitly filled)
+
+```bash
+gs -dNOPAUSE -dBATCH \
+   -sDEVICE=png16m \
+   -r100x100 \
+   -sOutputFile=page-%03d.jpg \
+   target.pdf
+```
+
+※ ghostscript는 pdf를 다루는 library이므로 image를 PDF로 만드는 일은 하기 어렵다. 이 작업은 [ImageMagick](https://imagemagick.org/index.php)을 이용하여 할 수 있다. 다만 용량이 늘어나는 문제가 생길 수 있다. 따라서 `-compress jpeg` 옵션이 필요하다.
+
+```bash
+convert -compress jpeg *.jpg output.pdf
+```
+
+## PDF 회전
+
+아래와 같이 하면 된다. 하지만 결과가 내가 원하는 것과 다르게 나타날 수 있다. 자세한 내용은 [여기](https://stackoverflow.com/a/3108179)를 참조하자.
+
+```bash
+gs -dNOPAUSE -dBATCH -q\
+  -sDEVICE=pdfwrite \
+   -c "<</Orientation 2>> setpagedevice" \
+  -sOutputFile=output.pdf \
+  input.pdf
+```
+
+ghostscript로 페이지를 임의로 회전하는 것은 어려운 것 같다. 이 역시 [ImageMagick](https://imagemagick.org/index.php)을 사용하자
+
+```bash
+convert -rotate -90 -density 200 input.pdf output.pdf
+```
+
 
 ## REF
 
@@ -90,3 +132,5 @@ gs -sDEVICE=pdfwrite  \
 * [프로그램에서 AI 파일을 보여주기: Ghostscript](http://blog.devquest.co.kr/imp/305)
 * [Ghostscript to merge PDFs compresses the result](https://stackoverflow.com/questions/8158584/ghostscript-to-merge-pdfs-compresses-the-result)
 * [Reverse white and black colors in a PDF](https://stackoverflow.com/questions/30284327/reverse-white-and-black-colors-in-a-pdf)
+* [Converting PDF to PNG using Ghostscript](https://www.opentechguides.com/how-to/article/tools/42/pdf-to-pnf.html)
+* [stackoverflow / How to change page orientation of PDF?](https://stackoverflow.com/a/3108179)
