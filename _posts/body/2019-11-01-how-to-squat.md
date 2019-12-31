@@ -35,3 +35,5 @@ How to
 <iframe width="560" height="315" src="https://www.youtube.com/embed/clzYEF-b9qM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [스쿼트 할 때 무릎통증 원인과 해결방안 (마크 리피토 이론 기반)](https://www.youtube.com/watch?v=clzYEF-b9qM)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dv3YFOr6Ubo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
