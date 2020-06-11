@@ -30,7 +30,7 @@ sudo apt-get install ghostscript
 
 ## PDF 용량  축소
 
-이전 글[PDF 용량 축소하기 (with Ghostscript)]({{site.baseurl}}/blog/2018/08/31/PDF-%EC%9A%A9%EB%9F%89-%EC%B6%95%EC%86%8C%ED%95%98%EA%B8%B0)을 참조하라.
+이전 글[PDF 용량 축소하기 (with Ghostscript)]({{site.baseurl}}/2018/08/31/PDF-%EC%9A%A9%EB%9F%89-%EC%B6%95%EC%86%8C%ED%95%98%EA%B8%B0)을 참조하라.
 
 ## PDF 병합
 
@@ -125,6 +125,26 @@ ghostscript로 페이지를 임의로 회전하는 것은 어려운 것 같다. 
 convert -rotate -90 -density 200 input.pdf output.pdf
 ```
 
+## PDF unlock
+
+잠겨 있는(locked) pdf인 경우 PDF를 OCR 하거나 일부 잘라내는 등의 가공을 할 수 없다. 이럴 때는 "unlcok pdf"라는 키워드로 검색하여 나오는 [smallpdf](https://smallpdf.com/kr/unlock-pdf), [sodapdf](https://www.sodapdf.com/ko/unlock-pdf/) 등 온라인 툴로 해결할 수 있다. 하지만 하나하나 해결해야 하므로 번거롭고, 개수 제한이 걸려 있는 걸려 있는 경우에는 충분히 사용할 수 없다. 원칙적으로는 password를 알아야 하지만 잃어버린 경우에는 방법이 없다. 이런 경우에는 Ghostscript를 이용하여 다음과 같은 방법으로 이를 해결할 수 있다. 
+
+```bash
+gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=unencrypted.pdf -c .setpdfwrite -f encrypted.pdf
+```
+
+폴더에 있는 여러 파일에 모두 적용하려면 다음과 같이 한다.
+
+```bash
+for F in *;
+do
+gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="un_${F}" -c .setpdfwrite -f "${F}"
+done
+```
+
+## make PDF searchable 
+
+문서를 그냥 스캔한 경우, 이미지로 내용을 확인할 수 있지만 텍스트를 복사하거나 검색할 수 없다. PDF 안에 그러한 데이터가 존재하지 않기 때문이다. 이런 경우 OCR을 한 후에 OCR 결과를 PDF에 layer로 삽입해 주어야 한다. [Acrobat Pro DC](https://acrobat.adobe.com/kr/ko/acrobat.html)를 사용하는 것이 정신건강에 좋다. 그러나 때때로 많은 파일을 일괄처리 하고 싶다면 open source program으로 해결할 수 있다. [검색 가능한 PDF 만들기(feat OCR)]({{site.baseurl}}/2020/05/11/검색-가능한-PDF-만들기)를 참조하라.
 
 ## REF
 
@@ -134,3 +154,4 @@ convert -rotate -90 -density 200 input.pdf output.pdf
 * [Reverse white and black colors in a PDF](https://stackoverflow.com/questions/30284327/reverse-white-and-black-colors-in-a-pdf)
 * [Converting PDF to PNG using Ghostscript](https://www.opentechguides.com/how-to/article/tools/42/pdf-to-pnf.html)
 * [stackoverflow / How to change page orientation of PDF?](https://stackoverflow.com/a/3108179)
+* [HowTo: Linux Remove a PDF File Password Using Command Line Options](https://www.cyberciti.biz/faq/removing-password-from-pdf-on-linux/
