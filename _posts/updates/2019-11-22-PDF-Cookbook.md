@@ -144,7 +144,7 @@ done
 
 ## make PDF searchable 
 
-문서를 그냥 스캔한 경우, 이미지로 내용을 확인할 수 있지만 텍스트를 복사하거나 검색할 수 없다. PDF 안에 그러한 데이터가 존재하지 않기 때문이다. 이런 경우 OCR을 한 후에 OCR 결과를 PDF에 layer로 삽입해 주어야 한다. [Acrobat Pro DC](https://acrobat.adobe.com/kr/ko/acrobat.html)를 사용하는 것이 정신건강에 좋다. 그러나 때때로 많은 파일을 일괄처리 하고 싶다면 open source program으로 해결할 수 있다. [검색 가능한 PDF 만들기(feat OCR)]({{site.baseurl}}/2020/05/11/검색-가능한-PDF-만들기)를 참조하라.
+문서를 그냥 스캔한 경우, 이미지로 내용을 확인할 수 있지만 텍스트를 복사하거나 검색할 수 없다. PDF 안에 그러한 데이터가 존재하지 않기 때문이다. 이런 경우 OCR을 한 후에 OCR 결과를 PDF에 layer로 삽입해 주어야 한다. [Acrobat Pro DC](https://acrobat.adobe.com/kr/ko/acrobat.html)를 사용하는 것이 정신건강에 좋다. 그러나 때때로 많은 파일을 일괄처리 하고 싶다면 open source program으로 해결할 수 있다. [검색 가능한 PDF 만들기(feat OCR)]({{site.baseurl}}/2019/07/08/Build-searchable-pdf)를 참조하라.
 
 ## REF
 
