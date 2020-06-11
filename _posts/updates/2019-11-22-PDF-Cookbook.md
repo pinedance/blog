@@ -138,7 +138,7 @@ gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=unencrypted.pdf -c .setpd
 ```bash
 for F in *;
 do
-gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="un_${F}" -c .setpdfwrite -f "${F}"
+   gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="un_${F}" -c .setpdfwrite -f "${F}"
 done
 ```
 
@@ -154,4 +154,4 @@ done
 * [Reverse white and black colors in a PDF](https://stackoverflow.com/questions/30284327/reverse-white-and-black-colors-in-a-pdf)
 * [Converting PDF to PNG using Ghostscript](https://www.opentechguides.com/how-to/article/tools/42/pdf-to-pnf.html)
 * [stackoverflow / How to change page orientation of PDF?](https://stackoverflow.com/a/3108179)
-* [HowTo: Linux Remove a PDF File Password Using Command Line Options](https://www.cyberciti.biz/faq/removing-password-from-pdf-on-linux/
+* [HowTo: Linux Remove a PDF File Password Using Command Line Options](https://www.cyberciti.biz/faq/removing-password-from-pdf-on-linux/)
