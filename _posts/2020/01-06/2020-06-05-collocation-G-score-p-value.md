@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "공기어(collocation) 문제에서 G-test와 p-value"
+title:  "공기어(collocation) 문제에서 G-Score와 p-value"
 categories: ["NLP"]
 ---
 
