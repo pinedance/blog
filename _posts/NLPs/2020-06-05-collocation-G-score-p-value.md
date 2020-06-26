@@ -26,10 +26,12 @@ G-test와 chi-squared test는 모두 적합도(goodness of fit)를 검정하는 
 G-Score는 chi-score에 비해 샘플 사이즈에 영향을 덜 받으며, 또한 p-value를 도출해 낼 수 있다는 장점이 있다. 공식은 아래와 같다. 
 
 $$
+
 \begin{alignat}{2}
-G & = & \; -2 \sum_{i=1}^m O_i \ln\left(\frac{E_i}{O_i}\right) \\
-  & = &     2 \sum_{i=1}^m O_i \ln\left(\frac{O_i}{E_i}\right)
+G  =  \; -2 \sum_{i=1}^m O_i \ln\left(\frac{E_i}{O_i}\right) \\
+   =      2 \sum_{i=1}^m O_i \ln\left(\frac{O_i}{E_i}\right)
 \end{alignat}
+
 $$
 
 Ted Dunning의 "Accurate Methods for the Statistics of Surprise and Coincidence"에 따르면, 텍스트 collocation의 경우, G-score 값은 자유도1의 chi-squared 분포에 근사한다. 
