@@ -9,16 +9,6 @@ git은 프로젝트를 버전에 따라 관리할 수 있도록 도와주는 유
 
 예시로 remote repo 주소를 `https://myrepo.github.com/coolproject.git`라고 해보자.
 
-## Git 관련된 글
-
-내용이 많아 별도의 글로 꾸민 내용들
-
-* [Git branch 사용하기](https://pinedance.github.io/blog/2019/05/28/Git-Branch)
-* [Git submodule 사용하기](https://pinedance.github.io/blog/2019/05/28/Git-Submodule)
-
-
-***
-
 ## Clone single branch only
 
 작업 과정에서 오류를 줄이기 위해 local에 작업 branch만을 받아오고 싶을 때가 있다. 예를 들어 작업 branch가 `develop`이라면, master branch 없이 develop branch만 local에 받아와 작업하고 push와 pull을 하면 좋을 것이다. 이런 경우에는 clone을 할 때 해당 branch만 받아 올 수 있다. [ref](https://stackoverflow.com/questions/1911109/how-to-clone-a-specific-git-branch)
@@ -39,6 +29,10 @@ git push -u origin develop
 git config --global core.quotepath false
 ```
 
-## id, password를 넣지 않고 Pull이나 Push 하기
+{% for post in site.posts %}
+{% if "git" in post.categories %}
 
-☞ [Git, id/password를 넣지 않고 Pull이나 Push 하기]({% post-url 2019-05-29-Git-Credential.md %}) 참조
+## [{{ post.title }}]({{ post.url }})
+
+{% endif %}
+{% endfor %}
