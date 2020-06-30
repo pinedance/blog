@@ -41,4 +41,4 @@ git config --global core.quotepath false
 
 ## id, password를 넣지 않고 Pull이나 Push 하기
 
-☞ [Git, id/password를 넣지 않고 Pull이나 Push 하기]({% post-url 2010-07-21-name-of-post 2019-05-29-Git-Credential.md %}) 참조
+☞ [Git, id/password를 넣지 않고 Pull이나 Push 하기]({% post-url 2019-05-29-Git-Credential.md %}) 참조
