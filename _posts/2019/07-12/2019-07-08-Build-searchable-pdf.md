@@ -2,7 +2,7 @@
 layout: post
 title:  "OCR을 통해 PDF를 검색하고 글자를 복사해오자."
 categories: 생활자동화
-keywords: ["searchable pdf", "ocrmypdf", "pdfsandwich", "pdf", "tesseract", "imagemagick", "bash"]
+tags: ["searchable pdf", "ocrmypdf", "pdfsandwich", "pdf", "tesseract", "imagemagick", "bash"]
 ---
 
 

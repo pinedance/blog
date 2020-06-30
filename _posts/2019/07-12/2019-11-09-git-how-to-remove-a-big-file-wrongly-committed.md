@@ -2,7 +2,7 @@
 layout: post
 title:  "Git에서 Commit 된 대용량 파일 삭제하기"
 categories: 코딩삽질기
-keywords: ['git', 'github']
+tags: ['git', 'github']
 ---
 
 github을 원격저장소로 사용하다보면 대용량 파일 때문에 push에 실폐할 때가 있다. github에는 100M 이 넘는 파일이 제한되어 있기 때문이다. 하지만 이 파일을 제거한 뒤에도 여전히 push에 실폐하게 된다. 이미 commit 된 히스토리 상에 이 파일이 남아있기 때문이다. 즉 현재 파일시스템에 보이지 않을 뿐, git에서 여전히 이 파일을 끌어안고 있기 때문이다.

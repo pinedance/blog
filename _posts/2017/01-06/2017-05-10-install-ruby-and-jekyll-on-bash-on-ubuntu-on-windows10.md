@@ -2,6 +2,7 @@
 layout: post
 title:  "윈도우10 bash에 ruby와 jekyll을 설치해 보자"
 categories: 코딩삽질기
+tags: ['ruby', 'jekyll']
 ---
 
 윈도우7을 윈도우10으로 업데이트 하면서 가장 기대했던 것은 bash의 등장이다.

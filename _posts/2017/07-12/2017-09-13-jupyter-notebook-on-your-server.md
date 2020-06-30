@@ -2,6 +2,7 @@
 layout: post
 title:  "Jupyter Notebook on Your Server "
 categories: 코딩삽질기
+tags: ['python', 'jupyter_notebook']
 ---
 
 [Digital Nomad가 되기 위해](https://goo.gl/uAyAcr), server에 jupyter notebook을 설치하고 remote browser에서 사용해 보자.

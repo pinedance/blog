@@ -2,12 +2,12 @@
 layout: post
 title:  "python과 javascript에서 문자열 길이가 다르다고?"
 categories: ["코딩삽질기"]
-keywords: ["javascript"]
+tags: ["javascript", "python"]
 ---
 
 ## Summary
 
-> javascript로 ASCII 이외의 문자, 특히 한자를 문자열로 다루면서 index로 문언가를 해야한다면, `[...srtring]`으로 array로 만들어 계산해야 한다. 
+> javascript로 ASCII 이외의 문자, 특히 한자를 문자열로 다루면서 index로 문언가를 해야한다면, `[...srtring]`으로 array로 만들어 계산해야 한다.
 
 ## Background
 

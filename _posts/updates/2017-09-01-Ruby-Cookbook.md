@@ -4,7 +4,13 @@ title:  "[Cookbook] Ruby, 이럴 때 이렇게 한다."
 categories: [코딩삽질기, Cookbook]
 ---
 
+## 배경
+
 Ruby를 사용하면서 얻은 잔기술들을 기록해 둔다.
+
+## 내용이 많아 따로 작성한 페이지
+
+{% include post_list_subject.html subject="ruby" %}
 
 ## Install Ruby
 

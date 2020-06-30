@@ -2,6 +2,7 @@
 layout: post
 title:  "Python으로 browser를 제어해 보자."
 categories: 코딩삽질기
+tags: ['python']
 ---
 
 > python, selenium으로 browser를 제어해 보자.

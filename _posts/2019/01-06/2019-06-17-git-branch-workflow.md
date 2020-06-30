@@ -2,6 +2,7 @@
 layout: post
 title:  "Git Branch Workflow"
 categories: 코딩삽질기
+tags: ['git']
 ---
 
 Git의 사용법을 익혔다고 해서 프로젝트에 바로 적용할 수 있는 것은 아니다. remote repository는 어떻게 운영할 것인지, 각 branch는 어떤 목적으로  어떤 것들을 만들고 유지해나갈 것인지, commit 메시지와 버전 이름 등은 어떤 방식으로 기입할 것인지 등등 실무적인 문제들이 많다. 특히 여러 사람이 git으로 프로젝트를 진행하기 위해서는 이러한 지침들에 대한 합의가 필요하다. 

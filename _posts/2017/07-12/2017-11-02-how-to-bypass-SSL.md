@@ -2,6 +2,7 @@
 layout: post
 title:  "SSL, 해결할 수 없다면 피하라."
 categories: 코딩삽질기
+tags: [ssl, git, curl, python, ruby, node, conda]
 ---
 
 > SSL로 피곤해 졌다.

@@ -2,7 +2,7 @@
 layout: post
 title:  "[드라마]빌어먹을 세상 따위"
 categories: Media
-keywords: ["The End of the F***ing World", "빌어먹을 세상 따위"]
+tags: ["The End of the F***ing World", "빌어먹을 세상 따위"]
 ---
 
 넷플릭스에서 "[빌어먹을 세상 따위](https://namu.wiki/w/%EB%B9%8C%EC%96%B4%EB%A8%B9%EC%9D%84%20%EC%84%B8%EC%83%81%20%EB%94%B0%EC%9C%84)" 시즌2를 보았다.

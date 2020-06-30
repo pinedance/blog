@@ -2,6 +2,7 @@
 layout: post
 title:  "Bash에 theme를 적용해 보자"
 categories: [코딩삽질기]
+tags: ['bash']
 ---
 
 bash에 적절한 색깔과 모양을 입히면 가독성이 높아지고 실수를 줄일 수 있게 된다.

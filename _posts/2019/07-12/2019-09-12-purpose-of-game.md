@@ -2,7 +2,7 @@
 layout: post
 title:  "삶이라는 게임에서 어떻게 만족할 것인가"
 categories: think
-keywords: []
+tags: []
 ---
 
 우리는 모두 만족을 원한다. 그러나 만족은 무엇을 기대하느냐에 따라 다르게 나타난다.

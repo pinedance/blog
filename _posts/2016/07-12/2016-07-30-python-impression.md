@@ -2,6 +2,7 @@
 layout: post
 title:  "Python 기초 강좌를 듣고"
 categories: 코딩삽질기
+tags: ['python']
 ---
 
 

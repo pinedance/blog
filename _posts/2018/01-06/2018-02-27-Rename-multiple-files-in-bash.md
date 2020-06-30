@@ -2,6 +2,7 @@
 layout: post
 title:  "bash에서 파일 이름을 일괄 변환 해보자"
 categories: 생활자동화
+tags: ['bash']
 ---
 
 컴퓨터를 쓰다가 폴더 속의 파일의 이름을 한꺼번에 바꾸어야 할 때가 있다. 이런 경우 때문에 [renamer](https://www.den4b.com/products/renamer) 같은 프로그램들이 만들어졌다.

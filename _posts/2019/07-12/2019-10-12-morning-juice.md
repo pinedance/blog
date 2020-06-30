@@ -2,7 +2,7 @@
 layout: post
 title:  "아침 활력 주스 feat 수분 섭취"
 categories: 먹고살자
-keywords: ["아침 주스"]
+tags: ["아침 주스"]
 ---
 
 ## 갈증, 수분 부족

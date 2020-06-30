@@ -2,6 +2,7 @@
 layout: post
 title:  "djvu 파일을 pdf로 바꿔보자"
 categories: 생활자동화
+tags: ['pdf']
 ---
 
 간혹 중국에서 만들어진 자료들을 보면 `djvu`라는 확장자를 가진 문서파일들이 있다. 열람하기도 어렵고 다루기도 어려워 PDF로 변환하고 싶은데, 어떻게 해야 할까?
@@ -46,7 +47,7 @@ REF
 
 ## USE djvu2pdf_0.9.2-1_all.deb
 
-`djvulibre`를 이용하여 만든 변환 프로그램도 존재한다. [`djvu2pdf`](https://0x2a.at/site/projects/djvu2pdf/)이다. 사용방법이 간단하다. 
+`djvulibre`를 이용하여 만든 변환 프로그램도 존재한다. [`djvu2pdf`](https://0x2a.at/site/projects/djvu2pdf/)이다. 사용방법이 간단하다.
 
 ```
 for dj in djvu/*; do djvu2pdf ${dj}; done

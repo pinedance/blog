@@ -5,9 +5,15 @@ categories: [코딩삽질기, Cookbook]
 tags: ['git']
 ---
 
+## 배경
+
 git은 프로젝트를 버전에 따라 관리할 수 있도록 도와주는 유용한 툴이다. git을 사용할 때 마주하게 되는 문제와 해결 방법을 적어 둔다.
 
 예시로 remote repo 주소를 `https://myrepo.github.com/coolproject.git`라고 해보자.
+
+## 내용이 많아 따로 작성한 페이지
+
+{% include post_list_subject.html subject="git" %}
 
 ## Clone single branch only
 
@@ -29,10 +35,4 @@ git push -u origin develop
 git config --global core.quotepath false
 ```
 
-{% for post in site.posts %}
-{% if "git" in post.categories %}
-
-## [{{ post.title }}]({{ post.url }})
-
-{% endif %}
-{% endfor %}
+## REF

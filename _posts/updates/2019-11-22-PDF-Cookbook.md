@@ -4,10 +4,15 @@ title:  "[Cookbook] PDF, 이럴 때 이렇게 한다."
 categories: [Cookbook, 생활자동화]
 ---
 
+## 배경
+
 PDF는 전자문서의 표준으로 다양한 분야에서 사용되고 있다. PDF를 보는 것은 [Adobe Acrobat Reader DC](https://get.adobe.com/kr/reader/)나 [foxit reader](https://www.foxitsoftware.com/pdf-reader/)를 통해 쉽게 할 수 있다. 그러나 편집을 하려고 하면 문제가 복잡해진다. 주머니 사정이 괜찮다면 [Adobe Acrobat Pro DC](https://acrobat.adobe.com/kr/ko/free-trial-download.html)를 구입하여 사용하는 편이 정신건강에 좋다. 사용하기도 쉽고, 제공하는 기능도 다양하다. 하지만 PDF 파일을 단순히 병합하거나 분리하거나 하기 위해 고가의 프로그램을 구입해야 할까. 다른 방법도 있다. [postscrip](https://namu.wiki/w/%ED%8F%AC%EC%8A%A4%ED%8A%B8%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8)를 다루기 위해 만들어진 [Ghostscript](https://www.ghostscript.com/)를 이용하면 된다. Windows10 부터는 [WSL(Windows Subsystem For Linux)](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)을 통해 linux를 이용할 수 있기 때문에 사용 가능하다.
 
 Ghostscript에 대해서는 이전 글[PDF 용량 축소하기 (with Ghostscript)]({{site.baseurl}}/blog/2018/08/31/PDF-%EC%9A%A9%EB%9F%89-%EC%B6%95%EC%86%8C%ED%95%98%EA%B8%B0)에서 소개한 바 있다.
 
+## 내용이 많아 따로 작성한 페이지
+
+{% include post_list_subject.html subject="pdf" %}
 
 ## 설치
 

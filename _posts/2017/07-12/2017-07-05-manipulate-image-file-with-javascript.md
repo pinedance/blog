@@ -2,6 +2,7 @@
 layout: post
 title:  "이미지 파일 다루기 (feat javascript)"
 categories: 생활자동화
+tags: ['image', 'javascript']
 ---
 
 
