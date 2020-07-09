@@ -25,7 +25,7 @@ Anaconda python이 너무 무거울 수 있다. 이럴 때는 [Miniconda](https:
 conda install jupyter
 ```
 
-참고로, Windows에 anaconda나 miniconda를 설치했을 경우에는 `anaconda prompt`로 접근해야 올바르게 사용할 수 있다. 기본 `cmd`나 `power shell`로 접근하면 anaconda 환경이 올바르게 로딩되지 않기 때문에 사용에 제한이 있다. [windows terminal을 설치하고 여기에 anaconda prompt를 추가해 두면 사용이 편리하다]({% post_url 2020-06-23-Windows-Terminal#condashell%EC%9D%84-%EC%B6%94%EA%B0%80%ED%95%B4-%EB%B3%B4%EC%9E%90 %}). 
+참고로, Windows에 anaconda나 miniconda를 설치했을 경우에는 `anaconda prompt`로 접근해야 올바르게 사용할 수 있다. 기본 `cmd`나 `power shell`로 접근하면 anaconda 환경이 올바르게 로딩되지 않기 때문에 사용에 제한이 있다. [windows terminal을 설치하고 여기에 anaconda prompt를 추가해 두면 사용이 편리하다](//pinedance.github.io/blog/2020/06/23/Windows-Terminal#condashell%EC%9D%84-%EC%B6%94%EA%B0%80%ED%95%B4-%EB%B3%B4%EC%9E%90). 
 
 ## Use package
 
