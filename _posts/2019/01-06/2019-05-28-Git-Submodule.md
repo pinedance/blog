@@ -280,13 +280,17 @@ git config alias.spush 'push --recurse-submodules=check'
 git config alias.supdate 'submodule update --remote --merge'
 ```
 
-### 대량의 module을 등록해야 할 때
+### 대량의 submodule을 등록해야 할 때
 
 기본적으로 submodule은 최초에 `git submodule add <url> <path>`을 통해 하나하나 등록해야 한다. 하지만 등록해야 하는 submodule이 많다면 어떻게 해야 할까. git에서 공식적으로 제공하고 있는 방법은 없다. 
 
 `.gitmodules`를 만들어 일괄 등록하는 방법을 적어둔다. `.gitmodules`를 문법에 맞게 먼저 만든다. 파일이 잘 인식되는지는 `git config -f .gitmodules --list`로 확인해 볼 수 있다.
 
 `.gitmodules` 파일에 문제가 없다면 다음 아래 스크립트를 실행시켜 `.gitmodules` 파일 속 submodule 들을 일괄 등록한다. 
+
+REF
+* [Restore git submodules from .gitmodules](https://stackoverflow.com/a/11258810)
+* [Use a .gitmodules from another project](https://stackoverflow.com/questions/42692250/use-a-gitmodules-from-another-project)
 
 ```bash
 #!/bin/sh
@@ -298,8 +302,19 @@ git config -f .gitmodules --get-regexp '^submodule\..*\.path$' |
     do
         url_key=$(echo $path_key | sed 's/\.path/.url/')
         url=$(git config -f .gitmodules --get "$url_key")
-        git submodule add $url $path
+        git submodule add "${url}" "${path}" || true
     done
+```
+
+### 등록된 submodule을 초기화 해야 할 때
+
+submodule 등록이 잘못되었거나 수정해야 하거나 하여 초기화 해야 할 때 다음과 같이 실행시킨다.
+
+```bash
+# 해당 모듈만 제거할 때
+git submodule deinit <path>
+# 전체 초기화
+git submodule deinit --all
 ```
 
 ## Summary
