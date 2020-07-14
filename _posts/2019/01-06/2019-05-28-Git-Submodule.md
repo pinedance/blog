@@ -138,7 +138,19 @@ git submodule add -b master ../subproject1.git
 git submodule add -b master ../subproject002.git subproject2  
 ```
 
-위와 같이 하고 나면, sub project repo의 정보가 담겨 있는 `.gitmodules` 파일이 생성되는 것을 확인할 수 있다.
+위와 같이 하고 나면, sub project repo의 정보가 담겨 있는 `.gitmodules` 파일이 생성되는 것을 확인할 수 있다. 이 파이을 열어보면 submodule 형태에 대해 더 잘 이해할 수 있다.
+
+```
+[submodule "subproject1"]
+    path = subproject1
+    url = ../subproject1.git
+    branch = master
+    
+[submodule "subproject2"]
+    path = subproject2
+    url = ../subproject2.git
+    branch = master
+```
 
 main project의 상태가 바뀐 것이기 때문에 `commit`을 수행해야 한다.
 
