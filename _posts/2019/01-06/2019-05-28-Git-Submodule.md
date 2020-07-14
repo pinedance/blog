@@ -67,13 +67,15 @@ clone을 마친 main project에 들어가 보면 `.gitmodules`라는 파일을 �
 ```bash
 # in main project root folder
 # git local config에 submodule을 인지시킴
-# 명령 전후로 git config list를 확인해 보자
+# 명령 전후로 'git config --list --local'를 확인해 보자
 git submodule init
 # clone submodules
 git submodule update
 # checkout master each sub project ... (*)
 git submodule foreach git checkout master
 ```
+
+※ `git submodule init`은 `.gitmodules` 파일에 있는 정보를 `.git/config`에 등록한다. 'git config --list --local'로 등록 결과를 확인해 보자. 
 
 ※ 마지막 명령은, 각 sub project를 master branch로 checkout 하기 위한 것이다. 처음 `submodule update`를 통해 sub project를 받으면, sub project는 `detached HEAD` 상태로 어떤 branch에도 속하지 않는 상태이기 때문이다.
 
@@ -276,6 +278,28 @@ git config alias.sdiff '!'"git diff && git submodule foreach 'git diff'"
 git config alias.spush 'push --recurse-submodules=check'
 # git supdate
 git config alias.supdate 'submodule update --remote --merge'
+```
+
+### 대량의 module을 등록해야 할 때
+
+기본적으로 submodule은 최초에 `git submodule add <url> <path>`을 통해 하나하나 등록해야 한다. 하지만 등록해야 하는 submodule이 많다면 어떻게 해야 할까. git에서 공식적으로 제공하고 있는 방법은 없다. 
+
+`.gitmodules`를 만들어 일괄 등록하는 방법을 적어둔다. `.gitmodules`를 문법에 맞게 먼저 만든다. 파일이 잘 인식되는지는 `git config -f .gitmodules --list`로 확인해 볼 수 있다.
+
+`.gitmodules` 파일에 문제가 없다면 다음 아래 스크립트를 실행시켜 `.gitmodules` 파일 속 submodule 들을 일괄 등록한다. 
+
+```bash
+#!/bin/sh
+
+set -e
+
+git config -f .gitmodules --get-regexp '^submodule\..*\.path$' |
+    while read path_key path
+    do
+        url_key=$(echo $path_key | sed 's/\.path/.url/')
+        url=$(git config -f .gitmodules --get "$url_key")
+        git submodule add $url $path
+    done
 ```
 
 ## Summary
