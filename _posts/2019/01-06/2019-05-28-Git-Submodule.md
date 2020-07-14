@@ -280,6 +280,16 @@ git config alias.spush 'push --recurse-submodules=check'
 git config alias.supdate 'submodule update --remote --merge'
 ```
 
+### submodule 정보 수정
+
+submodule의 remote repo 주소가 변경되었다고 해보자. 이럴 때는 이를 `.gitmodules`에서 수정해 주고 아래와 같이 `.git/config`에 반영해 주어야 한다. ( ["It re-synchronizes the information in .git/config with the information in .gitmodules"](https://stackoverflow.com/a/45679230) ) 
+
+```bash
+git submodule sync
+```
+
+그러나 이 경우 해당 subproject는 이미 `.git/config`에 등록된 것이어야 한다. `gitmodules`에 새로운 subproject를 추가하고 아래 명령을 주어도 `.git/config`는 등록되지 않는다. subproject를 등록하는 것은 `git submodules add`로만 가능하다. 
+
 ### 대량의 submodule을 등록해야 할 때
 
 기본적으로 submodule은 최초에 `git submodule add <url> <path>`을 통해 하나하나 등록해야 한다. 하지만 등록해야 하는 submodule이 많다면 어떻게 해야 할까. git에서 공식적으로 제공하고 있는 방법은 없다. 
