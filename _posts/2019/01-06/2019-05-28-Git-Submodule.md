@@ -117,7 +117,12 @@ main project의 업데이트가 끝나면, 새로 업데이트된 main project�
 git submodule update --remote --merge
 ```
 
+※ `git submodule update --remote <REMOTE-REPO-NAME> --merge`을 하면 특정 sub project만 update할 수 있다. 
+
+※ `git submodule update --init`은 현재 main project에 link 되어 있는 subproject의 정보를 가져와 update하는 것이다. main project의 commit 당시의 snap shot을 내려받는 것이라고 할 수 있다. 따라서 subproject의 파일들을 clone해 오지만 `git status`를 해 보면 main project에는 변화가 없다. 반면 `git submodule update --remote`는 remote repo의 최신 정보를 가져다가 update하는 것이다. remote repo에 새로운 commit이 있는 경우 local main project에 새로운 sub project link가 연결되기 때문에 main project가 update 된다. 따라서 main project에 변화가 생길 수 있으며, main project를 새로 commit 해야 한다. 
+
 ※ `--merge` 옵션이 없으면, sub project는 다시 `detached head` 상태가 된다. 그러면 각각 `git checkout master`를 수행해 주어야 한다. [ref](https://stackoverflow.com/a/55570998)
+
 
 
 ## 새로운 submodule을 만들거나 수정하기
