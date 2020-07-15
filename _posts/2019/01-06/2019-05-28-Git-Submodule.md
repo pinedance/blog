@@ -75,7 +75,9 @@ git submodule update
 git submodule foreach git checkout master
 ```
 
-※ `git submodule init`은 `.gitmodules` 파일에 있는 정보를 `.git/config`에 등록한다. 'git config --list --local'로 등록 결과를 확인해 보자. 
+※ `git submodule init`은 서브모듈 정보를 기반으로 로컬 환경설정 파일이 준비한다. 즉, `.gitmodules` 파일에 있는 정보를 `.git/config`에 등록한다. 'git config --list --local'로 등록 결과를 확인해 보자. 
+
+※ `git submodule update`는 서브모듈의 리모트 저장소에서 데이터를 가져오고 서브모듈을 포함한 프로젝트의 현재 스냅샷에서 Checkout 해야 할 커밋 정보를 가져와서 서브모듈 프로젝트에 대한 Checkout을 한다. 앞의 2가지 명령은 `git submodule update --init`과 같이 한 번에 수행할 수도 있다.
 
 ※ 마지막 명령은, 각 sub project를 master branch로 checkout 하기 위한 것이다. 처음 `submodule update`를 통해 sub project를 받으면, sub project는 `detached HEAD` 상태로 어떤 branch에도 속하지 않는 상태이기 때문이다.
 
