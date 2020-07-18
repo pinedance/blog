@@ -27,12 +27,31 @@ git clone --single-branch --branch develop http://www.myrepo.git
 git push -u origin develop
 ```
 
-## File names with non ASCII characters
+## Recommended default config
+
+git을 설치하고 나서 아래 설정을 해주자. 설명은 다음과 같다. 
+
+```bash
+git config --global core.autocrlf input
+git config --global core.quotepath false
+```
+
+### File names with non ASCII characters
 
 한글로 쓰여진 파일 이름이 decoding 상태로 표시되는 경우에는 다음과 같이 설정을 변경시켜 준다.
 
 ```bash
 git config --global core.quotepath false
 ```
+
+### End of Lines
+
+개행을 할 때 windows system에서는 `\r\n`을 쓰고, linux 계열에서는 `\n`을 쓴다. 따라서 협업을 할 때는 이로 인한 무분별한 파일 변환이 원하지 않게 일어날 수 있다. 이를 방지하기 위해 git에서는 `autocrlf` 기능을 제공한다. 특별히 윈도우 환경에서 일반적인 에디터에서는 `\r\n`를 고집하지 않는다. 따라서 아래와 같이 바꿔주는 것으로 충분하다. 
+
+```
+git config --global core.autocrlf input
+```
+
+
 
 ## REF
