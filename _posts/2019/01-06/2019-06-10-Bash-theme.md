@@ -40,7 +40,7 @@ export BASH_IT_THEME='bakke'
 
 bash-it에서는 git과 같은 version control tool의 정보를 표시해 준다. 현재 작업 중인 branch와 commit 상태를 알려주기 때문에 편리하다. 그러나 현재 작업중인 repository의 크기가 크다면 프롬프트가 갱신될 때마다 잠깐씩 기다려야 한다. 더구나 사양이 낮은 노트북으로 작업할 때는 작업 능률을 상당히 저해한다.
 
-이를 비활성화 시켜주고 싶을 때는 아래와 같이 `~/.bash_profile` file에 옵션을 추가해 주면 된다. 자세한 것은 [공식문서](https://github.com/Bash-it/bash-it#user-content-prompt-version-control-check)를 참고하자. 
+이를 비활성화 시켜주고 싶을 때는 아래와 같이 `~/.bashrc` file에 옵션을 수정해 주면 된다. 자세한 것은 [공식문서](https://github.com/Bash-it/bash-it#user-content-prompt-version-control-check)를 참고하자. 
 
 ```
 export SCM_CHECK=false
