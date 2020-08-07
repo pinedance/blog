@@ -17,8 +17,10 @@ YouTube에 올라온 동영상에서 mp3를 추출하여 다운로드 하는 방
 
 ```bash
 # install
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
+sudo apt install youtube-dl
+# or
+# sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+# sudo chmod a+rx /usr/local/bin/youtube-dl
 ```
 
 ```bash
