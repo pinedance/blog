@@ -62,6 +62,12 @@ for foo in *.mp3; do ffmpeg -loop 1 -i "background.jpg" -i "$foo" -shortest -aco
 ffmpeg -i LONGVIDEO.mkv -codec copy -f segment -segment_time 120 -reset_timestamps 1 tmp/out%03d.mkv
 ```
 
-REF
+## reduce bitrate
+
+```bash
+ffmpeg -i INPUT.mp3 -codec:a libmp3lame -b:a 64k OUTPUT.mp3
+```
+
+## REF
 * [How to automatically segment video using ffmpeg without re-encoding?](https://askubuntu.com/questions/948304/how-to-automatically-segment-video-using-ffmpeg-without-re-encoding)
 * [ffmpeg increases video segments length when used with -segment_time - how to fix?](https://superuser.com/questions/1065683/ffmpeg-increases-video-segments-length-when-used-with-segment-time-how-to-fix)
