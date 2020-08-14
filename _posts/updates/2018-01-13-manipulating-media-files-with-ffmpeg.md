@@ -62,7 +62,7 @@ for foo in *.mp3; do ffmpeg -loop 1 -i "background.jpg" -i "$foo" -shortest -aco
 ffmpeg -i LONGVIDEO.mkv -codec copy -f segment -segment_time 120 -reset_timestamps 1 tmp/out%03d.mkv
 ```
 
-## reduce bitrate
+## reduce mp3 bitrate
 
 ```bash
 ffmpeg -i INPUT.mp3 -codec:a libmp3lame -b:a 64k OUTPUT.mp3
