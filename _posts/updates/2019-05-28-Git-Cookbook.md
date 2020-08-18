@@ -44,7 +44,7 @@ git config --global core.quotepath false
 git config --global core.quotepath false
 ```
 
-### non ASCII characters
+### Display non ASCII characters on powershell
 
 Powershell을 이용하는 경우, commit message나 log에 한글이 표시되지 않을 수 있다. 이 때는 아래와 같이 실행한다. 
 
