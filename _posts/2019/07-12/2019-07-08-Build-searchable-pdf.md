@@ -77,7 +77,7 @@ OCR은 아래와 같이 수행한다.
 
 ```bash
 # 중국어 간체의 경우 (옵션이 chi-sim이 아님에 주의하라)
-ocrmypdf  -l chi-sim  --output-type pdf input_scanned.pdf  output_searchable.pdf 
+ocrmypdf  -l chi_sim  --output-type pdf input_scanned.pdf  output_searchable.pdf 
 ```
 
 쓰다보니 옵션을 주게 된다. 
