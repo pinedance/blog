@@ -44,6 +44,20 @@ git config --global core.quotepath false
 git config --global core.quotepath false
 ```
 
+### non ASCII characters
+
+Powershell을 이용하는 경우, commit message나 log에 한글이 표시되지 않을 수 있다. 이 때는 아래와 같이 실행한다. 
+
+```cmd
+$env:LC_ALL='C.UTF-8'
+```
+
+powershell이 실행 될 때 자동으로 적용하기 위해서는 profile에 넣어 주어야 한다. 아래와 같이 profile 설정 파일을 확인하고 해당 파일에 `$env:LC_ALL='C.UTF-8'`를 적어 넣고 저장하자. 
+
+```cmd
+$profile
+```
+
 ### End of Lines
 
 개행을 할 때 windows system에서는 `\r\n`을 쓰고, linux 계열에서는 `\n`을 쓴다. 따라서 협업을 할 때는 이로 인한 무분별한 파일 변환이 원하지 않게 일어날 수 있다. 이를 방지하기 위해 git에서는 `autocrlf` 기능을 제공한다. 특별히 윈도우 환경에서 일반적인 에디터에서는 `\r\n`를 고집하지 않는다. 따라서 아래와 같이 바꿔주는 것으로 충분하다. 
@@ -55,3 +69,5 @@ git config --global core.autocrlf input
 
 
 ## REF
+
+* [파워쉘을 이용할때 한글깨짐현상 해결방법](https://holjjack.tistory.com/144), [Powershell에서 한글이 깨져서 출력될 때 대처법](https://evandde.github.io/post/200227-git-powershell-ko-err/)
