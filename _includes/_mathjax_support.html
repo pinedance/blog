@@ -1,16 +1,20 @@
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    },
-    tex2jax: {
-    inlineMath: [ ['$', '$'] ],
-    displayMath: [ ['$$', '$$'] ],
-    processEscapes: true,
-  }
+	"extensions": ["tex2jax.js"],
+	"jax": ["input/TeX","output/HTML-CSS"],
+	"messageStyle": "none",
+	"tex2jax": {
+		"processEnvironments":false,
+		"processEscapes":true, 
+		"inlineMath":[["$","$"],["\\(","\\)"]],
+		"displayMath":[["$$","$$"],["\\[","\\]"]]
+	},
+	"TeX":{
+		"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+	},
+	"HTML-CSS":{"availableFonts":["TeX"],"imageFont":null}
 });
+
 MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
 	  alert("Math Processing Error: "+message[1]);
 	});
@@ -18,7 +22,9 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 	  alert("Math Processing Error: "+message[1]);
 	});
 </script>
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-  <!-- src="http://www.mi.fu-berlin.de/javascript/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> -->
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+<!-- <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"> -->
+<!-- src="http://www.mi.fu-berlin.de/javascript/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> -->
 </script>
