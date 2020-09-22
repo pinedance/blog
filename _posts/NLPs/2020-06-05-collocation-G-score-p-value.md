@@ -30,8 +30,8 @@ G-Score는 chi-score에 비해 샘플 사이즈에 영향을 덜 받으며, 또�
 
 |        | TERMa | TERM^a | MARGIN  |
 |:------:|:-----:|:------:|:--------:|
-|  TERMb | $O_{ab}$ | $O_{\_b}$  | $B$ |
-| TERM^b |  $O_{a\_}$  |   $O_{\_\_}$  | $S-B$ |
+|  TERMb | $O_{ab}$ | $O_{\lnot a b}$  | $B$ |
+| TERM^b | $O_{a \lnot b}$ | $O_{\lnot a \lnot b }$ | $S-B$ |
 | MARGIN |   $A$   |  $S-A$   |  $S$  |
 
 관찰값을 바탕으로 기대값을 구할 수 있다. 예를 들어 $E_{ab}$는 아래와 같이 구한다.
@@ -42,8 +42,8 @@ $$
 
 |        | TERMa | TERM^a | MARGIN  |
 |:------:|:-----:|:------:|:--------:|
-|  TERMb | $E_{ab}$ | $E_{\_b}$  | $B$ |
-| TERM^b |  $E_{a\_}$  |   $E_{\_\_}$  | $S-B$ |
+|  TERMb | $E_{ab}$ | $E_{\lnot a b}$  | $B$ |
+| TERM^b |  $E_{a \lnot b}$  |   $E_{\lnot a \lnot b}$  | $S-B$ |
 | MARGIN |   $A$   |  $S-A$   |  $S$  |
 
 이 때 G-value는 다음과 같다.
@@ -55,12 +55,12 @@ G  =  \; -2 \sum_{i=1}^m O_i \ln\left(\frac{E_i}{O_i}\right) \\
 \end{alignat}
 $$
 
-여기서 $O_{ab}$와 $E_{ab}$의 관계가 가장 중요하다. 그런데 이 두 값은 $S$에 비해 매우 작을 뿐만 아니라 다른 $O_{\_b}$, $O_{a\_}$, $O_{\_\_}$에 비해서도 매우 작다.
+여기서 $O_{ab}$와 $E_{ab}$의 관계가 가장 중요하다. 그런데 이 두 값은 $S$에 비해 매우 작을 뿐만 아니라 다른 $O_{\lnot a b}$, $O_{a \lnot b}$, $O_{\lnot a \lnot b }$에 비해서도 매우 작다.
 
 따라서 값을 모두 더하는 위의 공식은 포아송 분포(Poisson distribution)를 가정하였을 때 $O_{ab}$와 $E_{ab}$의 값만으로 아래와 같은 근사 공식으로 대신할 수 있다. 근사공식의 도출 방법은 Stefan Ever의 연구에 보인다.
 
 $$
-G  =  \; 2 \left( O_{ab} \ln\left(\frac{O_{ab}}{E_{ab}}\right) - ( O_{ab} - E_{ab} ) \right)
+G  \thickapprox  \; 2 \left( O_{ab} \ln\left(\frac{O_{ab}}{E_{ab}}\right) - ( O_{ab} - E_{ab} ) \right)
 $$
 
 ## G-Score의 p-value
