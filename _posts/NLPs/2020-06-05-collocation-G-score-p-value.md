@@ -21,9 +21,32 @@ G-Score는 Dunning’s log-likelihood, G2-value 등으로도 불리우는데, G-
 
 G-test와 chi-squared test는 모두 적합도(goodness of fit)를 검정하는 방법이다. 접합도라는 것은 모델에 얼마나 잘 fitting 되었는가를 살피는 것으로, 모델에 의해 기대된 값과 실재로 관측된 값 사이의 차이를 보게 된다. 적합도 검정에 대해서는 [이 글](http://blog.naver.com/leerider/220168446210)을 참조해 보자.
 
-## G-Score의 p-value
+## G-Score의 도출
 
-G-Score는 chi-score에 비해 샘플 사이즈에 영향을 덜 받으며, 또한 p-value를 도출해 낼 수 있다는 장점이 있다. 공식은 아래와 같다.
+G-Score는 chi-score에 비해 샘플 사이즈에 영향을 덜 받으며, 또한 p-value를 도출해 낼 수 있다는 장점이 있다. 아래와 같이 구할 수 있다.
+
+* $O$ : observed value
+* $E$ : expected value
+
+|        | TERMa | TERM^a | MARGIN  |
+|:------:|:-----:|:------:|:--------:|
+|  TERMb | $O_{ab}$ | $O_{\_b}$  | $B$ |
+| TERM^b |  $O_{a\_}$  |   $O_{\_\_}$  | $S-B$ |
+| MARGIN |   $A$   |  $S-A$   |  $S$  |
+
+관찰값을 바탕으로 기대값을 구할 수 있다. 예를 들어 $E_{ab}$는 아래와 같이 구한다.
+
+$$
+E_{ab} = \left(\frac{A}{S}\right)\left(\frac{B}{S}\right)
+$$
+
+|        | TERMa | TERM^a | MARGIN  |
+|:------:|:-----:|:------:|:--------:|
+|  TERMb | $E_{ab}$ | $E_{\_b}$  | $B$ |
+| TERM^b |  $E_{a\_}$  |   $E_{\_\_}$  | $S-B$ |
+| MARGIN |   $A$   |  $S-A$   |  $S$  |
+
+이 때 G-value는 다음과 같다.
 
 $$
 \begin{alignat}{2}
@@ -32,7 +55,17 @@ G  =  \; -2 \sum_{i=1}^m O_i \ln\left(\frac{E_i}{O_i}\right) \\
 \end{alignat}
 $$
 
-Ted Dunning의 ["Accurate Methods for the Statistics of Surprise and Coincidence"](https://www.aclweb.org/anthology/J93-1003/)에 따르면, 텍스트 collocation의 경우, G-score 값은 자유도1의 chi-squared 분포에 근사한다.
+여기서 $O_{ab}$와 $E_{ab}$의 관계가 가장 중요하다. 그런데 이 두 값은 $S$에 비해 매우 작을 뿐만 아니라 다른 $O_{\_b}$, $O_{a\_}$, $O_{\_\_}$에 비해서도 매우 작다.
+
+따라서 값을 모두 더하는 위의 공식은 포아송 분포(Poisson distribution)를 가정하였을 때 $O_{ab}$와 $E_{ab}$의 값만으로 아래와 같은 근사 공식으로 대신할 수 있다. 근사공식의 도출 방법은 Stefan Ever의 연구에 보인다.
+
+$$
+G  =  \; 2 \left( O_{ab} \ln\left(\frac{O_{ab}}{E_{ab}}\right) - ( O_{ab} - E_{ab} ) \right)
+$$
+
+## G-Score의 p-value
+
+Ted Dunning의 "Accurate Methods for the Statistics of Surprise and Coincidence"에 따르면, 텍스트 collocation의 경우, G-score 값은 자유도1의 chi-squared 분포에 근사한다.
 
 자유도1의 chi-squared 분포에서 p-value가 0.05일 때 chi-score는 약 3.838이다. ( 확인은 [여기](http://www.statdistributions.com/chisquare?p=0.05&df=1)에서 ) 즉, G-score가 3.838 이상인 사건은 상위 5%에 해당할 만큼 희소한 확률을 가진다.
 
@@ -47,6 +80,8 @@ Ted Dunning의 ["Accurate Methods for the Statistics of Surprise and Coincidence
 
 이상의 내용을 뒷받침하는 주요한 논문은 다음과 같다.
 
-* Dunning, T. (1993). Accurate Methods for the Statistics of Surprise and Coincidence. Computational Linguistics, 19, 1, March 1993, pp. 61-74.
+* [Dunning, T. (1993). Accurate Methods for the Statistics of Surprise and Coincidence. Computational Linguistics, 19, 1, March 1993, pp. 61-74.](https://www.aclweb.org/anthology/J93-1003/)
 
 * Rayson, P. and Garside, R. (2000). Comparing corpora using frequency profiling. In proceedings of the workshop on Comparing Corpora, held in conjunction with the 38th annual meeting of the Association for Computational Linguistics (ACL 2000). 1-8 October 2000, Hong Kong, pp. 1 - 6.
+
+* [Stefan Ever. (2007). Corpora and collocations. Corpus Linguistics. An International Handbook 2, 1212–1248.](http://www.stefan-evert.de/PUB/Evert2007HSK_extended_manuscript.pdf)
