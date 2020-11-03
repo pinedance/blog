@@ -2,7 +2,7 @@
 layout: post
 title:  "Python으로 browser를 제어해 보자."
 categories: 코딩삽질기
-tags: ['python']
+tags: ['python', 'selenium']
 ---
 
 > python, selenium으로 browser를 제어해 보자.
@@ -13,9 +13,7 @@ anaconda python을 기준으로 설명한다.
 
 python으로 browser를 제어하는 과정은 다음과 같다. 자세한 내용은 [공식 문서](http://selenium-python.readthedocs.io/installation.html#drivers)를 참고하자.
 
-```
-python -> selenium (python package, Selenium Client) - -> webdriver -> browser
-```
+> python -> selenium (python package, Selenium Client) - -> webdriver -> browser
 
 ## 준비
 
@@ -40,17 +38,18 @@ conda create -n myenv python=3.6
 conda env list
 ```
 
-conda install로 설치할 수 있는 package의 경우에는 `conda install -n myenv packagename`로 env 환경 내에 package를 설치할 수 있다. 하지만 selenium의 경우에는 conda install로 설치할 수 없고 pip로만 설치할 수 있다. 따라서 아래와 같이 env 환경을 활성화 시킨 다음 설치해 줘야 한다.
+아래와 같이 env 환경을 활성화시킨 다음 설치해 준다.  (env 환경 밖에서 package를 설치할 경우에는 `conda install -n myenv packagename`로 env 환경 내에 package를 설치할 수 있다.)
 
 ```
 # activate env
 activate myenv
 
 # install selenium for controling browser
-pip install selenium
+conda install selenium
+# or pip install selenium
 ```
 
-Tip : 회사 같은 경우 사내 ssl이 있다면 pip로 package 설치가 용이하지 않다. 이런 경우에는 `--trusted-host pypi.org --trusted-host files.pythonhosted.org` option을 달아 주었다. [여기](http://pinedance.github.io/blog/2017/11/02/how-to-bypass-SSL)
+Tip : 회사 같은 경우 사내 ssl이 있다면 pip로 package 설치가 용이하지 않다. 이런 경우에는 `--trusted-host pypi.org --trusted-host files.pythonhosted.org` option을 달아 준다. [여기](http://pinedance.github.io/blog/2017/11/02/how-to-bypass-SSL)
 
 ### python script 작성
 
@@ -94,9 +93,7 @@ def beyondAlert( browser, delay ):
 
 ### button click이 되지 않을 때
 
-마우스로 button을 클릭하면 액션이 나타나는데, selenium으로 하면 액션이 나타나지 않는 경우가 있다. button을 mouse-over해야 활성화되는 element를 심어 놓은 경우이다. 왜 이런 방식으로 페이지를 만들었는지는 모르겠지만, 이런 경우가 있다.
-
-이런 경우에는 아래 코드가 작동하지 않는다.
+마우스로 button을 클릭하면 액션이 나타나는데, selenium으로 하면 액션이 나타나지 않는 경우가 있다. button을 mouse-over해야 활성화되는 element를 심어 놓은 경우이다. 왜 이런 방식으로 페이지를 만들었는지는 모르겠지만, 이런 경우에는 아래 코드가 작동하지 않는다.
 
 ```python
 # browser = webdriver.Chrome(  )
