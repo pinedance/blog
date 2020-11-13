@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SSL, 해결할 수 없다면 피하라."
+title:  "회사 인증서 SSL, 해결할 수 없다면 피하라."
 categories: 코딩삽질기
 tags: [ssl, git, curl, python, ruby, node, conda]
 ---
@@ -31,7 +31,7 @@ tags: [ssl, git, curl, python, ruby, node, conda]
 
 ## Bash apps
 
-### git
+### Git
 
 ```bash
 git config --global http.sslVerify false
@@ -47,7 +47,7 @@ git config --global http.sslVerify false
 curl -k -O <url>
 ```
 
-curl을 통해 모든 연결을 insecure mode로 실행시키려면 아래와 같이 curl에 대한 설정파일을 별도로 만들어 주면 된다.
+curl을 통한 모든 연결을 insecure mode로 실행시키려면 아래와 같이 설정파일을 별도로 만들어 주면 된다.
 
 ```bash
 # set curl as insecure mode
@@ -60,6 +60,12 @@ echo insecure >> ~/.curlrc
 
 * `--no-check-certificate`: https 사이트를 SSL certificate 검증없이 연결한다.
 
+wget을 통한 모든 연결을 insecure mode로 실행시키려면 아래와 같이 설정파일을 별도로 만들어 주면 된다.
+
+```bash
+# set curl as insecure mode
+echo check-certificate=off >> ~/.wgetrc
+```
 
 ## python
 
@@ -105,6 +111,17 @@ atom package (`apm`)
 apm config set strict-ssl false
 ```
 
+### Yarn
+
+yarn을 사용하는 경우, 아래와 같이 해보자. 
+
+```
+yarn config set "strict-ssl" false -g
+set NODE_TLS_REJECT_UNAUTHORIZED=0
+Export NODE_TLS_REJECT_UNAUTHORIZED=0
+```
+
+
 ## Ruby
 
 ### Ruby itself
@@ -147,3 +164,4 @@ source "http://rubygems.org"
 
 * [Node Version Manager and failing certificate verification](https://juffalow.com/other/node-version-manager-and-failing-certificate-verification)
 * [How to ignore invalid and self signed ssl connection errors with curl](https://www.cyberciti.biz/faq/how-to-curl-ignore-ssl-certificate-warnings-command-option/)
+* [회사 프록시와 인증서에 고통받는 그대를 위한 글](http://blog.securekim.com/2019/03/bash-gradle-python-wget-nodejsnpm-apt.html)
