@@ -21,12 +21,16 @@ Windows 상의 Git에서 SSH로 remote repo에서 clone이나 pull/push가 문�
 
 ### COPY
 
-Windows의 SSH 정보는 `/mnt/c/Users/<username>/.ssh` 폴더 아래 설치되어 있다. 따라서 이 폴더 자체를 WSL의 `~/`폴더 아래로 복사하여 `~/.ssh`에 정보가 저장되도록 하자. 그런 다음 보안을 위해 파일 mode를 변경시킨다. 방법은 아래와 같다.
+Windows의 SSH 정보는 보통 윈도우 경로는 `c:\Users\<username>\.ssh`, wsl 경로로는 `/mnt/c/Users/<username>/.ssh`에 생성되어 있다. 
+
+잠깐, 폴더가 존재하지 않는다고? 그렇다면 ssh를 다른 폴더에 설치했거나 처음부터 생성하지 않은 것이다. 다른 폴더에 설치했다면 자신에게 맞는 폴더 경로를 적용하자. 만약 ssh를 생성하지 않았다면 [설치법](https://git-scm.com/book/ko/v2/Git-%EC%84%9C%EB%B2%84-SSH-%EA%B3%B5%EA%B0%9C%ED%82%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0)을 보고 먼저 설치하자. 
+
+이제 이 폴더 자체를 WSL의 `~/`폴더 아래로 복사하여 `~/.ssh`에 정보가 저장되도록 하자. 그런 다음 보안을 위해 파일 mode를 변경시킨다. 방법은 아래와 같다.
 
 ```bash
 # wsl bash
 USERNAME="YOURNAME"
-cp -r "/mnt/c/Users/${USERNAME}/.ssh" "~/"
+cp -r "/mnt/c/Users/${USERNAME}/.ssh" ~/
 chmod 600 ~/.ssh/id_rsa
 ```
 
