@@ -15,8 +15,8 @@ Create conda environment for development
 
 ```
 # conda env list
-conda create -n test-py36 python=3.6
-conda activate test-py36
+conda create -n dev-my-packages-py36 python=3.6
+conda activate dev-my-packages-py36
 ```
 
 Setup dev package for development
