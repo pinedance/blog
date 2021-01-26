@@ -21,9 +21,9 @@ selenium과 web browser 그리고 python을 이용하면 웹에 있는 자료들
 
 일단 웹 페이지 스냅샷을 성공하였기에 그 방법을 정리해 본다. 여기에서는 anaconda python 환경을 중심으로 설명한다. 
 
-먼저 프로젝트 환경을 만들어 보자. 이 과정은 생략해도 좋다. 
-
 ### python 환경 만들기
+
+먼저 프로젝트 환경을 만들어 보자. 이 과정은 생략해도 좋다. 
 
 ```bash
 conda create -n selenium python=3.6
@@ -95,6 +95,8 @@ driver.save_screenshot("web_screenshot.png")
 
 driver.close()
 ```
+
+실행 결과 "http://www.python.org" 페이지의 스크린샷 "web_screenshot.png"이 생성되었다면 성공이다. 
 
 참고로 폴더와 파일 구조는 다음과 같다. 
 
