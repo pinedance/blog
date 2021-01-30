@@ -15,6 +15,8 @@ YouTube에 올라온 동영상에서 mp3를 추출하여 다운로드 하는 방
 
 [youtube-dl](https://github.com/ytdl-org/youtube-dl)라는 훌륭한 프로그램이 존재한다. bash에서 사용해야 한다. 윈도우라면 [WSL](https://docs.microsoft.com/ko-kr/windows/wsl/about)을 이용하자.  
 
+매우 풍부한 기능을 가지고 있는 어플리케이션이므로 공식 페이지를 꼭 참고하자. 
+
 ```bash
 # install
 sudo apt install youtube-dl
@@ -26,6 +28,8 @@ sudo apt install youtube-dl
 ```bash
 # update
 sudo youtube-dl -U
+# or
+sudo -H pip install --upgrade youtube-dl
 ```
 
 Download MP3 Track from Youtube Video
@@ -39,6 +43,12 @@ Download Multiple MP3 Tracks from YouTube Playlist
 
 ```bash
 youtube-dl -x --audio-format mp3 --playlist-start 1 --playlist-end 〈LAST(int)〉 〈YOUTUBE PLAYLIST URL〉
+```
+
+Download Multiple MP3(64k) Tracks from YouTube Playlist with Output File Name
+
+```bash
+youtube-dl -x --audio-format mp3 --audio-quality 64k --playlist-reverse --playlist-start 1 --playlist-end 135  -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/playlist?list=abcdefghijklmn
 ```
 
 Issue
