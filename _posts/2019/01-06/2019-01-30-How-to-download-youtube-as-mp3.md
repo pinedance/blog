@@ -48,7 +48,7 @@ youtube-dl -x --audio-format mp3 --playlist-start 1 --playlist-end ã€ˆLAST(int)ã
 Download Multiple MP3(64k) Tracks from YouTube Playlist with Output File Name
 
 ```bash
-youtube-dl -x --audio-format mp3 --audio-quality 64k --playlist-reverse --playlist-start 1 --playlist-end 135  -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/playlist?list=abcdefghijklmn
+youtube-dl -x --audio-format mp3 --audio-quality 64k --playlist-reverse --playlist-start 1 --playlist-end 100  -o '%(playlist)s/%(playlist_index)s-%(upload_date)s-%(title)s.%(ext)s' https://www.youtube.com/playlist?list=abcdefghijklmn
 ```
 
 Issue
