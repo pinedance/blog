@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Git, id/password를 넣지 않고 Pull이나 Push 하기"
+title:  "Git, Pull/Push할 때 id password 묻지 않게 하기"
 categories: [코딩삽질기]
 tags: ['git']
 ---
@@ -71,6 +71,12 @@ git config --global credential.helper wincred
 <!---
 windows의 경우 microsoft에서 제공하는 [windows 용 GCM](https://github.com/Microsoft/Git-Credential-Manager-for-Windows)를 먼저 설치해야 하는 방법도 있다. 설치를 마치면 `~/.git-credentials`에 로그인 정보가 그대로 저장되지 않고 OS 자체에서 token을 부여 받아 해당 token을 저장하게 된다.
 --->
+
+
+```bash
+# for Mac
+git config --global credential.helper osxkeychain
+```
 
 ### 설정 상태 확인
 
