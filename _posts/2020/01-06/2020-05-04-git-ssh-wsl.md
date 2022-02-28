@@ -7,17 +7,26 @@ tags: ["git", "ssh", "wsl", "windows"]
 
 ## 배경
 
-Git의 remote repository의 주소는 ssh와 https 2가지 이다. ssh 쪽이 속도나 인증 면에서 더 편리하다. 그러나 windows의 WSL을 사용할 경우, Windows 상의 Git과 WSL 상의 Git 양자에서 ssh를 함께 사용하려면 어떻게 해야 할까?
+Git의 remote repository의 주소는 ssh와 https 두 가지이다. ssh쪽이 속도나 인증 면에서 더 편리하다. 그러나 windows의 WSL을 사용할 경우, Windows 상의 Git과 WSL 상의 Git 양자에서 ssh를 함께 사용하려면 어떻게 해야 할까? 
 
 ## 방법
 
-물론 네트워크는 복잡한 문제이므로, remote repo의 https 주소를 사용하는 것도 하나의 방법이다. 하지만 ssh를 사용하고 싶다면 크게 2가지 해법이 있다.
+물론 네트워크는 복잡한 문제이므로, remote repo의 https 주소를 사용하는 것도 하나의 방법이다. 하지만 ssh를 사용하고 싶다면 윈도우 git의 SSH 설정에 연결하여 사용할 수 있다. 
 
-WSL의 Linux( 보통 ubuntu )에는 git이 기본적으로 설치되어 있다. 따라서 우선 Windows에 git을 설치해 주자. 이렇게 하면 윈도우에 ssh 전송에 필요한 파일들이 설치되게 된다.
+Micro Soft 공식 문서 가운데 [Get started using Git on Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)에 잘 정리되어 있다. 
 
-Windows 상의 Git에서 SSH로 remote repo에서 clone이나 pull/push가 문제 없이 진행되는지 확인해 보자.
+요약하면, 윈도우와 WSL 양쪽 모두에 git을 설치한다. 그리고 WSL 환경에서 아래와 같이 설정을 추가해 준다. 의미는 WSL에 설치된 git의 credential로 하여금 윈도우에 설치된 Git의 credential을 참고하게 하겠다고 선언해 주는 것이다. 
 
-확인이 끝나면 윈도우의 ssh 정보를 wsl에 복사하거나 soft link 형태로 연결해 주면 된다.
+```bash
+# WSL
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+```
+
+***
+
+## 철 지난 방법
+
+윈도우의 ssh 정보를 wsl에 복사하거나 soft link 형태로 연결해 주면 된다.
 
 ### COPY
 
@@ -48,6 +57,7 @@ ln -s "/mnt/c/Users/${USERNAME}/.ssh" "~/.ssh"
 ```
 
 단 WSL2를 사용하는 경우에는 서로 다른 file system을 사용하기 때문에 soft link가 생성되지 않을 수 있다. 이럴 때는 앞의 방법을 사용하자.
+
 
 ## REF
 
