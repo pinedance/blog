@@ -7,26 +7,13 @@ tags: ["git", "ssh", "wsl", "windows"]
 
 ## 배경
 
-Git의 remote repository의 주소는 ssh와 https 두 가지이다. ssh쪽이 속도나 인증 면에서 더 편리하다. 그러나 windows의 WSL을 사용할 경우, Windows 상의 Git과 WSL 상의 Git 양자에서 ssh를 함께 사용하려면 어떻게 해야 할까? 
+Git의 remote repository의 주소는 SSH와 HTTPS 두 가지이다. 전자는 로컬 컴퓨터에서 공개키를 생성하고 이를 Git 서버에 등록하여 인증을 한다. 후자는 Git 서버에 등록된 User name과 password를 입력하여 인증을 한다. Windows의 WSL을 사용할 경우, WSL 상의 Git에서 SSH와 HTTPS로 편리하게 인증하려면 어떻게 해야 할까? 자세한 내용은 Micro Soft 공식 문서 가운데 [Get started using Git on Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)에 잘 정리되어 있다. 여기에서는 이를 짧게 적어본다. 
 
-## 방법
+결론부터다. Windows에 Git을 설치하고, WSL에도 Ubuntu용 Git을 설치해 두자. WSL Git의 인증 정보를 Windows용 Git의 인증 정보와 링크시켜 준다. WSL의 Git은 Windows용 Git의 인증 정보를 사용하게 된다. 
 
-물론 네트워크는 복잡한 문제이므로, remote repo의 https 주소를 사용하는 것도 하나의 방법이다. 하지만 ssh를 사용하고 싶다면 윈도우 git의 SSH 설정에 연결하여 사용할 수 있다. 
+## SSH의 경우
 
-Micro Soft 공식 문서 가운데 [Get started using Git on Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)에 잘 정리되어 있다. 
-
-요약하면, 윈도우와 WSL 양쪽 모두에 git을 설치한다. 그리고 WSL 환경에서 아래와 같이 설정을 추가해 준다. 의미는 WSL에 설치된 git의 credential로 하여금 윈도우에 설치된 Git의 credential을 참고하게 하겠다고 선언해 주는 것이다. 
-
-```bash
-# WSL
-git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
-```
-
-***
-
-## 철 지난 방법
-
-윈도우의 ssh 정보를 wsl에 복사하거나 soft link 형태로 연결해 주면 된다.
+윈도우의 SSH정보를 WSL에 복사하거나 soft link 형태로 연결해 주면 된다.
 
 ### COPY
 
@@ -47,7 +34,7 @@ chmod 600 ~/.ssh/id_rsa
 
 ### LINK
 
-보다 유연한 방법은 soft link를 이용하는 것이다. 이렇게 하면 윈도우의 ssh 정보가 변경되더라도 wsl에서도 이를 직접 참조하게 된다. 이미 `~/.ssh`가 있는 경우에는 에러가 발생하므로 미리 정리해 둔다.
+보다 유연한 방법은 soft link를 이용하는 것이다. 이렇게 하면 윈도우의 SSH 정보가 변경되더라도 WSL에서도 이를 직접 참조하게 된다. WSL에 이미 `~/.ssh`가 있는 경우에는 에러가 발생하므로 미리 정리해 둔다.
 
 ```bash
 # wsl bash
@@ -58,6 +45,14 @@ ln -s "/mnt/c/Users/${USERNAME}/.ssh" "~/.ssh"
 
 단 WSL2를 사용하는 경우에는 서로 다른 file system을 사용하기 때문에 soft link가 생성되지 않을 수 있다. 이럴 때는 앞의 방법을 사용하자.
 
+## HTTPS의 경우
+
+WSL 환경에서 아래와 같이 설정을 추가해 준다. 의미는 WSL에 설치된 git의 credential로 하여금 윈도우에 설치된 Git의 credential을 참고하게 하겠다고 선언해 주는 것이다. 이렇게 해 두면 Windows이든 WSL이든 일단 한 번 로그인 된 정보는 이 곳에 저장되므로 다시 물어보지 않는다. 
+
+```bash
+# WSL
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+```
 
 ## REF
 
