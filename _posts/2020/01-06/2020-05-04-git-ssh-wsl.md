@@ -47,7 +47,7 @@ ln -s "/mnt/c/Users/${USERNAME}/.ssh" "~/.ssh"
 
 ## HTTPS의 경우
 
-WSL 환경에서 아래와 같이 설정을 추가해 준다. 의미는 WSL에 설치된 git의 credential로 하여금 윈도우에 설치된 Git의 credential을 참고하게 하겠다고 선언해 주는 것이다. 이렇게 해 두면 Windows이든 WSL이든 일단 한 번 로그인 된 정보는 이 곳에 저장되므로 다시 물어보지 않는다. 
+WSL 환경에서 아래와 같이 설정을 추가해 준다. 의미는 WSL에 설치된 git의 credential로 하여금 윈도우에 설치된 Git의 credential을 참고하게 하겠다고 선언해 주는 것이다. 이렇게 해 두면 Windows이든 WSL이든 일단 한 번 로그인 된 정보는 이 곳에 저장되므로 다시 물어보지 않는다. 더 자세한 내용은 [이 글](https://pinedance.github.io/blog/2020/06/20/Windows-subsystem-for-Linux-aka-WSL)을 참조하라.
 
 ```bash
 # WSL

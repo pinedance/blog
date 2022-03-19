@@ -43,13 +43,13 @@ git config --global credential.helper /usr/share/doc/git/contrib/credential/libs
 
 ### WSL
 
-안타깝게도 `libsecret`을 이용한 위의 방법이 WSL(Windows Subsystem for Linux)에서는 작동하지 않는다는 점이다. 이를 적용하면 다음과 같은 에러를 만나게 된다. 
+안타깝게도 `libsecret`을 이용한 위의 방법이 WSL(Windows Subsystem for Linux)에서는 작동하지 않는다. 이를 적용하면 다음과 같은 에러를 만나게 된다. 
 
 ```bash
 could not connect to Secret Service: Cannot autolaunch D-Bus without X11 $DISPLAY
 ```
 
-WSL에서 linux 기능을 전부 사용할 수 없기 때문에 나타나는 문제로 보인다. WSL2로 업데이트 하면 문제가 해결될 것 같다. 하지만 WSL2는 filesystem 속도 이슈가 해결되지 않고 있기 때문에 못쓰고 있다. 
+WSL에서 linux 기능을 전부 사용할 수 없기 때문에 나타나는 문제로 보인다. WSL2로 업데이트 하면 문제가 해결될 것 같다. 하지만 WSL2는 filesystem 속도 이슈가 해결되지 않고 있기 때문에 아직 쓰지 못하고 있다. 
 
 그렇다면 어떻게 해야 할까. 2가지 해결책이 있다. 
 
@@ -65,6 +65,7 @@ git config --global credential.helper store
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
 ```
 
+보안을 생각했을 때 후자의 방법이 좋을 것 같다. 
 
 ## REF
 
