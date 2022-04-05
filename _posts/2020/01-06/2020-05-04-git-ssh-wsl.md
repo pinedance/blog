@@ -13,7 +13,7 @@ Git의 remote repository의 주소는 SSH와 HTTPS 두 가지이다. 전자는 �
 
 ## SSH의 경우
 
-윈도우의 SSH정보를 WSL에 복사하거나 soft link 형태로 연결해 주면 된다.
+윈도우의 SSH정보를 WSL에 복사하거나 soft link 형태로 연결해 주면 된다. 후자를 추천한다!
 
 ### COPY
 
@@ -44,6 +44,16 @@ ln -s "/mnt/c/Users/${USERNAME}/.ssh" "~/.ssh"
 ```
 
 단 WSL2를 사용하는 경우에는 서로 다른 file system을 사용하기 때문에 soft link가 생성되지 않을 수 있다. 이럴 때는 앞의 방법을 사용하자.
+
+이렇게 설정해 두고 WSL에서 `ssh`를 이용하여 접속을 시도했을 경우 "~\.ssh\config permissions error"라는 에러 메시지가 나올 수 있다. 보통 권한 문제로 발생하는 문제이지만 권한을 바꾸어도 해결되지 않는다. 리눅스와 윈도우 사이에 권한 문제가 얽히기 때문이다. 이 때에는 [여기](https://bootpanic.com/wsl-ubuntu-ssh-config-symlinked-to-cusersuser-sshconfig-permissions-error/) 또는 [여기](https://superuser.com/questions/1663858/wsl-ubuntu-ssh-config-symlinked-to-c-users-user-ssh-config-permissions-error)에 설명된 방법을 사용해 보자. 요약하면 `/etc/wsl.conf` 파일을 WSL에 만들고 아래와 같이 설정해 두는 것이다. 관련된 설명은 해당 글을 참조하자. 설정 후에 WSL을 완전히 멈춘 다음 재시작해야 한다. 잘 안되면 리부팅 한다. 
+
+```bash
+# /etc/wsl.conf
+[automount]
+options = "metadata,umask=22,fmask=11"
+```
+
+
 
 ## HTTPS의 경우
 
