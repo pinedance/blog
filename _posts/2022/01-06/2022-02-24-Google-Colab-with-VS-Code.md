@@ -7,6 +7,8 @@ tags: ['Colab', 'VS-Code']
 
 ## Background
 
+※ 2022년 6월 현재 이 방법은 Google 측에서 막은 상태이다. 아쉽다..... 기록 차원에서 글은 남겨둔다. 
+
 Google에서 제공하고 있는 [Colab](https://colab.research.google.com/?hl=ko)은 클라우드 기반의 가상 개발 환경이다. 구글 아이디만 있으면 누구나 무료로 사용할 수 있다. 개발 환경을 따로 구성하지 않아도 되고, GPU를 사용할 수 있다는 점이 큰 매력이다. 
 
 Colab은 간단하게 사용할 수 있도록 만들어졌다는 생각이 든다. 복잡한 절차 없이 Web Browser로 접속하는 것만으로 모든 준비가 끝난다. 사용자는 자신의 웹브라우저로 [Google Colab](https://colab.research.google.com/?hl=ko)에 접근한 다음 jupyter notebook 환경 아래서 python으로 코딩을 하고 실행시키면 된다. 프로그래밍 언어로서 [python](https://www.python.org/)과 개발 환경으로서 [jupyter notebook](https://jupyter.org/)에 익숙하지 않다면 다소 어렵게 느껴질 수 있으니 여기에 대한 배경 지식이 필요하다. 
