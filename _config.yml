@@ -27,7 +27,7 @@ imgurl:             "/blog/assets/img"
 
 # Build settings
 host: localhost
-port: 8384
+port: 8080
 
 # Site Build
 #highlighter:        pygments
