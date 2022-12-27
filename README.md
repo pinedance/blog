@@ -1,3 +1,11 @@
+Local Test
+
+```bash
+bundle exe jekyll serve --host 0.0.0.0
+```
+
+***
+
 ref: 지킬로 깃허브에 무료 블로그 만들기(https://nolboo.github.io/blog/2013/10/15/free-blog-with-github-jekyll/)
 
 ```
