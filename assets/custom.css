@@ -21,7 +21,7 @@ pre[class*="language-"].line-numbers {
 	border-radius: 0.4em;
 }
 
-ul li,
-ol li {
+article ul li,
+article ol li {
 	list-style: disc;
 }
