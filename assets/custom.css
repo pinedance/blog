@@ -2,17 +2,26 @@ blockquote p {
 	margin-block-start: 0.5em;
 }
 
+/* 
 body {
 	// background-image: url("img/background1.jpg");
 	// background-color: #f2e7b1;
 
 }
+ */
 
+/* 
 #___gcse_0 {
 	// background-color: #f2e7b1;
 }
+ */
 
 pre[class*="language-"].line-numbers {
 	padding-left: 2.8em;
 	border-radius: 0.4em;
+}
+
+ul li,
+ol li {
+	list-style: disc;
 }
