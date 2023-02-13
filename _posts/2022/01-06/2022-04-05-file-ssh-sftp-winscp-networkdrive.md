@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "SSH로 서버의 파일을 관리해보자 (feat SFTP, winSCP, networkdrive)"
+title:  "SSH로 서버의 파일을 관리해보자 (feat SSH, SFTP, winSCP, SSHFS, networkdrive)"
 categories: [코딩삽질기]
-tags: ['SSH', 'SFTP', 'winSCP', 'networkdrive']
+tags: ['SSH', 'SFTP', 'winSCP', 'SSHFS', 'networkdrive']
 ---
 
 ## 배경
