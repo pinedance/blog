@@ -150,3 +150,13 @@ sudo service apache2 start
 sudo service apache2 stop
 sudo service apache2 restart
 ```
+
+## REF
+
+Apache 기초
+* [DigitalOcean/Apache Basics: Installation and Configuration Troubleshooting](https://www.digitalocean.com/community/tutorials/apache-basics-installation-and-configuration-troubleshooting)
+
+Apache Redirect
+* [Apache redirect to another port](https://stackoverflow.com/a/13089668)
+* [How do I redirect subdomains to a different port on the same server?](https://serverfault.com/a/195831)
+* [Redirect multiple https ports to multiple external ip & ports](https://serverfault.com/a/909715)
