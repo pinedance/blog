@@ -13,7 +13,7 @@ YouTube에 올라온 동영상에서 mp3를 추출하여 다운로드 하는 방
 
 ## USE youtube-dl
 
-[youtube-dl](https://github.com/ytdl-org/youtube-dl)라는 훌륭한 프로그램이 존재한다. bash에서 사용해야 한다. 윈도우라면 [WSL](https://docs.microsoft.com/ko-kr/windows/wsl/about)을 이용하자.  
+[youtube-dl](https://github.com/ytdl-org/youtube-dl)라는 훌륭한 프로그램이 존재한다. bash에서 사용해야 한다. 윈도우라면 [WSL](https://docs.microsoft.com/ko-kr/windows/wsl/about)을 이용하자. 좀 더 기능이 추가된 [yt-dlp](https://github.com/yt-dlp/yt-dlp)도 있으니 참고하자. 
 
 매우 풍부한 기능을 가지고 있는 어플리케이션이므로 공식 페이지를 꼭 참고하자. 
 
