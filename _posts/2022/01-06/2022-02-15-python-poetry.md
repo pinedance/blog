@@ -13,11 +13,10 @@ python의 생태계는 거대하지만 의외로 library 관리나 개발환경 
 
 ## Commands
 
-설치
+설치. 내용이 조금씩 바뀌므로 현재 시점에서 가장 정확한 내용은 [공식 문서](https://python-poetry.org/docs/#installing-with-the-official-installer)를 참고하자. 
 
 ```bash
-pip install poetry  
-# or conda install poetry
+curl -sSL https://install.python-poetry.org | python -
 ```
 
 ```bash
@@ -87,7 +86,7 @@ poetry config virtualenvs.in-project true
 
 ### Custom library 사용
 
-때때로 poetry project 안에서 자신이 만든 custom library를 사용하고 싶을 때가 있다. 설정파일인 `pyproject.toml`에 다음과 같이 적어 주고 `poetry install`를 실행시켜주면 된다. 이에 대해서는 [Poetry 에서 로컬 패키지 add 하기](https://dailyheumsi.tistory.com/251)에 자세하다. 
+때때로 poetry project 안에서 자신이 만든 custom library를 사용하고 싶을 때가 있다. 설정파일인 `pyproject.toml`에 다음과 같이 적어 주고 `poetry install`를 실행시켜주면 된다. 이에 대해서는 [Poetry 에서 로컬 패키지 add 하기](https://dailyheumsi.tistory.com/251)에 자세하다. [적응 안되는 python의 Package 경로 문제(feat Poetry)](http://pinedance.github.io/blog/2023/01/16/import-package-path-problem-in-python)도 함께 참고하자.
 
 ```bash
 # my-project/pyproject.toml
