@@ -33,7 +33,7 @@ Ubuntu와 같은 Linux OS에서는 프로그램이나 package를 설치할 때 �
 
 ```bash
 # bash
-sudo openssl x509 -inform DEM -in myssl.cer -out awesome.cer
+sudo openssl x509 -inform DEM -in awesome.cer -out awesome.crt
 ```
 
 이렇게 하면 `awesome.crt` 파일이 새로 생성된 것을 볼 수 있다. 
