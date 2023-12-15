@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ssh tunneling을 통해 proxy network 사용하기"
+title:  "ssh tunneling을 통해 proxy 사용하기"
 categories: 코딩삽질기
 tags: ['proxy', 'SSH']
 ---
@@ -49,9 +49,16 @@ ssh -D 8282 -f -C -N username@my.remote-server.io -p 8282
 
 ### 웹브라우저 설정하기
 
-크롬 등 크로미움 기반의 웹브라우저에서 proxy 기능을 이용하기 위해서는 OS 설정에서 proxy를 구성해 주어야 한다. 그렇게 되면 OS에서 동작하는 모든 네트워크가 proxy 설정의 영향을 받는다. proxy 설정이 가능한 웹브라우저는 [firefox](https://www.mozilla.org/en-US/firefox/new/)가 있다. 로컬 머신에 firefox 웹브라우저를 설치해 준 뒤에 forefox 브라우저 설정으로 이동해 proxy를 설정해 준다. 
+웹브라우저에서 proxy 기능을 이용하기 위해서는 웹브라우저 설정에서 proxy 설정이 가능해야 한다. 그러나 크롬 등 크로미움 기반의 웹브라우저에서는 proxy 설정을 단독으로 할 수 없고 OS 설정을 따르도록 되어 있다. 만약 OS 차원에서 proxy를 구성해 준다면 웹브라우저 뿐만 아니라 OS에서 동작하는 모든 네트워크가 proxy 설정의 영향을 받는다. 
 
-설정은 매우 간단하다 `firefox 설정 > 네트워크 > 인터넷 프록시`로 찾아간다. `수동 프록시 설정`에 있는 SOCKS 호스트에 `127.0.0.1`, 포트에 `8282`를 입력하고 `SOCKS_v5`를 선택하면 된다. 
+다행히 웹브라우저 설정에서 proxy 설정이 가능한 웹브라우저가 있다. [firefox](https://www.mozilla.org/en-US/firefox/new/)이다. 로컬 머신에 firefox 웹브라우저를 설치해 준 뒤에 firefox 브라우저 설정으로 이동해 proxy를 설정해 주자.
+
+설정은 매우 간단하다 
+* `firefox 설정 > 네트워크 > 인터넷 프록시`(Configure Proxy Access to the Internet)로 찾아간다. 
+* `수동 프록시 설정`을 선택하고 다음과 같이 설정한다.
+  - SOCKS 호스트에 `127.0.0.1` 입력
+  - 포트에 `8282`를 입력
+  - `SOCKS_v5`를 선택
 
 이제 firefox 브라우저에서는 다음과 같이 연결이 이루어진다. 
 
