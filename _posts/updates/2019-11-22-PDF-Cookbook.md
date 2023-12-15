@@ -1,20 +1,26 @@
 ---
 layout: post
-title:  "[Cookbook] PDF, 이럴 때 이렇게 한다."
+title:  "[Cookbook] PDF, 이럴 때 이렇게 한다. feat Ghostscript"
 categories: [Cookbook, 생활자동화]
 ---
 
 ## 배경
 
-PDF는 전자문서의 표준으로 다양한 분야에서 사용되고 있다. PDF를 보는 것은 [Adobe Acrobat Reader DC](https://get.adobe.com/kr/reader/)나 [foxit reader](https://www.foxitsoftware.com/pdf-reader/)를 통해 쉽게 할 수 있다. 그러나 편집을 하려고 하면 문제가 복잡해진다. 주머니 사정이 괜찮다면 [Adobe Acrobat Pro DC](https://acrobat.adobe.com/kr/ko/free-trial-download.html)를 구입하여 사용하는 편이 정신건강에 좋다. 사용하기도 쉽고, 제공하는 기능도 다양하다. 하지만 PDF 파일을 단순히 병합하거나 분리하거나 하기 위해 고가의 프로그램을 구입해야 할까. 다른 방법도 있다. [postscrip](https://namu.wiki/w/%ED%8F%AC%EC%8A%A4%ED%8A%B8%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8)를 다루기 위해 만들어진 [Ghostscript](https://www.ghostscript.com/)를 이용하면 된다. Windows10 부터는 [WSL(Windows Subsystem For Linux)](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)을 통해 linux를 이용할 수 있기 때문에 사용 가능하다.
+PDF는 전자문서의 표준으로 다양한 분야에서 사용되고 있다. PDF를 보는 것은 [Adobe Acrobat Reader DC](https://get.adobe.com/kr/reader/)나 [foxit reader](https://www.foxitsoftware.com/pdf-reader/)를 통해 쉽게 할 수 있다. 
 
-Ghostscript에 대해서는 이전 글[PDF 용량 축소하기 (with Ghostscript)]({{site.baseurl}}/blog/2018/08/31/PDF-%EC%9A%A9%EB%9F%89-%EC%B6%95%EC%86%8C%ED%95%98%EA%B8%B0)에서 소개한 바 있다.
+그러나 편집을 하려고 하면 문제가 복잡해진다. 주머니 사정이 괜찮다면 [Adobe Acrobat Pro DC](https://acrobat.adobe.com/kr/ko/free-trial-download.html)를 구입하여 사용하는 편이 정신건강에 좋다. 사용하기도 쉽고, 제공하는 기능도 다양하다. 하지만 PDF 파일을 단순히 병합하거나 분리하거나 하기 위해 고가의 프로그램을 구입해야 할까. 
+
+다른 방법도 있다. [postscrip](https://namu.wiki/w/%ED%8F%AC%EC%8A%A4%ED%8A%B8%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8)를 다루기 위해 만들어진 [Ghostscript](https://www.ghostscript.com/)를 이용하면 된다. Windows10 부터는 [WSL(Windows Subsystem For Linux)](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)을 통해 linux를 이용할 수 있기 때문에 사용 가능하다.
+
+Ghostscript에 대해서는 이전 글 [PDF 용량 축소하기 (with Ghostscript)]({{site.baseurl}}/blog/2018/08/31/PDF-%EC%9A%A9%EB%9F%89-%EC%B6%95%EC%86%8C%ED%95%98%EA%B8%B0)에서 소개한 바 있다.
 
 ## 내용이 많아 따로 작성한 페이지
 
 {% include post_list_subject.html subject="pdf" %}
 
-## 설치
+## Ghostscript 
+
+### 설치
 
 먼저 설치한다. 간단하게 apt-get으로 설치할 수 있다. windows의 경우, wsl 환경으로 들어가서 실행시킨다.
 
@@ -24,7 +30,7 @@ sudo apt-get install ghostscript
 
 최신 버전을 설치하려면 [Ghostscript 공식 홈페이지](https://www.ghostscript.com/)에서 다운로드 받아 설명된 설치 방법에 따른다.
 
-## 사용법(일부)
+### 사용법(일부)
 
 자세한 사용법은 공식 홈페이지의 [설명](https://www.ghostscript.com/doc/current/Use.htm)을 참조하라. 공식 설명이 너무 길기 때문에 [gs (GhostScript) cheat sheet](http://flukylogs.blogspot.com/2012/08/gs-ghostscript-cheat-sheet.html)을 먼저 보자.
 
@@ -35,7 +41,7 @@ sudo apt-get install ghostscript
 
 ## PDF 용량  축소
 
-이전 글[PDF 용량 축소하기 (with Ghostscript)]({{site.baseurl}}/2018/08/31/PDF-%EC%9A%A9%EB%9F%89-%EC%B6%95%EC%86%8C%ED%95%98%EA%B8%B0)을 참조하라.
+[PDF 용량 축소하기 (with Ghostscript)]({{site.baseurl}}/2018/08/31/PDF-%EC%9A%A9%EB%9F%89-%EC%B6%95%EC%86%8C%ED%95%98%EA%B8%B0)을 참조하라.
 
 ## PDF 병합
 
@@ -132,7 +138,31 @@ convert -rotate -90 -density 200 input.pdf output.pdf
 
 ## PDF unlock
 
-잠겨 있는(locked) pdf인 경우 PDF를 OCR 하거나 일부 잘라내는 등의 가공을 할 수 없다. 이럴 때는 "unlcok pdf"라는 키워드로 검색하여 나오는 [smallpdf](https://smallpdf.com/kr/unlock-pdf), [sodapdf](https://www.sodapdf.com/ko/unlock-pdf/) 등 온라인 툴로 해결할 수 있다. 하지만 하나하나 해결해야 하므로 번거롭고, 개수 제한이 걸려 있는 걸려 있는 경우에는 충분히 사용할 수 없다. 원칙적으로는 password를 알아야 하지만 잃어버린 경우에는 방법이 없다. 이런 경우에는 Ghostscript를 이용하여 다음과 같은 방법으로 이를 해결할 수 있다. 
+잠겨 있는(locked) pdf인 경우 PDF를 OCR 하거나 일부 잘라내는 등의 가공을 할 수 없다. 이럴 때는 "unlcok pdf"라는 키워드로 검색하여 나오는 [smallpdf](https://smallpdf.com/kr/unlock-pdf), [sodapdf](https://www.sodapdf.com/ko/unlock-pdf/) 등 온라인 툴로 해결할 수 있다. 하지만 하나하나 해결해야 하므로 번거롭고, 개수 제한이 걸려 있는 걸려 있는 경우에는 충분히 사용할 수 없다. 원칙적으로는 password를 알아야 하지만 잃어버린 경우에는 방법이 없다. 
+
+### QPDF
+
+이런 경우 [qpdf](https://github.com/qpdf/qpdf)를 이용할 수 있다. qpdf는 C++ 라이브러리로 콘텐츠 보호가 걸려 있는 pdf를 변환할 수 있다. qpdf를 설치한 뒤에 아래와 같이 실행하면 된다. 
+
+```bash
+sudo apt-get install qpdf
+```
+
+```bash
+qpdf --decrypt input.pdf output.pdf
+```
+
+비밀번호를 바꾸려면 아래와 같이 실행시킨다. 
+
+```bash
+qpdf --decrypt --password=newpassword input.pdf output.pdf
+```
+
+unlock pdf과 관련된 여러 프로그램들은 [여기](https://listoffreeware.com/best-free-software-unlock-pdf/)를 참고하라. 
+
+### Ghostscript
+
+최후의 방법으로는 Ghostscript를 이용하여 다음과 같은 방법으로 이를 해결할 수 있다. 
 
 ```bash
 gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=unencrypted.pdf -c .setpdfwrite -f encrypted.pdf
