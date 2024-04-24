@@ -34,18 +34,18 @@ SSH tunneling를 이용하기 위해서는 당연히 SSH로 연결된 원격 서
 만약 로컬 머신에서 아래와 같은 명령을 통해 원격 서버로 접속할 수 있다고 해보자. 
 
 ```bash
-ssh username@my.remote-server.io -p 8282
+ssh username@my.remote-server.io -p 9292
 ```
 
 Dynamic port forwarding을 이용하려면 위의 연결 명령어를 아래와 같이 바꿔준다. 
 
 ```bash
-ssh -D 8282 -f -C -N username@my.remote-server.io -p 8282
+ssh -D 8282 -f -C -N username@my.remote-server.io -p 9292
 ```
 
 이제 로컬 머신에서 원격 서버로 SSH tunneling이 만들어졌다. 
 
-이제 로컬 머신에서 `127.0.0.1:8282`로 연결되는 통신은 SSH tunneling을 통해 원격 서버로 연결되게 된다. 
+이제 로컬 머신에서 `127.0.0.1:8282`로 연결되는 통신은 SSH tunneling을 통해 원격 서버(my.remote-server.io:9292)로 연결되게 된다. 
 
 ### 웹브라우저 설정하기
 
