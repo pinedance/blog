@@ -47,6 +47,24 @@ ssh -D 8282 -f -C -N username@my.remote-server.io -p 9292
 
 이제 로컬 머신에서 `127.0.0.1:8282`로 연결되는 통신은 SSH tunneling을 통해 원격 서버(my.remote-server.io:9292)로 연결되게 된다. 
 
+### SSH tunneling 테스트
+
+SSH tunneling이 잘 성립되었는지 테스트해 보자. 우선 프록시를 사용하기 전 연결 상태를 확인하자. 여기에서는 dropbox 주소를 예로 들었다. 
+
+```bash
+curl https://www.dropbox.com/at/cws
+```
+
+이제 SSH tunneling을 이용하여 접속해보자. curl의 경우 `-x` 혹은 `--proxy` 옵션을 이용한다. 
+
+```bash
+curl -x socks5h://localhost:8282 https://www.dropbox.com/at/cws
+# 또는 
+# curl -x socks5h://127.0.0.1:8282 https://www.dropbox.com/at/cws
+```
+
+원하는 값을 얻었다면 SSH tunneling이 잘 작동하고 있는 것이다. 
+
 ### 웹브라우저 설정하기
 
 웹브라우저에서 proxy 기능을 이용하기 위해서는 웹브라우저 설정에서 proxy 설정이 가능해야 한다. 그러나 크롬 등 크로미움 기반의 웹브라우저에서는 proxy 설정을 단독으로 할 수 없고 OS 설정을 따르도록 되어 있다. 만약 OS 차원에서 proxy를 구성해 준다면 웹브라우저 뿐만 아니라 OS에서 동작하는 모든 네트워크가 proxy 설정의 영향을 받는다. 
