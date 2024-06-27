@@ -15,11 +15,11 @@ PDF 파일에는 bookmark 기능이 있다. 이 기능을 이용해 책의 목�
 
 ## PDFtk
 
-[PDFtk](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)라는 놀라운 도구가 있다. PDF에 관해 매우 많은 기능을 제공하는 어플리케이션이다. Windows, mac os, linux 등 다양한 OS를 지원해준다. 또한 GUI, CLI 등 원하는 방식으로 프로그램을 사용할 수 있다. 무료버전, 유로버전 그리고 Server 버전도 있다. 만약 PDF를 다루는 backend 개발을 원한다면 Server 버전이 유용할 것이다. 
+[PDFtk](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)라는 놀라운 도구가 있다. PDF에 관해 매우 많은 기능을 제공하는 어플리케이션이다. Windows, mac os, linux 등 다양한 OS를 지원해준다. 또한 GUI, CLI 등 원하는 방식으로 프로그램을 사용할 수 있다. 무료버전, 유로버전 그리고 Server 버전도 있다. 만약 PDF를 다루는 backend 개발을 원한다면 Server 버전이 유용할 것이다. 예전에는 ubuntu와 같은 linux에서 `sudo apt install pdftk`와 같이 설치하여 사용할 수 있었다. 그러나 현재는 버전이 올라가서인지 설치되기는 하지만 실행 중에 오류가 발생한다. 
 
-예전에는 ubuntu와 같은 linux에서 `sudo apt install pdftk`와 같이 설치하여 사용할 수 있었다. 하지만 버전이 올라가서인지 설치는 되지만 실행 중에 오류가 발생한다. 현재 Red Hat 계열이나 CentOS 계열 OS에는 설치가 용이하다. 하지만 Ubuntu와 같은 경우에는 소스 코드를 내려 받아 직접 컴파일 해야 한다. 컴파일 방법은 [공식 홈페이지 설명](https://www.pdflabs.com/tools/pdftk-server/index.html#build)와 [이 글](https://www.baeldung.com/linux/install-pdftk)을 참고하자. 
+현재 server 버전의 경우, Red Hat 계열이나 CentOS 계열 OS에서는 설치가 용이하다. 하지만 Ubuntu와 같은 경우에는 소스 코드를 내려 받아 직접 컴파일 해야 한다. 컴파일 방법은 [공식 홈페이지 설명](https://www.pdflabs.com/tools/pdftk-server/index.html#build)와 [이 글](https://www.baeldung.com/linux/install-pdftk)을 참고하자. 
 
-다행스러운 것은 Windows 환경에서는 무료 버전을 쉽게 설치할 수 있고, bookmark 편집도 가능하다는 것이다. 공식 홈페이지에서 Windows용 무료 버전을 다운로드 받아 설치하면 된다. 
+다행스러운 것은 Windows 환경에서는 무료 버전을 쉽게 설치할 수 있고, bookmark 편집도 가능하다는 점이다. 공식 홈페이지에서 Windows용 무료 버전을 다운로드 받아 설치하면 된다. 
 
 약간 어려운 것은 사용 방법이다. 설치 후 실행하면 GUI 창이 열린다. 하지만 여기에는 bookmark 편집 기능이 없다. windows의 CLI 환경인 CMD에서 이용해야 한다. 
 
@@ -33,7 +33,7 @@ pdftk path\source.pdf dump_data output path\pdf_data.txt
 
 ```
 BookmarkBegin
-BookmarkTitle: PDF Reference (Version 1.5)
+BookmarkTitle: PDF Reference
 BookmarkLevel: 1
 BookmarkPageNumber: 1
 BookmarkBegin
@@ -42,19 +42,40 @@ BookmarkLevel: 2
 BookmarkPageNumber: 3
 ```
 
+위의 데이터는 다음과 같은 bookmark 구조를 의미한다. 
+
+```
+PDF Reference # 1page
+ └ Contents   # 3page
+```
+
 이 bookmark data를 수정한 뒤에 다시 다음 명령을 실행하면 수정된 내용이 pdf file에 적용된다. 
 
 ```cmd
 pdftk path\source.pdf update_info path\pdf_data.txt output path\updated.pdf
 ```
 
-여기서 주의할 점은, Bookmark title이 ASCII text가 아닐 때는 HTML numerical entities를 사용해야 한다는 점이다. 예를 들어 한글 "들어가며"는 "&#xB4E4;&#xC5B4;&#xAC00;&#xBA70;"라고 써 주어야 한다. 이 변환은 [온라인 툴](https://appdevtools.com/html-entity-encoder-decoder)을 쓰거나 [python의 html library를 이용](https://stackoverflow.com/a/7088472)하여 처리할 수 있다. 
+여기서 주의할 점은, Bookmark title이 ASCII text가 아닐 때는 HTML numerical entities를 사용해야 한다는 점이다. 예를 들어 한글 "들어가며"는 "&#xB4E4;&#xC5B4;&#xAC00;&#xBA70;"라고 써 주어야 한다. 이 변환은 [온라인 툴](https://appdevtools.com/html-entity-encoder-decoder)을 쓰거나 [python의 html library를 이용](https://stackoverflow.com/a/7088472)하여 처리할 수 있다. 만약 아래와 같은 구조의 bookmark가 있다면 bookmark data는 다음과 같다. 
+
+```
+들어가며  # 1page
+ ├ 개요1  # 5page
+ └ 개요2  # 7page
+```
 
 ```
 BookmarkBegin
 BookmarkTitle: &#xB4E4;&#xC5B4;&#xAC00;&#xBA70;
 BookmarkLevel: 1
 BookmarkPageNumber: 1
+BookmarkBegin
+BookmarkTitle: &#xC18C;&#xC81C;&#xBAA9;1;
+BookmarkLevel: 2
+BookmarkPageNumber: 5
+BookmarkBegin
+BookmarkTitle: &#xC18C;&#xC81C;&#xBAA9;12;
+BookmarkLevel: 2
+BookmarkPageNumber: 7
 ```
 
 ## JPdfBookmarks
@@ -66,9 +87,9 @@ JPdfBookmarks를 설치한 뒤 실행시키면 GUI 창이 열린다. 여기서 �
 bookmark data는 대략 다음과 같은 모습이다. 
 
 ```
-본문/10,Black,notBold,notItalic,open,FitPage
-	개요1/11,Black,notBold,notItalic,open,FitPage
-	개요2/15,Black,notBold,notItalic,open,FitPage
+들어가며/1,Black,notBold,notItalic,open,FitPage
+	소제목1/5,Black,notBold,notItalic,open,FitPage
+	소제목2/7,Black,notBold,notItalic,open,FitPage
 ```
 
 
