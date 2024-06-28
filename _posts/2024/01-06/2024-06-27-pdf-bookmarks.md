@@ -92,6 +92,9 @@ bookmark data는 대략 다음과 같은 모습이다.
 	소제목2/7,Black,notBold,notItalic,open,FitPage
 ```
 
+주의할 점은 인코딩이다. `Tools > Options`를 열어보면 bookmark의 인코딩을 설정하는 기능이 있다. "Select a charset encoding for dump and apply" 부분을 "UTF-8"로 설정해 주자. 
+
+
 
 
 
