@@ -71,6 +71,8 @@ systemctl stop autossh
 
 ### tsocks
 
+현재 더이상 지원되지 않는 것 같아. 아래 proxychains을 사용하자. 
+
 ```bash
 # 설치
 sudo apt-get install tsocks
@@ -93,14 +95,18 @@ tsocks curl <Target URL>
 # curl --proxy socks5h://localhost:8282 <Target URL>
 ```
 
-자세한 사용 방법은 [tsocks 공식 홈페이지](https://tsocks.sourceforge.net/)를 참고하시라. 
+자세한 사용 방법은 [tsocks 공식 홈페이지](ttps://github.com/zouguangxian/tsocks)를 참고하시라. 
 
 ### proxychains
 
 proxychains도 tsocks와 비슷한 역할을 해 준다. 다만 proxychains는 여러 프록시를 통해 트래픽을 연쇄적으로 전송하는 __프록시 체인__을 지원해 준다. 여러 단계의 프록시 서버를 이용하면 익명성을 높일 수 있다. tsocks보다 더 다양한 기능을 지원하므로 고급 사용에 적합하다. 
 
+proxychains을 기반으로 proxychains4, [proxychains-ng](https://github.com/rofl0r/proxychains-ng) 등도 있다. 기능이 추가된 library인 듯하다.
+
 ```bash
 sudo apt-get install proxychains
+# sudo apt-get install proxychains4
+# sudo apt-get install proxychains-ng
 ```
 
 `/etc/proxychains.conf` 파일을 다음과 같이 설정해 준다.
