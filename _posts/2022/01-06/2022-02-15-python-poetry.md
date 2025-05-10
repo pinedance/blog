@@ -7,13 +7,25 @@ tags: ['python']
 
 ## Background
 
-python의 생태계는 거대하지만 의외로 library 관리나 개발환경 쪽에서는 의외로 불편함이 있다. 개발환경을 관리하기 위해 anaconda의 env를 사용해 왔지만, 이는 프로젝트와 분리된 개념이기 때문에 불편할 때가 있다. 때때로 `pipenv`를 사용하다가 최근에 `poetry`를 알게 되어 정착하게 되었다. 
+python의 생태계는 거대하지만 package 관리나 개발환경 쪽에서는 의외로 불편함이 있다. 개발환경을 관리하기 위해 anaconda의 env를 사용해 왔지만, 이는 프로젝트와 분리된 개념이기 때문에 불편할 때가 있다. 때때로 `pipenv`를 사용하다가 최근에 `poetry`를 알게 되어 정착하게 되었다. 
 
 `poetry`는 ruby의 `bundle`과 개념이 유사하여 쉽게 익힐 수 있었다. [공식 문서](https://python-poetry.org/)에 설명이 잘 되어 있으므로 여기에서는 많이 사용되는 문구와 몇가지 Tip만 적어 둔다. 
 
 ## Install
 
 설치. 내용이 조금씩 바뀌므로 현재 시점에서 가장 정확한 내용은 [공식 문서](https://python-poetry.org/docs/#installing-with-the-official-installer)를 참고하자. 
+
+`pipx`를 통해 설치할 수 있다. [pipx](https://pipx.pypa.io/stable/)는 python applications을 독립된 환경에서 실행할 수 있는 tool이다. 
+
+```bash
+# pipx 설치
+# > sudo apt install pipx
+# > pipx ensurepath
+# poetry 설치
+pipx install poetry
+```
+
+pipx를 이용하는 대신 공식 installer를 사용할 수도 있다. 설치 방법은 아래와 같다. 
 
 ```bash
 curl -sSL https://install.python-poetry.org | python -
@@ -34,9 +46,11 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 ```
 
-주의! `pip install poetry`로도 설치가 가능하다. 이럴 경우 python 버전에 종속되는 문제가 있으므로 권장하지 않는다. 만약 위의 방법으로 설치하였는데 문제가 계속된다면 `pip install poetry`로 설치된 package가 있을 수 있다. 이럴 때는 먼저 `python -m pip uninstall poetry`로 제거해 주고 다시 위의 방법으로 설치한다. 
+주의!!! `pip install poetry`로도 설치가 가능하다. 이럴 경우 python 버전에 종속되는 문제가 있으므로 권장하지 않는다. 만약 위의 방법으로 설치하였는데 문제가 계속된다면 `pip install poetry`로 설치된 package가 있을 수 있다. 이럴 때는 먼저 `python -m pip uninstall poetry`로 제거해 주고 다시 위의 방법으로 설치한다. 
 
 ## Commands
+
+기본적인 사용방법을 정리한다. 자세한 내용은 공식 홈페이지를 참고하자. 
 
 ```bash
 # 사용법 보기
@@ -52,31 +66,43 @@ poetry init
 ```
 
 ```bash
-# add and install new library
-poetry add <library_name>
-# poetry add git+ssh://git@github.com/sdispater/pendulum.git
+# install the defined dependencies
+poetry install
 
-# remove library
-poetry remove <library_name>
+# to make sure that the project’s environment is in sync with the poetry.lock file
+poetry sync
+
+# update the dependencies
+poetry update
 ```
 
+```bash
+# add and install new package
+poetry add <package_name>
+# poetry add git+ssh://git@github.com/sdispater/pendulum.git
+
+# Add package as development dependency
+poetry add --dev <package_name>
+
+# remove package
+poetry remove <package_name>
+```
+
+package 설치와 제거 과정에서 문제가 있다면 가상 환경 속에서 실행해서일 가능성이 있다. 이럴 때는 `deactivate`를 이용하여 가상 환경에서 나온 뒤에 다시 해보자. 
 
 ```bash
 # excute script within env
 # Ruby: bundle exe jekyll serve
 poetry run python your_script.py
-
-# activate env
-poetry shell
-python your_script.py
 ```
 
 ```bash
-# install the defined dependencies
-poetry install
+# activate env
+poetry env activate
+python your_script.py
 
-# update the dependencies
-poetry update
+# deactivate env
+deactivate
 ```
 
 ## Tips
@@ -109,9 +135,9 @@ poetry install
 
 python 버전은 개인적으로 `asdf`로 관리하고 있다. "[의외의 복병 개발환경, asdf로 개발 언어를 관리해 보자](http://pinedance.github.io/blog/2022/12/12/asdf)"를 참고하자. 
 
-### Custom library 사용
+### Custom package 사용
 
-때때로 poetry project 안에서 자신이 만든 custom library를 사용하고 싶을 때가 있다. 설정파일인 `pyproject.toml`에 다음과 같이 적어 주고 `poetry install`를 실행시켜주면 된다. 이에 대해서는 [Poetry 에서 로컬 패키지 add 하기](https://dailyheumsi.tistory.com/251)에 자세하다. "[적응 안되는 python의 Package 경로 문제(feat Poetry)](http://pinedance.github.io/blog/2023/01/16/import-package-path-problem-in-python)"도 함께 참고하자.
+때때로 poetry project 안에서 자신이 만든 custom package를 사용하고 싶을 때가 있다. 설정파일인 `pyproject.toml`에 다음과 같이 적어 주고 `poetry install`를 실행시켜주면 된다. 이에 대해서는 [Poetry 에서 로컬 패키지 add 하기](https://dailyheumsi.tistory.com/251)에 자세하다. "[적응 안되는 python의 Package 경로 문제(feat Poetry)](http://pinedance.github.io/blog/2023/01/16/import-package-path-problem-in-python)"도 함께 참고하자.
 
 ```bash
 # my-project/pyproject.toml
