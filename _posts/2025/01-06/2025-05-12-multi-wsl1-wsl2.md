@@ -156,9 +156,11 @@ wsl -d Ubuntu2404-WSL1
 이제 WSL Root로 진입했을 것이다. 아래와 같이 하여 user를 추가하고 비밀번호 등을 설정하자.
 
 ```bash
-# Ubuntu2404-WSL1 Bash Shell
-# as root
+# Ubuntu2404-WSL1 Bash Shell / # as root
 adduser <wsl username>
+# 'sudo'를 쓰기 위해 sudo group에 넣기
+# 이 과정을 생략하면 root 권한을 쓸 수 없게 된다. 아래 "Root 권한 사용 불가" 부분을 참고하자.
+usermod -a -G sudo <wsl username>
 ```
 
 자 이제 아래와 같이 WSL에서 빠져나와 WSL을 종료하자.
@@ -204,3 +206,20 @@ ln -s /mnt/d/Working /home/<wsl username>/Working
 
 * SSH: [이 글](https://pinedance.github.io/blog/2025/05/09/ssh)
 * Git: [이 글](https://pinedance.github.io/blog/2021/02/07/WSL-git-keychain)
+
+### Root 권한 사용 불가
+
+만약 WSL에서 `sudo` 권한을 쓰려고 할 때 "user is not in the sudoers file."이라는 메시지와 함께 root 권한에 접근할 수 없다면? 현재 user에서 sudo 권한이 없다는 의미이다. 다음과 같이 해결한다.
+
+```
+# Windows Powershell
+# WSL에 root 권한으로 로그인 
+# wsl -l -v
+wsl -d <WSL name> -u root
+```
+
+```bash
+# WSL Bash Shell / # as root
+# 'sudo'를 쓰기 위해 기본 user를 sudo group에 넣기
+usermod -a -G sudo <wsl username>
+```

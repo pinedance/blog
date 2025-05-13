@@ -47,7 +47,7 @@ BASH_IT_CONFIG_FILE=".bashrc_user/bash_it" ~/.bash_it/install.sh
 
 ```bash
 # .bashrc가 실행될 때 함께 실행되도록 등록해준다.
-echo "source home/<username>/.bashrc_user/bash_it" >> ~/.bashrc
+echo "source /home/<username>/.bashrc_user/bash_it" >> ~/.bashrc
 ```
 
 ## 커스터마이징
