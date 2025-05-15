@@ -1,21 +1,21 @@
 ---
 layout: post
-title:  "linux의 profile과 bashrc ( feat. source )"
+title:  "linux의 profile과 bashrc ( feat. source, vscode )"
 categories: 코딩삽질기
 tags: ['Ubuntu', 'Linux', 'WSL']
 ---
 
 ## profile과 bashrc
 
-Ubuntu와 같은 linux system에는 설정 파일을 `.profile`과 `.bashrc` 등으로 관리할 수 있다. 이 2가지를 어떻게 사용하면 좋을지 생각해 보자.
+Ubuntu와 같은 Linux 시스템에는 `.profile`과 `.bashrc` 파일로 사용자 환경을 설정할 수 있다. 이 두 파일의 차이점과 적절한 사용법에 대해 알아보자.
 
-`/etc` 아래 전역 설정에도 이들이 있지만, 여기서는 user가 관리할 수 있는 `~/.prpfile`과 `~/.bashrc`만 다루겠다. 특별한 경우가 아니라면 sudo 권한은 쓰지 않는 편이 좋다.
+`/etc` 디렉토리에는 시스템 전역 설정이 있지만, 이 글에서는 사용자가 직접 관리할 수 있는 `~/.profile`과 `~/.bashrc`만 다룬다. 특별한 경우가 아니라면 sudo 권한은 사용하지 않는 편이 좋다.
 
 양자는 모두 사용자 환경 설정에 중요한 역할을 하지만, 실행되는 시점과 적용 범위에 차이가 있다.
 
 ## profile
 
-먼저 `~/.profile`는 사용자(user) 전용 환경 설정 파일이다. 사용자에 종속되어 있다. 사용자가 터미널을 통해 로그인할 때 단 한 번 실행되므로 주로 사용자 환경에 필요한 설정을 담는다. 가장 많이 사용하는 예는 다음과 같다.
+먼저 `~/.profile`는 사용자(user) 전용 환경 설정 파일이다. 사용자에 종속되어 있으며, 사용자가 터미널을 통해 로그인할 때 단 한 번 실행된다. 주로 사용자 환경에 필요한 설정을 담는다. 가장 많이 사용하는 예는 다음과 같다.
 
 * 시스템 전체에 영향을 주는 중요한 환경 변수들을 설정 e.g. `PATH`
 * 어떤 종류의 터미널을 사용하는지 설정 e.g. bash, zsh, fish
@@ -25,7 +25,7 @@ Ubuntu와 같은 linux system에는 설정 파일을 `.profile`과 `.bashrc` 등
 
 ## bashrc
 
-다음으로 `~/.bashrc`는 bash shell 전용 환경 설정 파일이다. bash에 종속되어 있다. 새로운 bash 셸이 시작될 때마다 실행되므로 주로 bash 셸에서만 사용되는 편리한 기능들을 설정합니다. 가장 많이 사용하는 예는 다음과 같다.
+다음으로 `~/.bashrc`는 bash shell 전용 환경 설정 파일이다. bash에 종속되어 있으며, 새로운 bash 셸이 시작될 때마다 실행된다. 주로 bash 셸에서만 사용되는 편리한 기능들을 설정한다. 가장 많이 사용하는 예는 다음과 같다.
 
 * 별칭(alias) 설정: 자주 사용하는 명령어를 짧은 별칭으로 만들어 편리하게 사용할 수 있다. e.g. `alias ll='ls -al'`
 * 함수(function) 정의: 복잡한 명령어들을 묶어 함수로 정의하여 재사용성을 높일 수 있다.
@@ -34,7 +34,7 @@ Ubuntu와 같은 linux system에는 설정 파일을 `.profile`과 `.bashrc` 등
 
 ## 사용 예시
 
-정리하면, `~/.profile`는 사용자와 관련된 환경 설정 파일이다. 로그인 시 한 번만 필요한 환경 변수나 초기 작업을 설정하며, 이는 시스템 전반에 영향을 준다. 반면 `~/.bashrc`는 bash shell와 관련된 환경 설정 파일이다. 새로운 bash 셸이 시작될 때마다 필요한 bash 환경을 설정한다. 주로 bash 사용 편의성을 높이는 설정이 포함된다.
+정리하면, `~/.profile`은 사용자 전체 환경과 관련된 설정 파일이다. 로그인 시 한 번만 실행되며, 시스템 전반에 영향을 주는 환경 변수나 초기 작업을 설정한다. 반면 `~/.bashrc`는 bash shell 전용 환경 설정 파일로, 새로운 bash 셸이 시작될 때마다 실행되어 shell 사용 환경을 설정한다.
 
 Ubuntu 등에 App(혹은 system package)를 설치할 때 종종 pre-compiled file을 어떤 위치에 저장하고, 해당 위치 경로를 PATH에 추가하라고 할 때가 있다. 그렇다면 이 PATH는 어디에서 설정해 주어야 할까. bash가 아니라 system에 대한 설정이므로 `~/.profile`에 넣어 주는 것이 좋겠다.
 
@@ -118,6 +118,8 @@ source ~/.profile
 
 ## 참고
 
+### "bash foo.sh" vs "source foo.sh"
+
 bash shell script `foo.sh`와 `bar.sh`가 있다고 해보자. 아래와 같이 몇 가지 실행 방법이 있다. 어떤 차이가 있을까?
 
 ```bash
@@ -179,3 +181,45 @@ echo $MYNAME
 ```
 
 반면 여기서 `bash bar.sh`라고 하면 "WORLD"라는 값이 출력된다. bar.sh에서 여전히 foo.sh에서 선언한 MYNAME를 사용할 수 있기 때문이다.
+
+### VS Code Terminal
+
+VS Code의 터미널은 System 터미널과 다르게 동작할 수 있다. VS Code 터미널은 기본적으로 `~/.bashrc`나 `~/.profile` 파일을 자동으로 실행하지 않아, 설정한 사용자 환경이 적용되지 않거나 PATH가 다르게 설정되어 프로그램을 찾지 못하는 등의 문제가 발생할 수 있다.
+
+이 문제를 해결하기 위해서는 VS Code의 설정을 다음과 같이 수정해야 한다.
+
+VS Code 설정 열기:
+
+* Windows/Linux: `Ctrl + ,`
+* Mac: `Cmd + ,`
+
+환경 변수 상속 설정:
+
+* 검색창에 `terminal.integrated.inheritEnv` 입력
+* 이 설정값을 `true`로 변경
+* 이를 통해 VS Code 터미널이 시스템의 환경 변수를 상속받게 됨
+
+Bash 프로필 설정:
+
+* 검색창에 `terminal.integrated.profiles.linux` 입력
+* settings.json에 다음 설정 추가
+* `-l` 옵션은 bash를 로그인 셸로 실행하도록 하여 `~/.profile`과 `~/.bashrc`가 모두 로드되게 함
+
+```json
+"terminal.integrated.profiles.linux": {
+    "bash": {
+        "path": "bash",
+        "args": ["-l"]
+    }
+}
+```
+
+기본 프로필을 bash로 설정 (선택 사항):
+
+* `terminal.integrated.defaultProfile.linux` 설정을 추가하여 S Code의 기본 터미널이 bash로 설정됨
+
+```json
+"terminal.integrated.defaultProfile.linux": "bash"
+```
+
+이러한 설정을 완료한 후 VS Code를 재시작하거나 새 터미널을 열면, System Terminal과 동일한 환경에서 작업할 수 있다.
