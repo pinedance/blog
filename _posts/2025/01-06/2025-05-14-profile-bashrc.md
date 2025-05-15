@@ -55,7 +55,7 @@ mkdir my.bashrc.d
 ```bash
 # ~/.profile
 if [ -d "$HOME/my.profile.d" ]; then
-  for i in "$HOME/my.profile.d/*" ; do
+  for i in $HOME/my.profile.d/* ; do
     if [ -r "$i" ]; then
       . "$i"
     fi
@@ -78,7 +78,7 @@ if [ -d ~/my.bashrc.d ]; then
 fi
 ```
 
-※ 따옴표 등을 잘못하면 에러가 날 수 있으므로 주의하자.
+※ 따옴표를 잘못 처리하면 에러가 날 수 있으므로 주의하자.
 
 문제가 없는지 다음과 같이 테스트 해보자.
 
