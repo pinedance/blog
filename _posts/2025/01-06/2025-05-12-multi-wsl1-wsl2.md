@@ -40,9 +40,9 @@ Windows에 WSL(Windows Subsystem for Linux)이 생겨난 뒤로 코딩 환경이
 
 이 문제를 다음과 같이 해결해 보았다.
 
-* 윈도우에 복수의 WSL distro를 설치한다. 즉, WSL1 기반의 Ubuntu(이하 Ubuntu-WSL1)와 WSL2 기반의 Ubuntu(이하 Ubuntu-WSL2)를 각각 설치한다.
+* 윈도우에 복수의 WSL distro를 설치한다. 즉, WSL1 기반의 Ubuntu(이하 Ubuntu-WSL1)와 WSL2 기반의 Debian(이하 Debian-WSL2)를 각각 설치한다.
 * Ubuntu-WSL1을 기본으로 사용하고,
-* docker와 같이 kernel을 이용해야 할 부분만 Ubuntu-WSL2에 설치하여 사용한다.
+* docker와 같이 kernel을 이용해야 할 부분만 Debian-WSL2에 설치하여 사용한다.
 
 이를 정리하면 다음과 같다.
 
@@ -54,6 +54,91 @@ Windows에 WSL(Windows Subsystem for Linux)이 생겨난 뒤로 코딩 환경이
 이제 구체적인 설치 방법을 살펴보자.  
 
 WSL 설치에 대해서는 [공식 문서](https://learn.microsoft.com/ko-kr/windows/wsl/install)에 잘 설명되어 있으므로 명령어 중심으로 정리하겠다. Windows Powershell에서 작업하는 것인지, WSL shell에서 작업하는 것인지 유념하자. Windows Powershell은 관리자 권한으로 실행시켜서 명령을 수행해야 한다.
+
+### 1st and 2nd WSL 설치
+
+복수의 WSL을 설치하기 위해서는 다음과 같은 과정이 필요하다. 서로 다른 distro를 설치하는 것이 관리하기 쉽다.
+
+```
+# Windows Powershell
+# install WSLs
+## 옵션: 설치 가능한 distro의 정보를 알아보자.
+wsl --list --online
+## 1st WSL 설치 (Ubuntu-24.04)
+wsl --install Ubuntu-24.04 --name Ubuntu2404-WSL2
+## 2nd WSL 설치 (Debian)
+wsl --install Debian --name Debian-WSL2
+```
+
+```
+# Windows Powershell
+# 추가 설정
+## 1st WSL을 WSL version 1로 수정
+wsl --set-version Ubuntu2404-WSL1 1
+## (optional) 1st WSL을 기본 distro 변경
+wsl --set-default Ubuntu2404-WSL1
+```
+
+`wsl.exe`에서 자주 쓰는 명령어는 다음과 같다.
+
+```
+# Windows Powershell
+# 설치 가능한 WSL distro 확인 
+wsl --list --online
+# local에 설치된 WSL 확인
+wsl --list -v
+# WSL 실행
+wsl -d <WSL name>
+# WSL 종료
+wsl -t <WSL name>
+# 모든 WSL 종료
+wsl --shutdown
+# wsl 사용법 
+wsl --help
+```
+
+## Tip
+
+### link folders
+
+나의 주요 작업 폴더가 윈도우 기준 `D:Working`라고 해보자. WSL1에서 이곳에 `~/Working`으로 접근하고 싶다면 어떻게 해야 할까?
+
+다음과 같이 심볼릭 링크를 걸어주면 된다.
+
+```bash
+# Ubuntu2404-WSL1
+ln -s /mnt/d/Working /home/<wsl username>/Working
+```
+
+### Windows와 app 설정 공유
+
+다음 글을 참고하자.
+
+* SSH: [이 글](https://pinedance.github.io/blog/2025/05/09/ssh)
+* Git: [이 글](https://pinedance.github.io/blog/2021/02/07/WSL-git-keychain)
+
+### Root 권한 사용 불가
+
+만약 WSL에서 `sudo` 권한을 쓰려고 할 때 "user is not in the sudoers file."이라는 메시지와 함께 root 권한에 접근할 수 없다면? 현재 user에서 sudo 권한이 없다는 의미이다. 다음과 같이 해결한다.
+
+```
+# Windows Powershell
+# WSL에 root 권한으로 로그인 
+# wsl -l -v
+wsl -d <WSL name> -u root
+```
+
+```bash
+# WSL Bash Shell / # as root
+# 'sudo'를 쓰기 위해 기본 user를 sudo group에 넣기
+usermod -a -G sudo <wsl username>
+```
+
+<!--
+
+예전글을 삭제하지 않고 남겨둔다.
+
+## 방법: 복수의 WSL 설치
 
 ### 1st WSL 설치 (WSL2)
 
@@ -187,39 +272,4 @@ wsl --manage Ubuntu2404-WSL1 --set-default-user <wsl username>
 
 이제 모두 끝났다. 이제 `wsl -d Ubuntu2404-WSL1`로 동작하면 `wsl username`으로 진입하게 될 것이다.
 
-## Tip
-
-### link folders
-
-나의 주요 작업 폴더가 윈도우 기준 `D:Working`라고 해보자. WSL1에서 이곳에 `~/Working`으로 접근하고 싶다면 어떻게 해야 할까?
-
-다음과 같이 심볼릭 링크를 걸어주면 된다.
-
-```bash
-# Ubuntu2404-WSL1
-ln -s /mnt/d/Working /home/<wsl username>/Working
-```
-
-### Windows와 app 설정 공유
-
-다음 글을 참고하자.
-
-* SSH: [이 글](https://pinedance.github.io/blog/2025/05/09/ssh)
-* Git: [이 글](https://pinedance.github.io/blog/2021/02/07/WSL-git-keychain)
-
-### Root 권한 사용 불가
-
-만약 WSL에서 `sudo` 권한을 쓰려고 할 때 "user is not in the sudoers file."이라는 메시지와 함께 root 권한에 접근할 수 없다면? 현재 user에서 sudo 권한이 없다는 의미이다. 다음과 같이 해결한다.
-
-```
-# Windows Powershell
-# WSL에 root 권한으로 로그인 
-# wsl -l -v
-wsl -d <WSL name> -u root
-```
-
-```bash
-# WSL Bash Shell / # as root
-# 'sudo'를 쓰기 위해 기본 user를 sudo group에 넣기
-usermod -a -G sudo <wsl username>
-```
+-->
