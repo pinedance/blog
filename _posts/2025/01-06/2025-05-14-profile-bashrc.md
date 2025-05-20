@@ -55,7 +55,7 @@ mkdir my.bashrc.d
 ```bash
 # ~/.profile
 if [ -d "$HOME/my.profile.d" ]; then
-  for i in $HOME/my.profile.d/* ; do
+  for i in "$HOME/my.profile.d"/* ; do
     if [ -r "$i" ]; then
       . "$i"
     fi
@@ -64,18 +64,30 @@ if [ -d "$HOME/my.profile.d" ]; then
 fi
 ```
 
+한줄 명령은 다음과 같다.
+
+```bash
+echo "if [ -d \"\$HOME/my.profile.d\" ]; then for i in \"\$HOME/my.profile.d\"/* ; do if [ -r \"\$i\" ]; then . \"\$i\"; fi; done; unset i; fi" >> ~/.profile
+```
+
 같은 요령으로 `/.bashrc` 파일 마지막에 다음 내용을 추가하자. 그러면 `/.bashrc`가 호출될 때 `~/my.bashrc.d` 속에 있는 설정 파일들이 차례로 함께 호출된다.
 
 ```bash
 # ~/.bashrc
-if [ -d ~/my.bashrc.d ]; then
-  for i in ~/my.bashrc.d/* ; do
-    if [ -r $i ]; then
-      . $i
+if [ -d "$HOME/my.bashrc.d" ]; then
+  for i in "$HOME/my.bashrc.d"/* ; do
+    if [ -r "$i" ]; then
+      . "$i"
     fi
   done
   unset i
 fi
+```
+
+한줄 명령은 다음과 같다.
+
+```bash
+echo "if [ -d \"\$HOME/my.bashrc.d\" ]; then for i in \"\$HOME/my.bashrc.d\"/* ; do if [ -r \"\$i\" ]; then . \"\$i\"; fi; done; unset i; fi" >> ~/.bashrc
 ```
 
 ※ 따옴표를 잘못 처리하면 에러가 날 수 있으므로 주의하자.
@@ -101,7 +113,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
 하지만 우리는 추가된 설정 파일을 따로 관리하고자 하므로 `~/.profile`를 수정하지 않고 다음과 같이 새로운 파일을 만들고 해당 내용을 넣어주기만 하면 된다. ( 파일을 만들고 내용을 쓰기 위해  `>`를 사용했다. )
 
 ```bash
-echo 'export PATH=$PATH:/usr/local/go/bin' > ~/.my.profile.d/go
+echo 'export PATH=$PATH:/usr/local/go/bin' > ~/my.profile.d/go
 ```
 
 적용은 모두 아래와 같이 한다.
