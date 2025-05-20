@@ -4,8 +4,7 @@ title:  "Docker, 도커, 더커, 주요 명령어"
 categories: 코딩삽질기
 ---
 
-Background
---------------
+## Background
 
 [Docker](https://www.docker.com/)라는 녀석이 있다. 한국에서는 "도커" 혹은 "더커"로 부른다. 사용자에게 가상환경을 지원해 준다. ( 자세한 설명은 [이재홍님의 가장 빨리 만나는 도커 Docker](http://pyrasis.com/book/DockerForTheReallyImpatient/)를 보시라~! )
 
@@ -25,14 +24,11 @@ Background
 
 언제나 깨끗한 새 컴퓨터에 원하는 환경을 설치하고 하고자 하는 일을 진행할 수 있다. 기존 시스템의 간섭이나 기존 설치 앱과의 충돌을 염려하지 않아도 된다.
 
-
-How To Use
---------------
+## How To Use
 
 사실 Docker에 대한 설명은 매우 많고, 개념도 쉽지는 않은 편이다. 나도 자세히 모르고, 여기서 그런 것들을 모두 설명할 생각이 없다.
 
 제목처럼 자주 사용하는 명령어를 써 놓고 그때 그때 보면서 사용하기 위한 글이다.
-
 
 ### 설치
 
@@ -44,7 +40,6 @@ sudo usermod -aG docker ${USER}
 sudo service docker restart
 # 계정 logout and login
 ```
-
 
 ### 전형적인 용례
 
@@ -60,6 +55,7 @@ sudo docker run -i -t --name testbed continuumio/anaconda3 /bin/bash
 Container 내부에서 어떤 설치 및 작업 후 Image로 저장하기
 
 ```bash
+# 모든 Container 보기
 docker ps -a
 ## docker commit <CONTAINER ID> myNewName:myNewTag
 docker commit <CONTAINER ID> mlearn:0.0.1
@@ -87,16 +83,15 @@ jupyter notebook을 실행하기
 
 ```bash
 docker run -i -t \
-	-v /home/${USER}/Labs:/home/notebooks \
-	-p 8888:8888 \
-	IMAGENAME /bin/bash \
-	-c "/opt/conda/bin/jupyter notebook --notebook-dir=/home/notebooks --ip='*' --port=8888 --no-browser --allow-root "
+ -v /home/${USER}/Labs:/home/notebooks \
+ -p 8888:8888 \
+ IMAGENAME /bin/bash \
+ -c "/opt/conda/bin/jupyter notebook --notebook-dir=/home/notebooks --ip='*' --port=8888 --no-browser --allow-root "
 ```
 
+## 더 보기
 
-### 더 보기
-
-#### Image 관리
+### Image 관리
 
 ```bash
 #  Image 찾기
@@ -120,29 +115,32 @@ sudo docker save ubuntu:latest > ubuntu.latest.tar
 sudo docker load --input ubuntu.latest.tar
 ```
 
-#### Container 관리
+### Container 관리
 
 ```bash
-# Container 보기
+# 실행 중인 Container 보기
+sudo docker ps
+
+# 모든 Container 보기
 sudo docker ps -a
 
 # Container 실행하기
-sudo docker start hello
+sudo docker start <Container ID>
 
 # Container 실행된 Container에 들어가기
-sudo docker attach hello
+sudo docker attach <Container ID>
 
 # Container 실행하고 동시에 들어가기
-sudo docker start -a hello
+sudo docker start -a <Container ID>
 
 # Container 다시실행하기 (≒리부팅)
-sudo docker restart hello
+sudo docker restart <Container ID>
 
 # Container 중지하기
-sudo docker stop hello
+sudo docker stop <Container ID>
 
 # Container 삭제하기
-sudo docker rm hello
+sudo docker rm <Container ID>
 
 # Container 이름 바꾸기
 sudo docker rename hello hello-world
