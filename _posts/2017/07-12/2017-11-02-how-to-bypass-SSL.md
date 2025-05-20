@@ -23,11 +23,9 @@ tags: [ssl, git, curl, python, ruby, node, conda]
 * python : `error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed`
 * curl : `SSL Certificate: Invalid certificate chain`
 
-
 내용도 깊이 모르고 네트워크 관리자 권한도 없다면 약간의 위험을 감수하고 해당 software의 인증기능을 비활성화 시키는 것이 정신건강에 좋다.
 
 해당 app들에서 인증기능을 비활성화 시키는 방법을 기록해 둔다.
-
 
 ## Bash apps
 
@@ -52,6 +50,16 @@ curl을 통한 모든 연결을 insecure mode로 실행시키려면 아래와 �
 ```bash
 # set curl as insecure mode
 echo insecure >> ~/.curlrc
+# ~/.bashrc
+# set curl as insecure mode
+# export CURLRC=~/.curlrc
+```
+
+`.bashrc`에 아래와 같이 추가해 주는 방법도 있다.
+
+```bash
+# ~/.bashrc
+alias curl='curl --insecure'
 ```
 
 ### wget
@@ -65,6 +73,8 @@ wget을 통한 모든 연결을 insecure mode로 실행시키려면 아래와 �
 ```bash
 # set curl as insecure mode
 echo check-certificate=off >> ~/.wgetrc
+# 전역파일에 설정하려면 /etc/wgetrc 또는 /usr/local/etc/wgetrc
+sudo echo check-certificate=off >> /usr/local/etc/wgetrc
 ```
 
 ## python
@@ -86,13 +96,11 @@ conda config --set ssl_verify false
 
 ## Node
 
-
 ### Node itself
 
 Node는 권한 문제 때문에 [nvm](https://github.com/nvm-sh/nvm)을 이용하여 설치하는 것이 편리하다. 그런데 nvm은 curl으로 설치 스크립트를 받아와 실행시키기 때문에 ssl 내부 보안이 걸려 있는 경우 파일을 다운로드 받지 못하게 된다.
 
 이런 경우에는 아래 curl에 대한 설명을 보고 `-k` option을 사용하거나 `.curlrc` 파일을 만들어준 뒤에 nvm을 사용하면 된다.
-
 
 ### Node package
 
@@ -113,14 +121,13 @@ apm config set strict-ssl false
 
 ### Yarn
 
-yarn을 사용하는 경우, 아래와 같이 해보자. 
+yarn을 사용하는 경우, 아래와 같이 해보자.
 
 ```
 yarn config set "strict-ssl" false -g
 set NODE_TLS_REJECT_UNAUTHORIZED=0
 Export NODE_TLS_REJECT_UNAUTHORIZED=0
 ```
-
 
 ## Ruby
 
