@@ -7,11 +7,24 @@
 #search-input {
   width: 100%;
   padding: 10px;
+  padding-right: 30px; /* Make space for the clear button */
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1em;
   box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
+
+#search-clear {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  color: #999;
+  display: none; /* Hide by default */
+}
+
 
 #search-results {
   list-style-type: none;

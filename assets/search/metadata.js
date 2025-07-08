@@ -1,7 +1,7 @@
 ---
 layout: null
 ---
-[
+var search_metadata = [
   {% for post in site.posts %}
     {
       "title": {{ post.title | jsonify }},
@@ -11,4 +11,4 @@ layout: null
     }
     {% unless forloop.last %},{% endunless %}
   {% endfor %}
-]
+];
