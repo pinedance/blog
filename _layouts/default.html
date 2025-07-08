@@ -5,35 +5,40 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		{% include head.html %}
-		{% seo %}
-	</head>
+<head>
+	{% include head.html %}
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/search/search.css">
+	{% seo %}
+</head>
 
-	<body>
+<body>
 
-		{% include header.html %}
+	{% include header.html %}
 
-		<main>
-			{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
-		</main>
+	{% include search.html %}
 
-		{% if page.path contains '_posts' %}
+	<main>
+		{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
+	</main>
 
-			{% if content contains 'reversefootnote' %}
-				<aside class="note"></aside>
-				<script async src="{{site.baseurl}}/assets/footnotes.js"></script>
-			{% endif %}
+	{% if page.path contains '_posts' %}
 
-		{% endif %}
-		<script src="{{ site.baseurl }}/assets/custom.js"></script>
-		<script src="{{ site.baseurl }}/assets/prism.js"></script>
+	{% if content contains 'reversefootnote' %}
+	<aside class="note"></aside>
+	<script async src="{{site.baseurl}}/assets/footnotes.js"></script>
+	{% endif %}
 
-		{% include search.html %}
+	{% endif %}
 
-		{% if page.use_math %}
-		{% include _mathjax_support.html %}
-		{% endif %}
-	</body>
+	<script src="{{ site.baseurl }}/assets/custom.js"></script>
+	<script src="{{ site.baseurl }}/assets/prism.js"></script>
+	<script src="{{ site.baseurl }}/assets/search/lunr.min.js"></script>
+	<script src="{{ site.baseurl }}/assets/search/search.js"></script>
+
+	{% if page.use_math %}
+	{% include _mathjax_support.html %}
+	{% endif %}
+
+</body>
 
 </html>

@@ -15,9 +15,9 @@ url: "https://blog.pinedance.click" # the base hostname & protocol for your site
 #theme: "the plain (https://github.com/heiswayi/the-plain)"
 
 # Author Info
-author_name:        "Junho"
-author_email:       pinedance@gmail.com
-author_gravatar:    fc746ff5d8579298993f87ac2bf84e48 # Gravatar md5 hash
+author_name:     "Junho"
+author_email:    pinedance@gmail.com
+author_gravatar: fc746ff5d8579298993f87ac2bf84e48 # Gravatar md5 hash
 github_username: pinedance
 
 # Site Settings

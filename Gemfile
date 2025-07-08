@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 ruby RUBY_VERSION
 
 # Hello! This is where you manage which Jekyll version is used to run.
@@ -25,3 +25,7 @@ gem 'github-pages', group: :jekyll_plugins
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "webrick", "~> 1.7"
+
+group :development do
+    gem 'html-proofer'
+end
