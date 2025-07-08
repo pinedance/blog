@@ -6,19 +6,19 @@ categories: [Cookbook, 생활자동화]
 
 ## 배경
 
-PDF는 전자문서의 표준으로 다양한 분야에서 사용되고 있다. PDF를 보는 것은 [Adobe Acrobat Reader DC](https://get.adobe.com/kr/reader/)나 [foxit reader](https://www.foxitsoftware.com/pdf-reader/)를 통해 쉽게 할 수 있다. 
+PDF는 전자문서의 표준으로 다양한 분야에서 사용되고 있다. PDF를 보는 것은 [Adobe Acrobat Reader DC](https://get.adobe.com/kr/reader/)나 [foxit reader](https://www.foxitsoftware.com/pdf-reader/)를 통해 쉽게 할 수 있다.
 
-그러나 편집을 하려고 하면 문제가 복잡해진다. 주머니 사정이 괜찮다면 [Adobe Acrobat Pro DC](https://acrobat.adobe.com/kr/ko/free-trial-download.html)를 구입하여 사용하는 편이 정신건강에 좋다. 사용하기도 쉽고, 제공하는 기능도 다양하다. 하지만 PDF 파일을 단순히 병합하거나 분리하거나 하기 위해 고가의 프로그램을 구입해야 할까. 
+그러나 편집을 하려고 하면 문제가 복잡해진다. 주머니 사정이 괜찮다면 [Adobe Acrobat Pro DC](https://acrobat.adobe.com/kr/ko/free-trial-download.html)를 구입하여 사용하는 편이 정신건강에 좋다. 사용하기도 쉽고, 제공하는 기능도 다양하다. 하지만 PDF 파일을 단순히 병합하거나 분리하거나 하기 위해 고가의 프로그램을 구입해야 할까.
 
 다른 방법도 있다. [postscrip](https://namu.wiki/w/%ED%8F%AC%EC%8A%A4%ED%8A%B8%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8)를 다루기 위해 만들어진 [Ghostscript](https://www.ghostscript.com/)를 이용하면 된다. Windows10 부터는 [WSL(Windows Subsystem For Linux)](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)을 통해 linux를 이용할 수 있기 때문에 사용 가능하다.
 
-Ghostscript에 대해서는 이전 글 [PDF 용량 축소하기 (with Ghostscript)]({{site.baseurl}}/blog/2018/08/31/PDF-%EC%9A%A9%EB%9F%89-%EC%B6%95%EC%86%8C%ED%95%98%EA%B8%B0)에서 소개한 바 있다.
+Ghostscript에 대해서는 이전 글 [PDF 용량 축소하기 (with Ghostscript)]({{site.baseurl}}/2018/08/31/PDF-%EC%9A%A9%EB%9F%89-%EC%B6%95%EC%86%8C%ED%95%98%EA%B8%B0)에서 소개한 바 있다.
 
 ## 내용이 많아 따로 작성한 페이지
 
 {% include post_list_subject.html subject="pdf" %}
 
-## Ghostscript 
+## Ghostscript
 
 ### 설치
 
@@ -97,6 +97,7 @@ gs -sDEVICE=pdfwrite  \
 ## PDF를 image(jpg, png)로
 
 DEVICE options
+
 * `png16m`: 24-bit RGB color
   * `png256`: 8-bit color
   * `png16`: 4-bit color
@@ -138,11 +139,11 @@ convert -rotate -90 -density 200 input.pdf output.pdf
 
 ## PDF unlock
 
-잠겨 있는(locked) pdf인 경우 PDF를 OCR 하거나 일부 잘라내는 등의 가공을 할 수 없다. 이럴 때는 "unlcok pdf"라는 키워드로 검색하여 나오는 [smallpdf](https://smallpdf.com/kr/unlock-pdf), [sodapdf](https://www.sodapdf.com/ko/unlock-pdf/) 등 온라인 툴로 해결할 수 있다. 하지만 하나하나 해결해야 하므로 번거롭고, 개수 제한이 걸려 있는 걸려 있는 경우에는 충분히 사용할 수 없다. 원칙적으로는 password를 알아야 하지만 잃어버린 경우에는 방법이 없다. 
+잠겨 있는(locked) pdf인 경우 PDF를 OCR 하거나 일부 잘라내는 등의 가공을 할 수 없다. 이럴 때는 "unlcok pdf"라는 키워드로 검색하여 나오는 [smallpdf](https://smallpdf.com/kr/unlock-pdf), [sodapdf](https://www.sodapdf.com/ko/unlock-pdf/) 등 온라인 툴로 해결할 수 있다. 하지만 하나하나 해결해야 하므로 번거롭고, 개수 제한이 걸려 있는 걸려 있는 경우에는 충분히 사용할 수 없다. 원칙적으로는 password를 알아야 하지만 잃어버린 경우에는 방법이 없다.
 
 ### QPDF
 
-이런 경우 [qpdf](https://github.com/qpdf/qpdf)를 이용할 수 있다. qpdf는 C++ 라이브러리로 콘텐츠 보호가 걸려 있는 pdf를 변환할 수 있다. qpdf를 설치한 뒤에 아래와 같이 실행하면 된다. 
+이런 경우 [qpdf](https://github.com/qpdf/qpdf)를 이용할 수 있다. qpdf는 C++ 라이브러리로 콘텐츠 보호가 걸려 있는 pdf를 변환할 수 있다. qpdf를 설치한 뒤에 아래와 같이 실행하면 된다.
 
 ```bash
 sudo apt-get install qpdf
@@ -152,17 +153,17 @@ sudo apt-get install qpdf
 qpdf --decrypt input.pdf output.pdf
 ```
 
-비밀번호를 바꾸려면 아래와 같이 실행시킨다. 
+비밀번호를 바꾸려면 아래와 같이 실행시킨다.
 
 ```bash
 qpdf --decrypt --password=newpassword input.pdf output.pdf
 ```
 
-unlock pdf과 관련된 여러 프로그램들은 [여기](https://listoffreeware.com/best-free-software-unlock-pdf/)를 참고하라. 
+unlock pdf과 관련된 여러 프로그램들은 [여기](https://listoffreeware.com/best-free-software-unlock-pdf/)를 참고하라.
 
 ### Ghostscript
 
-최후의 방법으로는 Ghostscript를 이용하여 다음과 같은 방법으로 이를 해결할 수 있다. 
+최후의 방법으로는 Ghostscript를 이용하여 다음과 같은 방법으로 이를 해결할 수 있다.
 
 ```bash
 gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=unencrypted.pdf -c .setpdfwrite -f encrypted.pdf
@@ -177,7 +178,7 @@ do
 done
 ```
 
-## make PDF searchable 
+## make PDF searchable
 
 문서를 그냥 스캔한 경우, 이미지로 내용을 확인할 수 있지만 텍스트를 복사하거나 검색할 수 없다. PDF 안에 그러한 데이터가 존재하지 않기 때문이다. 이런 경우 OCR을 한 후에 OCR 결과를 PDF에 layer로 삽입해 주어야 한다. [Acrobat Pro DC](https://acrobat.adobe.com/kr/ko/acrobat.html)를 사용하는 것이 정신건강에 좋다. 그러나 때때로 많은 파일을 일괄처리 하고 싶다면 open source program으로 해결할 수 있다. [검색 가능한 PDF 만들기(feat OCR)]({{site.baseurl}}/2019/07/08/Build-searchable-pdf)를 참조하라.
 

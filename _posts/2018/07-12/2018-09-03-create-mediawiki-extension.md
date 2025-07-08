@@ -12,7 +12,7 @@ mediawiki는 대표적인 wiki flatform으로 풍부한 기능에도 불구하�
 
 하지만 프로젝트에 맞게 최적화되어 개발된 소프트웨어는 아니기 때문에 사용 목적에 따라 부족한 기능이 있을 수 있다. 나 역시 그러했다. 가장 불편한 기능은 알파벳 이외의 문자에 대한 검색이 잘 되지 않는다는 점이었고, 그 다음으로는 리다이렉트 페이지를 자동으로 만들어야 했는데 그런 extension이 없었다는 점이었다.
 
-검색 문제는 구체적으로 한글과 한자 검색이었는데, mediawiki에서 게시한 안내에 따라 elasticsearch를 설치하여 full text 검색을 하는 방식으로 해결할 수 있었다. 자세한 내용은 [MediaWiki에서 Full text 검색](https://pinedance.github.io/blog/2018/08/07/full-text-search-on-mediawiki-with-cirrussearch-and-elasticsearch)에서 설명한 바 있다.
+검색 문제는 구체적으로 한글과 한자 검색이었는데, mediawiki에서 게시한 안내에 따라 elasticsearch를 설치하여 full text 검색을 하는 방식으로 해결할 수 있었다. 자세한 내용은 [MediaWiki에서 Full text 검색]({{ site.baseurl }}/2018/08/07/full-text-search-on-mediawiki-with-cirrussearch-and-elasticsearch)에서 설명한 바 있다.
 
 위키에서 생각보다 민감한 문제는 문서의 이름이다. 문서 이름이 일종의 ID 역할을 하고, 내부 링크에서도 사용되기 때문에 신중하게 정해야 한다. 특히 동의어 같은 경우는 처리하기 어렵다. 우리 프로젝트 같은 경우에서는 고민 끝에 `한글(한자)` 형태로 문서 제목을 정하기로 했다. 한글만으로 하면 같은 문서들이 너무 많이 양산되고, 한자만으로 하면 한글로 검색할 때 제목이 누락되는 문제가 생길 수 있기 때문이다.
 
@@ -42,13 +42,13 @@ mediawiki extension을 만들기 위해서는 먼저 규약에 맞게 폴더와 
 $pageTitle = Title::newFromText( $pageTitleText );
 
 if ( !is_null( $pageTitle ) && !$pageTitle->isKnown() && $pageTitle->canExist() ){
-	// Title $pageTitle 객체로 새로운 wikipage 객체 생성
-	$newWikiPage = new WikiPage( $pageTitle );
-	// String $pageContentText를 내용으로 하는 Content 객체 생성
-	$pageContent = ContentHandler::makeContent( $pageContentText, $sourceTitle );
-	// 새로 만들어진 wikipage 객체의 Content를 수정함
-	$newWikiPage->doEditContent( $pageContent,
-		"Page created automatically by parser function on page [[$sourceTitleText]]" ); //TODO i18n
+ // Title $pageTitle 객체로 새로운 wikipage 객체 생성
+ $newWikiPage = new WikiPage( $pageTitle );
+ // String $pageContentText를 내용으로 하는 Content 객체 생성
+ $pageContent = ContentHandler::makeContent( $pageContentText, $sourceTitle );
+ // 새로 만들어진 wikipage 객체의 Content를 수정함
+ $newWikiPage->doEditContent( $pageContent,
+  "Page created automatically by parser function on page [[$sourceTitleText]]" ); //TODO i18n
 }
 ```
 

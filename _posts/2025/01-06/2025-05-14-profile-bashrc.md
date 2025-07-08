@@ -38,7 +38,7 @@ Ubuntu와 같은 Linux 시스템에는 `.profile`과 `.bashrc` 파일로 사용�
 
 Ubuntu 등에 App(혹은 system package)를 설치할 때 종종 pre-compiled file을 어떤 위치에 저장하고, 해당 위치 경로를 PATH에 추가하라고 할 때가 있다. 그렇다면 이 PATH는 어디에서 설정해 주어야 할까. bash가 아니라 system에 대한 설정이므로 `~/.profile`에 넣어 주는 것이 좋겠다.
 
-만약 [bash-it](https://pinedance.github.io/blog/2019/06/10/Bash-theme)과 같이 bash의 모양이나 편의성을 추가하는 설정을 해야 할 때는 어떻게 해야 할까? system이 아니라 bash shell과 관련된 일이므로 `~/.bashrc`에 넣어 주는 것이 좋겠다.
+만약 [bash-it]({{ site.baseurl }}/2019/06/10/Bash-theme)과 같이 bash의 모양이나 편의성을 추가하는 설정을 해야 할 때는 어떻게 해야 할까? system이 아니라 bash shell과 관련된 일이므로 `~/.bashrc`에 넣어 주는 것이 좋겠다.
 
 하지만 환경 설정을 변경할 때마다 이 두 파일을 수정하는 것은 그리 편리하지 않다. 어떻게 해야할까? 사용자 전용 파일을 만들고 이를 `~/.profile`과 `~/.bashrc`에서 불러서 적용해주는 편이 더 편리하다. 우선 다음과 같이 해보자.
 

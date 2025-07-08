@@ -32,14 +32,14 @@ image file은 RGB 정보를 담고 있고, 컴퓨터는 이 정보를 읽어 색
 
 ### ex: 영인본처럼 만들기
 
-일전에 [imagemagick을 이용해서 컬러 이미지를 영인본처럼 만드는 방법을 소개](http://pinedance.github.io/blog/2016/06/10/%EC%8A%A4%EC%BA%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%AC%B8%EC%84%9C-%ED%9D%91%EB%B0%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0) 했었다. javascript를 이용하면 어떻게 할 수 있을까?
+일전에 [imagemagick을 이용해서 컬러 이미지를 영인본처럼 만드는 방법을 소개]({{ site.baseurl }}/2016/06/10/%EC%8A%A4%EC%BA%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%AC%B8%EC%84%9C-%ED%9D%91%EB%B0%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0) 했었다. javascript를 이용하면 어떻게 할 수 있을까?
 
 직관적으로 생각해보자. 일단 모든 컬러 이미지를 앞의 방법에 따라 흑백으로 만든다. 그러면 각 값들은 0에서 255 사이의 값을
  가지게 된다. 그런 뒤에 cutoff value를 정하고 그보다 높은 값들은 모두 흰색으로 만들고 그보다 작은 값들은 무채색 값을 유지하면 된다. 스캐너로 스캔한 자료라면 이정도로도 영인본처럼 종이와 글자를 뚜렷하게 구분할 수 있다.
 
 node와 jimp를 이용하여 이를 구현해 봤다. [여기](https://github.com/pinedance/snippets/tree/master/BlackAndWhite/javascript.version)
 
-![before](https://pinedance.github.io/blog/assets/img/2016-06-10/before.jpg)
+![before]({{ site.baseurl }}/assets/img/2016-06-10/before.jpg)
 
 ![after](https://lh3.googleusercontent.com/PGuCAxLti0lJuGbbPoAoFcmTMWItOwpi4O8NTaxlolSYeL63qHtnmjTNnwFEoa8ht7oA95SOCMKCKBiYm-JGkvlVdowbCHN3YnUqJFKO35fsrIn4BHDeRsZAmzjD0-zzCVHfBu2tWzku6VkxUBW_qbym52ljzAGbK92jrqSfZYnIi8-vJZQ_1KGZC0dgZ7HnmQvwm1vFB_jNfH9dSgXqRV0bbQGdJeZ-mbHTYzSFyuD0R5iU424ywBMMFVMz01Ousuqvgybk5wwoaEi08bVBdVsG7XV2q_Pf-tap0bfHLlc0xfBQBvaVmMgFQcYcXDjdTtmbUQETmxoYTyneTsfUBz8BygdZTRWwW1jY82uCmvTnuwk25vELCVMXPQ0wXoB1FKhlbDFgn1Uo2zFGN1KQiC0qobTkOtTx-m5AAg24CJikJdvORXqYHgbhXuSWcGI5Go1hO3zzuinlw9QvlAod3LxwwxmlQ5GlC-7TX7MFAs3X_ULY2R9GhrD60qP8TpW1ARF_i9mK9_TYfFRFRQOJ2tEMQjawQE0eB4mDLF8-vP3Mk9KoOH-tQXOTNVQHzPXTvxFrgpZdxsdMhrucuTMxep2czyuU4ChC9SqnAjSYQslBfBGXg-Z6rv34m9RyFVe6LqL-rHdRZ4bL9JASekOXzNSxFziX3ZmV29iDQLBWmDge4J0=w1024-h683-no)
 

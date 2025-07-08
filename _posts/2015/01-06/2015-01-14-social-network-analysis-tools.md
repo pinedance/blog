@@ -22,22 +22,20 @@ Data Manipulation은 주로 R이나 python 등 프로그래밍 언어를 통해 
 - 장점 : 무료, 가장 유명하고 가장 널리 쓰인다. 기능이 무척 많다.
 - 단점 : 그림이 단순함(별로 안예쁨), utf-8 인식 잘 안됨(현재는 개선 된 듯), 사용방법이 쉽지 않다.
 
-
 ### [Gephi](http://gephi.github.io/)
 
 - 장점 : 무료, 높은 완성도, 그림 좋음
 - 단점 : 프로그램이 약간 불안정
 
-
 ### [vosViewer](http://www.vosviewer.com/Home)
 
 - 장점 : normalization 공식이 탑재되어 있음. density view, cluster view 등 직관적인 이미지 제공
 - 단점 : normalization 공식이 탑재되어 있음
-- works : [density](https://pinedance.github.io/research/data/images/CheongKangEuiGam/Density.png), [cluster](https://pinedance.github.io/research/data/images/CheongKangEuiGam/ClusterDensity.png)
+- works : [density](https://research.pinedance.click/data/images/CheongKangEuiGam/Density.png), [cluster](https://research.pinedance.click/data/images/CheongKangEuiGam/ClusterDensity.png)
 
 관련자료
 
-* [A tutorial for vosviewer](https://seinecle.github.io/vosviewer-tutorials/generated-html/importing-en.html)
+- [A tutorial for vosviewer](https://seinecle.github.io/vosviewer-tutorials/generated-html/importing-en.html)
 
 ### [Cytoscape](http://www.cytoscape.org/)
 

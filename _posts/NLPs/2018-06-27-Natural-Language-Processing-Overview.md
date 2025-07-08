@@ -29,10 +29,12 @@ Harris, 1968 (Mathematical Structures of Language)
 Miller and Charles, 1991 (Language and Cognitive Processes)
 
 Various extensions…
+
 * Similar contexts will have similar meanings
 * Names that occur in similar contexts will refer to the same underlying person
 
 Ref
+
 * [(Ted Pedersen)Language Independent Methods of Clustering Similar Contexts](https://www.youtube.com/watch?v=nW6KjSw8G5c)
 * [aclwiki/Distributional_Hypothesis](https://aclweb.org/aclwiki/Distributional_Hypothesis)
 * [M Sahlgren. The distributional hypothesis. Italian Journal of Linguistics. 2008;20:33-53.](http://www.diva-portal.org/smash/get/diva2:1041938/FULLTEXT01.pdf)
@@ -44,7 +46,6 @@ Ref
 
 windows(n size), 문장, 문단, 문서 etc
 
-
 ### Lexical Features
 
 #### N-gram
@@ -53,7 +54,7 @@ windows(n size), 문장, 문단, 문서 etc
 
 #### Unsupervised Segmentation
 
-☞ [Unsupervised  Segmentation](https://pinedance.github.io/blog/2018/07/25/Unsupervised-Segmentation)
+☞ [Unsupervised  Segmentation]({{ site.baseurl }}/2018/07/25/Unsupervised-Segmentation)
 
 #### Co-occurrences
 
@@ -68,7 +69,6 @@ windows(n size), 문장, 문단, 문서 etc
 * [Word Weighting(1)](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/03/28/tfidf/)
 
 * [Word Weighting(2)](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/04/14/wordweighting/)
-
 
 ### Vector Space Model
 
@@ -104,14 +104,10 @@ Term-Co-occurence Matrix
 
 ##### LDA (Latent Dirichelt Allocation)
 
-
-
-
-
-
 #### Similarity
 
 Measuring Similarity
+
 * Integer Values
   * Matching Coefficient
   * Jaccard Coefficient
@@ -123,21 +119,17 @@ Measuring Similarity
 
 #### Distance
 
-
 ### Generative model
 
 * [언어모델(Language Model)](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/09/16/LM/)
-
-
 
 ***
 
 ## Semantics
 
-###  Word Embedding
+### Word Embedding
 
-☞ [Word Embedding](https://pinedance.github.io/blog/2018/08/05/Word-Embedding)
-
+☞ [Word Embedding]({{ site.baseurl }}/2018/08/05/Word-Embedding)
 
 ### Sequence-to-Sequence
 
@@ -149,8 +141,7 @@ Measuring Similarity
 
 ### Collocations
 
-☞ [Collocations](https://pinedance.github.io/blog/2018/02/03/Collocations)
-
+☞ [Collocations]({{ site.baseurl }}/2018/02/03/Collocations)
 
 ### Topic Modeling
 
@@ -159,7 +150,6 @@ Measuring Similarity
 * [Probabilistic Latent Semantic Analysis](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/25/plsa/)
 
 * [Topic Modeling, LDA](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/06/01/LDA/)
-
 
 ### Comparing Corpuses
 
@@ -195,7 +185,6 @@ $$
 \chi^2=\sum_{k=1}^{n} \frac{(O_k - E_k)^2}{E_k}
 $$
 
-
 #### log-likelihood ratio G2
 
 * [Log-likelihood for comparing texts](http://wordhoard.northwestern.edu/userman/analysis-comparewords.html)
@@ -218,17 +207,14 @@ $$
 
 ### [Word-sense disambiguation](https://en.wikipedia.org/wiki/Word-sense_disambiguation)
 
-
 ***
-
 
 ## Visualization
 
-
-☞ [Data Visualization](https://pinedance.github.io/blog/2018/04/07/data-visualization)
+☞ [Data Visualization]({{ site.baseurl }}/2018/04/07/data-visualization)
 
 ***
 
 ## Lectures
 
-☞ [자연어처리 강의들](https://pinedance.github.io/blog/2018/08/07/Lectures-about-NLP)
+☞ [자연어처리 강의들]({{ site.baseurl }}/2018/08/07/Lectures-about-NLP)

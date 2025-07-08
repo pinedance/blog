@@ -15,17 +15,17 @@ Python을 사용하면서 얻은 잔기술들을 기록해 둔다.
 
 ## Install python
 
-ubuntu를 기준으로 설명한다. 보통 이미 설치되어 있다. 
+ubuntu를 기준으로 설명한다. 보통 이미 설치되어 있다.
 
 하지만 다양한 버전이 필요하거나 관리의 편의를 의해 버전관리 도구를 통해 설치하는 것이 유리할 수 있다. 이런 경우 Anaconda python을 사용하자. [Anaconda python 홈페이지](https://www.anaconda.com/distribution/#linux)에서 설치 프로그램을 다운로드 받아 설치하면 된다. 가끔 다운로드가 잘 안될 때가 있다.[Anaconda python mirror](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)에서 다운로드 받을 수 있다.
 
-Anaconda python이 너무 무거울 수 있다. 이럴 때는 [Miniconda](https://docs.conda.io/en/latest/miniconda.html)를 설치하자. 개인적으로 필자는 Miniconda를 선호한다. 단 Miniconda에는 jupyter notebook과 같은 기능이 포함되어 있지 않다. 따라서 아래와 같이 별도로 설치해 준다. 
+Anaconda python이 너무 무거울 수 있다. 이럴 때는 [Miniconda](https://docs.conda.io/en/latest/miniconda.html)를 설치하자. 개인적으로 필자는 Miniconda를 선호한다. 단 Miniconda에는 jupyter notebook과 같은 기능이 포함되어 있지 않다. 따라서 아래와 같이 별도로 설치해 준다.
 
 ```bash
 conda install jupyter
 ```
 
-참고로, Windows에 anaconda나 miniconda를 설치했을 경우에는 `anaconda prompt`로 접근해야 올바르게 사용할 수 있다. 기본 `cmd`나 `power shell`로 접근하면 anaconda 환경이 올바르게 로딩되지 않기 때문에 사용에 제한이 있다. [windows terminal을 설치하고 여기에 anaconda prompt를 추가해 두면 사용이 편리하다](//pinedance.github.io/blog/2020/06/23/Windows-Terminal#condashell%EC%9D%84-%EC%B6%94%EA%B0%80%ED%95%B4-%EB%B3%B4%EC%9E%90). 
+참고로, Windows에 anaconda나 miniconda를 설치했을 경우에는 `anaconda prompt`로 접근해야 올바르게 사용할 수 있다. 기본 `cmd`나 `power shell`로 접근하면 anaconda 환경이 올바르게 로딩되지 않기 때문에 사용에 제한이 있다. [windows terminal을 설치하고 여기에 anaconda prompt를 추가해 두면 사용이 편리하다](//{{ site.baseurl }}/2020/06/23/Windows-Terminal#condashell%EC%9D%84-%EC%B6%94%EA%B0%80%ED%95%B4-%EB%B3%B4%EC%9E%90).
 
 ## Use package
 
@@ -51,7 +51,7 @@ pip install <libraryname>
 pip install --upgrade <libraryname> --user
 ```
 
-SSL 문제로 연결이 되지 않을 수 있다. 이 때는 [여기](https://pinedance.github.io/blog/2017/11/02/how-to-bypass-SSL)를 참고하라.
+SSL 문제로 연결이 되지 않을 수 있다. 이 때는 [여기]({{ site.baseurl }}/2017/11/02/how-to-bypass-SSL)를 참고하라.
 
 #### Install packages via anaconda
 
@@ -96,7 +96,7 @@ python로 project를 진행할 때 스스로 package(`.py` 파일)를 만들어 
 
 현재 프로젝트 폴더에 있는 `packages` 폴더에 작성한 파일들을 넣고 참조한다고 가정해 보자.
 
-ubuntu에서는 bash를 사용한다. [Bash-스크립트에서-환경변수-설정하기](https://pinedance.github.io/blog/2019/05/09/Bash-Cookbook#bash-스크립트에서-환경변수-설정하기)를 참조한다.
+ubuntu에서는 bash를 사용한다. [Bash-스크립트에서-환경변수-설정하기]({{ site.baseurl }}/2019/05/09/Bash-Cookbook#bash-스크립트에서-환경변수-설정하기)를 참조한다.
 
 windows에서는 다음과 같이 한다.
 
@@ -143,8 +143,6 @@ sys.stdout = sys.__stdout__
 # ref : https://stackoverflow.com/questions/4675728/redirect-stdout-to-a-file-in-python
 ```
 
-
-
 ***
 
 ## Packages
@@ -156,6 +154,7 @@ sys.stdout = sys.__stdout__
 ### Network Analysis
 
 [NetworkX](https://networkx.github.io/)
+
 * [overview ppt by Salvatore Scellato](https://www.cl.cam.ac.uk/~cm542/teaching/2011/stna-pdfs/stna-lecture11.pdf)
 * [backbone_extractor.py](https://gist.github.com/brianckeegan/8846206)
 * [NetworkX를 이용한 네트워크 분석 / PYCON Korea 2014](https://www.pycon.kr/2014/program/7)

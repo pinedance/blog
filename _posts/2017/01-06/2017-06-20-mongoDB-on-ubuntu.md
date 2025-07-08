@@ -5,7 +5,7 @@ categories: 코딩삽질기
 ---
 
 
-ubuntu library 업데이트를 하다가 mongoDB가 멈췄다. 아.... [ubuntu를 이용하면서 가장 난처한 경우이다](http://pinedance.github.io/blog/2017/06/19/web-and-my-own-server).
+ubuntu library 업데이트를 하다가 mongoDB가 멈췄다. 아.... [ubuntu를 이용하면서 가장 난처한 경우이다]({{ site.baseurl }}/2017/06/19/web-and-my-own-server).
 
 이참에 mongoDB만 돌아가는 서버를 만들고, 이 서버에 원격으로 접근하는 방식을 취해야겠다고 생각했다.
 
@@ -53,7 +53,6 @@ sudo service mongod status   # 상태보기
 
 `/etc/systemd/system/mongod.service` 파일을 만들어 아래와 같이 입력해 준다.
 
-
 ```
 sudo nano /etc/systemd/system/mongod.service
 ```
@@ -72,7 +71,6 @@ WantedBy=multi-user.target
 ```
 
 mongoDB가 `/usr/bin/mongod`에 설치되어 있지 않다면 환경에 맞게 바꿔 주어야 한다.
-
 
 이제 mongoDB를 기동해 보자.
 
@@ -98,7 +96,6 @@ sudo systemctl enable mongod
 sudo systemctl enable mongod.service
 ```
 
-
 # 원격으로 접속하기
 
 mongDB는 원칙적으로 같은 localhost에서 접근하도록 되어 있다. 하지만 외부에서 접근할 수 있도록 설정할 수도 있다.
@@ -114,7 +111,6 @@ mongDB는 원칙적으로 같은 localhost에서 접근하도록 되어 있다. 
 네트워크가 열리고 mongoDB 설정이 허락하면 이론적으로 누구나 mongoDB에 접근할 수 있다. 따라서 권한이 있는 user만 사용할 수 있도록 user를 만들어 둔다.
 
 특정 db 별로 user를 생성하고 싶다면 mongo shell 환경에서 다음과 같이 생성한다.
-
 
 ```
 # dbName이라는 db에 접근할 user 생성
@@ -138,7 +134,6 @@ db.createUser({
     roles: [ "userAdminAnyDatabase",  "dbAdminAnyDatabase",  "readWriteAnyDatabase"]
 })
 ```
-
 
 ## mongoDB 환경 변경
 
@@ -164,7 +159,6 @@ security:
 
 환경변경 후에는 mongoDB를 다시 실행시켜야 한다.
 
-
 ```
 sudo systemctl restart mongodb
 ```
@@ -172,7 +166,6 @@ sudo systemctl restart mongodb
 ## test
 
 이제 원격으로 접근해 보자. 참고로 현재 machine에도 mongo shell이 설치되어 있어야 한다.
-
 
 ```
 mongo -u userName -p userPassword 192.168.12.345/dbName

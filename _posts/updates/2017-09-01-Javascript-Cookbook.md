@@ -26,14 +26,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 설치 후에 바로 `nvm`이라고 하면 명령을 인식하지 못한다. 작업 환경에 환경변수가 아직 갱신되지 않았기 때문이다. bash 창을 새로 열거나 `source ~/.bashrc`를 통해 환경변수를 갱신해 주어야 한다.
 
-설치 후에 `nvm`을 쳐보면 대략적인 사용 방법을 알 수 있다. 만약 ssl 인증 문제로 `nvm` 설치 후 node를 설치할 수 없다면 [여기](https://pinedance.github.io/blog/2017/11/02/how-to-bypass-SSL)를 참조하라.
-
+설치 후에 `nvm`을 쳐보면 대략적인 사용 방법을 알 수 있다. 만약 ssl 인증 문제로 `nvm` 설치 후 node를 설치할 수 없다면 [여기]({{ site.baseurl }}/2017/11/02/how-to-bypass-SSL)를 참조하라.
 
 ## Use package
 
-
 ***
-
 
 ## Deep Dive
 

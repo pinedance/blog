@@ -19,7 +19,7 @@ Intro
 
 다행히 [팟인코더](http://tvpot.daum.net/application/PotEncoder.do)를 사용하여 GUI 환경에서 동영상을 잘라낼 수 있었다. 하지만 잘라낸 뒤에 파일이 원본 파일과 다르게 변형되어 찜찜했다. 내 기억에는 원본파일과 같은 형식으로 만드는 옵션은 없었던 것 같다. (내가 사용법을 잘 몰라서 그럴 수도 있다.)
 
-얼마 전에 지인으로 부터 ubuntu에서 동영상을 편집하니 빠르고 오히려 더 쉽다는 이야기를 들었다. 지인이 말한 것은 `ffmpeg` 였는데, 조금 알아보니 동영상에서의 [imagemagick](https://pinedance.github.io/blog/2016/06/10/%EC%8A%A4%EC%BA%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%AC%B8%EC%84%9C-%ED%9D%91%EB%B0%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0) 같은 본좌 프로그램이었다.
+얼마 전에 지인으로 부터 ubuntu에서 동영상을 편집하니 빠르고 오히려 더 쉽다는 이야기를 들었다. 지인이 말한 것은 `ffmpeg` 였는데, 조금 알아보니 동영상에서의 [imagemagick]({{ site.baseurl }}/2016/06/10/%EC%8A%A4%EC%BA%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%AC%B8%EC%84%9C-%ED%9D%91%EB%B0%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0) 같은 본좌 프로그램이었다.
 
 ***
 
@@ -48,7 +48,7 @@ sudo apt-get install ffmpeg
 
 ```
 The following packages have unmet dependencies:
-	....
+ ....
 ```
 
 그냥 잘 설치되면 감사한 일이다.

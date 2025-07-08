@@ -10,7 +10,8 @@ title:              "지금의 흔적"
 description:        "생각격리실. 머리 속에 떠오르는 생각들, 피할 수 없었던 삽질들을 잊지 않도록 기록해 둔다."
 #google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
 google_analytics:   UA-72863252-1 # Put your Google Analytics code
-url: "https://pinedance.github.io/blog" # the base hostname & protocol for your site
+# url: "{{ site.baseurl }}" # the base hostname & protocol for your site
+url: "https://blog.pinedance.click" # the base hostname & protocol for your site
 #theme: "the plain (https://github.com/heiswayi/the-plain)"
 
 # Author Info
@@ -20,7 +21,8 @@ author_gravatar:    fc746ff5d8579298993f87ac2bf84e48 # Gravatar md5 hash
 github_username: pinedance
 
 # Site Settings
-baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
+# baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
+baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
 permalink:          /:year/:month/:day/:title # Post permalink
 timezone:           Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 imgurl:             "/blog/assets/img"

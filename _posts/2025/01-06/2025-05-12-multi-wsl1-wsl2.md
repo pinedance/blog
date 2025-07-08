@@ -12,7 +12,7 @@ Windows에 WSL(Windows Subsystem for Linux)이 생겨난 뒤로 코딩 환경이
 그러나 다음과 같은 현실적인 문제가 있다.
 
 * SSH, Git과 같이 윈도우와 WSL 양쪽 모두에서 사용해야 하는 경우는 부득이 양쪽 모두에 설치할 수 밖에 없다.
-  * 이 경우 설정값을 동기화 하면 편리한데, App에 따라 그렇게 할 수도 있고 못 할 수도 있다. SSH에 대해서는 [이 글](https://pinedance.github.io/blog/2025/05/09/ssh), Git에 대해서는 [이 글](https://pinedance.github.io/blog/2021/02/07/WSL-git-keychain)을 참고하자.
+  * 이 경우 설정값을 동기화 하면 편리한데, App에 따라 그렇게 할 수도 있고 못 할 수도 있다. SSH에 대해서는 [이 글]({{ site.baseurl }}/2025/05/09/ssh), Git에 대해서는 [이 글]({{ site.baseurl }}/2021/02/07/WSL-git-keychain)을 참고하자.
 * WSL에는 기능 제한이 있다.
   * WSL1(WSL version1)의 경우, kernel 접근이 제한되므로 docker 등을 사용할 수 없다.
   * WSL2(WSL version2)의 경우, kernel까지 완전히 접근 가능하여 사실상 Linux 그대로라고 할 수 있다. 그러나 윈도우 file system이 아닌 linux file system을 사용한다. 때문에  WSL2에서 윈도우 파일 시스템에 접근하거나 그 반대의 경우 속도가 느려진다. 사실상 작업을 하기 어렵다. 따라서 Microsoft에서는 윈도우 관련 파일은 윈도우 file system 안에서, WSL 관련 파일은 WSL 안에 있는 linux file system 안에서 사용할 것을 권장하고 있다.
@@ -114,8 +114,8 @@ ln -s /mnt/d/Working /home/<wsl username>/Working
 
 다음 글을 참고하자.
 
-* SSH: [이 글](https://pinedance.github.io/blog/2025/05/09/ssh)
-* Git: [이 글](https://pinedance.github.io/blog/2021/02/07/WSL-git-keychain)
+* SSH: [이 글]({{ site.baseurl }}/2025/05/09/ssh)
+* Git: [이 글]({{ site.baseurl }}/2021/02/07/WSL-git-keychain)
 
 ### Root 권한 사용 불가
 

@@ -7,9 +7,9 @@ tags: ["git", "ssh", "wsl", "windows"]
 
 ## 배경
 
-Git의 remote repository의 주소는 SSH와 HTTPS 두 가지이다. 전자는 로컬 컴퓨터에서 공개키를 생성하고 이를 Git 서버에 등록하여 인증을 한다. 후자는 Git 서버에 등록된 User name과 password를 입력하여 인증을 한다. Windows의 WSL을 사용할 경우, WSL 상의 Git에서 SSH와 HTTPS로 편리하게 인증하려면 어떻게 해야 할까? 자세한 내용은 Micro Soft 공식 문서 가운데 [Get started using Git on Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)에 잘 정리되어 있다. 여기에서는 이를 짧게 적어본다. 
+Git의 remote repository의 주소는 SSH와 HTTPS 두 가지이다. 전자는 로컬 컴퓨터에서 공개키를 생성하고 이를 Git 서버에 등록하여 인증을 한다. 후자는 Git 서버에 등록된 User name과 password를 입력하여 인증을 한다. Windows의 WSL을 사용할 경우, WSL 상의 Git에서 SSH와 HTTPS로 편리하게 인증하려면 어떻게 해야 할까? 자세한 내용은 Micro Soft 공식 문서 가운데 [Get started using Git on Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)에 잘 정리되어 있다. 여기에서는 이를 짧게 적어본다.
 
-결론부터다. Windows에 Git을 설치하고, WSL에도 Ubuntu용 Git을 설치해 두자. WSL Git의 인증 정보를 Windows용 Git의 인증 정보와 링크시켜 준다. WSL의 Git은 Windows용 Git의 인증 정보를 사용하게 된다. 
+결론부터다. Windows에 Git을 설치하고, WSL에도 Ubuntu용 Git을 설치해 두자. WSL Git의 인증 정보를 Windows용 Git의 인증 정보와 링크시켜 준다. WSL의 Git은 Windows용 Git의 인증 정보를 사용하게 된다.
 
 ## SSH의 경우
 
@@ -17,9 +17,9 @@ Git의 remote repository의 주소는 SSH와 HTTPS 두 가지이다. 전자는 �
 
 ### COPY
 
-Windows의 SSH 정보는 보통 윈도우 경로는 `c:\Users\<username>\.ssh`, wsl 경로로는 `/mnt/c/Users/<username>/.ssh`에 생성되어 있다. 
+Windows의 SSH 정보는 보통 윈도우 경로는 `c:\Users\<username>\.ssh`, wsl 경로로는 `/mnt/c/Users/<username>/.ssh`에 생성되어 있다.
 
-잠깐, 폴더가 존재하지 않는다고? 그렇다면 ssh를 다른 폴더에 설치했거나 처음부터 생성하지 않은 것이다. 다른 폴더에 설치했다면 자신에게 맞는 폴더 경로를 적용하자. 만약 ssh를 생성하지 않았다면 [설치법](https://git-scm.com/book/ko/v2/Git-%EC%84%9C%EB%B2%84-SSH-%EA%B3%B5%EA%B0%9C%ED%82%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0)을 보고 먼저 설치하자. 
+잠깐, 폴더가 존재하지 않는다고? 그렇다면 ssh를 다른 폴더에 설치했거나 처음부터 생성하지 않은 것이다. 다른 폴더에 설치했다면 자신에게 맞는 폴더 경로를 적용하자. 만약 ssh를 생성하지 않았다면 [설치법](https://git-scm.com/book/ko/v2/Git-%EC%84%9C%EB%B2%84-SSH-%EA%B3%B5%EA%B0%9C%ED%82%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0)을 보고 먼저 설치하자.
 
 이제 이 폴더 자체를 WSL의 `~/`폴더 아래로 복사하여 `~/.ssh`에 정보가 저장되도록 하자. 그런 다음 보안을 위해 파일 mode를 변경시킨다. 방법은 아래와 같다.
 
@@ -45,7 +45,7 @@ ln -s "/mnt/c/Users/${USERNAME}/.ssh" "~/.ssh"
 
 단 WSL2를 사용하는 경우에는 서로 다른 file system을 사용하기 때문에 soft link가 생성되지 않을 수 있다. 이럴 때는 앞의 방법을 사용하자.
 
-이렇게 설정해 두고 WSL에서 `ssh`를 이용하여 접속을 시도했을 경우 "~\.ssh\config permissions error"라는 에러 메시지가 나올 수 있다. 보통 권한 문제로 발생하는 문제이지만 권한을 바꾸어도 해결되지 않는다. 리눅스와 윈도우 사이에 권한 문제가 얽히기 때문이다. 이 때에는 [여기](https://bootpanic.com/wsl-ubuntu-ssh-config-symlinked-to-cusersuser-sshconfig-permissions-error/) 또는 [여기](https://superuser.com/questions/1663858/wsl-ubuntu-ssh-config-symlinked-to-c-users-user-ssh-config-permissions-error)에 설명된 방법을 사용해 보자. 요약하면 `/etc/wsl.conf` 파일을 WSL에 만들고 아래와 같이 설정해 두는 것이다. 관련된 설명은 해당 글을 참조하자. 설정 후에 WSL을 완전히 멈춘 다음 재시작해야 한다. 잘 안되면 리부팅 한다. 
+이렇게 설정해 두고 WSL에서 `ssh`를 이용하여 접속을 시도했을 경우 "~\.ssh\config permissions error"라는 에러 메시지가 나올 수 있다. 보통 권한 문제로 발생하는 문제이지만 권한을 바꾸어도 해결되지 않는다. 리눅스와 윈도우 사이에 권한 문제가 얽히기 때문이다. 이 때에는 [여기](https://bootpanic.com/wsl-ubuntu-ssh-config-symlinked-to-cusersuser-sshconfig-permissions-error/) 또는 [여기](https://superuser.com/questions/1663858/wsl-ubuntu-ssh-config-symlinked-to-c-users-user-ssh-config-permissions-error)에 설명된 방법을 사용해 보자. 요약하면 `/etc/wsl.conf` 파일을 WSL에 만들고 아래와 같이 설정해 두는 것이다. 관련된 설명은 해당 글을 참조하자. 설정 후에 WSL을 완전히 멈춘 다음 재시작해야 한다. 잘 안되면 리부팅 한다.
 
 ```bash
 # /etc/wsl.conf
@@ -53,11 +53,9 @@ ln -s "/mnt/c/Users/${USERNAME}/.ssh" "~/.ssh"
 options = "metadata,umask=22,fmask=11"
 ```
 
-
-
 ## HTTPS의 경우
 
-WSL 환경에서 아래와 같이 설정을 추가해 준다. 의미는 WSL에 설치된 git의 credential로 하여금 윈도우에 설치된 Git의 credential을 참고하게 하겠다고 선언해 주는 것이다. 이렇게 해 두면 Windows이든 WSL이든 일단 한 번 로그인 된 정보는 이 곳에 저장되므로 다시 물어보지 않는다. 더 자세한 내용은 [이 글](https://pinedance.github.io/blog/2020/06/20/Windows-subsystem-for-Linux-aka-WSL)을 참조하라.
+WSL 환경에서 아래와 같이 설정을 추가해 준다. 의미는 WSL에 설치된 git의 credential로 하여금 윈도우에 설치된 Git의 credential을 참고하게 하겠다고 선언해 주는 것이다. 이렇게 해 두면 Windows이든 WSL이든 일단 한 번 로그인 된 정보는 이 곳에 저장되므로 다시 물어보지 않는다. 더 자세한 내용은 [이 글]({{ site.baseurl }}/2020/06/20/Windows-subsystem-for-Linux-aka-WSL)을 참조하라.
 
 ```bash
 # WSL
@@ -66,5 +64,5 @@ git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec
 
 ## REF
 
--   [Sharing SSH keys between Windows and WSL 2](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/)
--   [SSH key and the Windows Subsystem for Linux](https://florianbrinkmann.com/en/ssh-key-and-the-windows-subsystem-for-linux-3436/)
+- [Sharing SSH keys between Windows and WSL 2](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/)
+- [SSH key and the Windows Subsystem for Linux](https://florianbrinkmann.com/en/ssh-key-and-the-windows-subsystem-for-linux-3436/)

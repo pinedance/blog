@@ -7,7 +7,7 @@ tags: ['proxy', 'SSH']
 
 ## 배경
 
-[지난 글](https://pinedance.github.io/blog/2023/12/14/proxy-with-ssh-tunneling)에서 SSH tunneling의 개념, SSH tunneling 연결하는 방법, 이를 바탕으로 internet browser에서 proxy를 설정하여 네트워크에 접속하는 방법에 대해 알아보았다.
+[지난 글]({{ site.baseurl }}/2023/12/14/proxy-with-ssh-tunneling)에서 SSH tunneling의 개념, SSH tunneling 연결하는 방법, 이를 바탕으로 internet browser에서 proxy를 설정하여 네트워크에 접속하는 방법에 대해 알아보았다.
 
 이번에는 SSH tunneling을 이용하는 여러 가지 방법에 대해 알아보고자 한다. (여기에서는 `socks5` 프로토콜을 기준으로 설명한다)
 

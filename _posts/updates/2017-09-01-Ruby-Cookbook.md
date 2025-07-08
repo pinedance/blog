@@ -22,7 +22,7 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
-ruby를 설치하거나 package를 설치할 때 SSL 문제로 연결이 되지 않을 수 있다. 이 때는 [여기](https://pinedance.github.io/blog/2017/11/02/how-to-bypass-SSL)를 참고하라.
+ruby를 설치하거나 package를 설치할 때 SSL 문제로 연결이 되지 않을 수 있다. 이 때는 [여기]({{ site.baseurl }}/2017/11/02/how-to-bypass-SSL)를 참고하라.
 
 ## Gem
 
@@ -43,7 +43,6 @@ echo 'export PATH="$PATH:~/.ruby/bin"' >> ~/.bashrc
 # apply new env
 source ~/.bashrc
 ```
-
 
 ***
 

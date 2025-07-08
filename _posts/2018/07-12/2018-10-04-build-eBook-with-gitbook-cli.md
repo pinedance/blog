@@ -18,7 +18,6 @@ categories: 생활자동화
 
 gitbook-cli는 흡사 [jekyll](https://jekyllrb.com/)과 같이 markdown으로 집필된 원고를 html로 build（static page） 해 주는 역할을 하며, eBook management 프로그램 [Calibre](https://calibre-ebook.com/)를 통해 이를 pdf, epub, mobi 등 다른 포멧으로 변환시켜 준다.
 
-
 ## Gitbook-cli 및 Calibre 설치
 
 ### install [gitbook-cli](https://github.com/GitbookIO/gitbook-cli)
@@ -34,8 +33,7 @@ gitbook install
 
 다음으로 gitbook-cli가 의존하고 있는 Calibre를 설치한다.
 
-[install Calibre](https://pinedance.github.io/blog/2018/10/04/Calibre-Cookbook#install) 참조
-
+[install Calibre]({{ site.baseurl }}/2018/10/04/Calibre-Cookbook#install) 참조
 
 ※ 참고
 
@@ -49,7 +47,6 @@ gitbook fetch 2.1.0       ## Install a specific version
 gitbook update            ## Update to the latest version
 gitbook uninstall 2.0.1   ## Uninstall a specific version
 ```
-
 
 ## 사용법
 

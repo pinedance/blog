@@ -49,7 +49,7 @@ conda install selenium
 # or pip install selenium
 ```
 
-Tip : 회사 같은 경우 사내 ssl이 있다면 pip로 package 설치가 용이하지 않다. 이런 경우에는 `--trusted-host pypi.org --trusted-host files.pythonhosted.org` option을 달아 준다. [여기](http://pinedance.github.io/blog/2017/11/02/how-to-bypass-SSL)
+Tip : 회사 같은 경우 사내 ssl이 있다면 pip로 package 설치가 용이하지 않다. 이런 경우에는 `--trusted-host pypi.org --trusted-host files.pythonhosted.org` option을 달아 준다. [여기]({{ site.baseurl }}/2017/11/02/how-to-bypass-SSL)
 
 ### python script 작성
 
@@ -77,18 +77,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def beyondAlert( browser, delay ):
-	try:
-		WebDriverWait( browser, delay ).until( EC.alert_is_present(), 'Waiting for alert timed out' )
-		alert = browser.switch_to_alert()
-		alert.accept()
-		print("alert accepted")
-		state = 1
-	except TimeoutException:
-		print("no alert")
-		state = 0
+ try:
+  WebDriverWait( browser, delay ).until( EC.alert_is_present(), 'Waiting for alert timed out' )
+  alert = browser.switch_to_alert()
+  alert.accept()
+  print("alert accepted")
+  state = 1
+ except TimeoutException:
+  print("no alert")
+  state = 0
 
-	browser.switch_to_default_content()
-	return state
+ browser.switch_to_default_content()
+ return state
 ```
 
 ### button click이 되지 않을 때

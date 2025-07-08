@@ -11,7 +11,7 @@ tags: ['ruby', 'python', 'ubuntu', 'wsl', 'bash']
 
 ### Bash theme
 
-bash theme를 바꾸면 가독성이 높아져 사용에 도움이 된다. 더 자세한 것은 ["Bash에 theme를 적용해 보자"](https://pinedance.github.io/blog/2019/06/10/Bash-theme)를 참조하자.
+bash theme를 바꾸면 가독성이 높아져 사용에 도움이 된다. 더 자세한 것은 ["Bash에 theme를 적용해 보자"]({{ site.baseurl }}/2019/06/10/Bash-theme)를 참조하자.
 
 ```bash
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
@@ -22,7 +22,7 @@ git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 
 #### python via anaconda
 
-자세한 것은 ["install-python"](https://pinedance.github.io/blog/2017/09/01/Python-Cookbook#install-python)를 참조하자.
+자세한 것은 ["install-python"]({{ site.baseurl }}/2017/09/01/Python-Cookbook#install-python)를 참조하자.
 
 #### node via nvm
 
@@ -31,7 +31,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 nvm install node
 ```
 
-더 자세한 것은 ["install-node"](https://pinedance.github.io/blog/2017/09/01/Javascript-Cookbook)를 참조하자.
+더 자세한 것은 ["install-node"]({{ site.baseurl }}/2017/09/01/Javascript-Cookbook)를 참조하자.
 
 #### ruby via [rvm](https://rvm.io/)
 
@@ -40,7 +40,7 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
-더 자세한 것은 ["install-ruby"](https://pinedance.github.io/blog/2017/09/01/Ruby-Cookbook#install-ruby)를 참조하자.
+더 자세한 것은 ["install-ruby"]({{ site.baseurl }}/2017/09/01/Ruby-Cookbook#install-ruby)를 참조하자.
 
 ### Core APP 설치
 
@@ -54,7 +54,7 @@ sudo apt install git-all
 
 #### Docker
 
-자세한 것은 ["Docker, 도커, 더커, 주요 명령어"](https://pinedance.github.io/blog/2019/01/05/Docker-long-story-short)를 참조하자.
+자세한 것은 ["Docker, 도커, 더커, 주요 명령어"]({{ site.baseurl }}/2019/01/05/Docker-long-story-short)를 참조하자.
 
 ### 유용한 APP 설치
 
@@ -69,7 +69,7 @@ sudo apt install axel
 
 ## 디스크 및 파티션
 
-### 디스크 및 파티션 현황을 알아보자.
+### 디스크 및 파티션 현황을 알아보자
 
 File System이 어떤 종류인지 확인
 

@@ -5,7 +5,7 @@ categories: [코딩삽질기]
 tags: [git]
 ---
 
-자주 쓰는 명령은 [summary](#summary) 항목에 있다. 
+자주 쓰는 명령은 [summary](#summary) 항목에 있다.
 
 ## 배경
 
@@ -30,7 +30,6 @@ tags: [git]
 * main project에서  sub project의 새로운 버전이 필요하다면 그때 sub project를 다운로드 받아 해당 폴더에 덮어쓴다.
 
 하지만 다소 번거롭다. 다행히 git에는 이를 위한 git submodule이 준비되어 있다. git submodule은 git 저장소 안에 다른 git 저장소를 분리해 넣고 관리하게 해 주는 git의 기능이다.
-
 
 ## 이미 만들어진 submodule 사용 하기
 
@@ -75,13 +74,13 @@ git submodule update
 git submodule foreach git checkout master
 ```
 
-※ `git submodule init`은 서브모듈 정보를 기반으로 로컬 환경설정 파일이 준비한다. 즉, `.gitmodules` 파일에 있는 정보를 `.git/config`에 등록한다. 'git config --list --local'로 등록 결과를 확인해 보자. 
+※ `git submodule init`은 서브모듈 정보를 기반으로 로컬 환경설정 파일이 준비한다. 즉, `.gitmodules` 파일에 있는 정보를 `.git/config`에 등록한다. 'git config --list --local'로 등록 결과를 확인해 보자.
 
 ※ `git submodule update`는 서브모듈의 리모트 저장소에서 데이터를 가져오고 서브모듈을 포함한 프로젝트의 현재 스냅샷에서 Checkout 해야 할 커밋 정보를 가져와서 서브모듈 프로젝트에 대한 Checkout을 한다. 앞의 2가지 명령은 `git submodule update --init`과 같이 한 번에 수행할 수도 있다.
 
 ※ 마지막 명령은, 각 sub project를 master branch로 checkout 하기 위한 것이다. 처음 `submodule update`를 통해 sub project를 받으면, sub project는 `detached HEAD` 상태로 어떤 branch에도 속하지 않는 상태이기 때문이다.
 
-※ remote repo 주소가 https로 되어 있는 경우에는 login에 필요한 정보를 요구할 수 있다. 일일이 입력하기 힘들다면 [Git Credential](https://pinedance.github.io/blog/2019/05/28/Git-Cookbook#id-password를-넣지-않고-pull이나-push-하기)을 참고하자.
+※ remote repo 주소가 https로 되어 있는 경우에는 login에 필요한 정보를 요구할 수 있다. 일일이 입력하기 힘들다면 [Git Credential]({{ site.baseurl }}/2019/05/28/Git-Cookbook#id-password를-넣지-않고-pull이나-push-하기)을 참고하자.
 
 #### Clone Main and Sub Project at the same time
 
@@ -93,7 +92,6 @@ git clone --recurse-submodules https://myrepo.github.com/mainproject.git
 ```
 
 다시 한 번 주의하자. `submodule update` 이후 각 sub project의 git repo는 `detached HEAD` 상태이므로 코드를 수정하기 전에 이를 작업 branch로 checkout 해 주어야 한다.
-
 
 ### Update Submodule
 
@@ -117,13 +115,11 @@ main project의 업데이트가 끝나면, 새로 업데이트된 main project�
 git submodule update --remote --merge
 ```
 
-※ `git submodule update --remote <REMOTE-REPO-NAME> --merge`을 하면 특정 sub project만 update할 수 있다. 
+※ `git submodule update --remote <REMOTE-REPO-NAME> --merge`을 하면 특정 sub project만 update할 수 있다.
 
-※ `git submodule update --init`은 현재 main project에 link 되어 있는 subproject의 정보를 가져와 update하는 것이다. main project의 commit 당시의 snap shot을 내려받는 것이라고 할 수 있다. 따라서 subproject의 파일들을 clone해 오지만 `git status`를 해 보면 main project에는 변화가 없다. 반면 `git submodule update --remote`는 remote repo의 최신 정보를 가져다가 update하는 것이다. remote repo에 새로운 commit이 있는 경우 local main project에 새로운 sub project link가 연결되기 때문에 main project가 update 된다. 따라서 main project에 변화가 생길 수 있으며, main project를 새로 commit 해야 한다. 
+※ `git submodule update --init`은 현재 main project에 link 되어 있는 subproject의 정보를 가져와 update하는 것이다. main project의 commit 당시의 snap shot을 내려받는 것이라고 할 수 있다. 따라서 subproject의 파일들을 clone해 오지만 `git status`를 해 보면 main project에는 변화가 없다. 반면 `git submodule update --remote`는 remote repo의 최신 정보를 가져다가 update하는 것이다. remote repo에 새로운 commit이 있는 경우 local main project에 새로운 sub project link가 연결되기 때문에 main project가 update 된다. 따라서 main project에 변화가 생길 수 있으며, main project를 새로 commit 해야 한다.
 
 ※ `--merge` 옵션이 없으면, sub project는 다시 `detached head` 상태가 된다. 그러면 각각 `git checkout master`를 수행해 주어야 한다. [ref](https://stackoverflow.com/a/55570998)
-
-
 
 ## 새로운 submodule을 만들거나 수정하기
 
@@ -190,7 +186,6 @@ git pull
 
 코드를 수정하고 난 뒤에는 일반적인 방식으로 `commit`과 `push`를 수행하면 된다.
 
-
 #### Push Main Project
 
 sub project가 수정되면, main project 입장에서 보면, 자기에게 연결된 sub project의 commit이 변경되게 된 것이다. main project와 sub project의 연결 상태가 갱신되었기 때문에 이를 commit 할 필요가 있다. 이 역시 일반적인 방법으로 commit 한다.
@@ -217,7 +212,6 @@ git config push.recurseSubmodules check
 # git push --recurse-submodules=on-demand
 git config push.recurseSubmodules on-demand
 ```
-
 
 ## Tip
 
@@ -250,7 +244,6 @@ git push --recurse-submodules=check
 ```
 
 Git의 `Detached HEAD`에 대해서는 [이 글](http://sunphiz.me/wp/archives/2266)을, submodule과 Detached HEAD에 대해서는 [이 글](https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master)을 참고하자.
-
 
 ### 상태 확인
 
@@ -289,18 +282,17 @@ git config alias.supdate 'submodule update --remote --merge'
 
 ### submodule 정보 수정
 
-submodule의 remote repo 주소가 변경되었다고 해보자. 이럴 때는 이를 `.gitmodules`에서 수정해 주고 아래와 같이 `.git/config`에 반영해 주어야 한다. ( ["It re-synchronizes the information in .git/config with the information in .gitmodules"](https://stackoverflow.com/a/45679230) ) 
+submodule의 remote repo 주소가 변경되었다고 해보자. 이럴 때는 이를 `.gitmodules`에서 수정해 주고 아래와 같이 `.git/config`에 반영해 주어야 한다. ( ["It re-synchronizes the information in .git/config with the information in .gitmodules"](https://stackoverflow.com/a/45679230) )
 
 ```bash
 git submodule sync
 ```
 
-그러나 이 경우 해당 subproject는 이미 `.git/config`에 등록된 것이어야 한다. `gitmodules`에 새로운 subproject를 추가하고 아래 명령을 주어도 `.git/config`는 등록되지 않는다. subproject를 등록하는 것은 `git submodules add`로만 가능하다. 
+그러나 이 경우 해당 subproject는 이미 `.git/config`에 등록된 것이어야 한다. `gitmodules`에 새로운 subproject를 추가하고 아래 명령을 주어도 `.git/config`는 등록되지 않는다. subproject를 등록하는 것은 `git submodules add`로만 가능하다.
 
 ### 대량의 submodule을 등록해야 할 때
 
-[Git submodule 일괄등록하기](http://pinedance.github.io/blog/2020/07/16/batch-register-git-submoudles)를 보자.
-
+[Git submodule 일괄등록하기]({{ site.baseurl }}/2020/07/16/batch-register-git-submoudles)를 보자.
 
 ### 등록된 submodule을 초기화 해야 할 때
 
@@ -342,8 +334,7 @@ sub project는 일반적인 git repository를 관리하는 방식과 완전히 �
 
 #### Clone or update submodules
 
-
-로컬 저장소에 새로 가져와야 할 경우에는 clone을 수행한다. 
+로컬 저장소에 새로 가져와야 할 경우에는 clone을 수행한다.
 
 ```bash
 # If you need new submodule repo in local machine,
@@ -354,7 +345,7 @@ git submodule update
 git submodule foreach git checkout master
 ```
 
-이미 clone 되어 있는 subdmoule project가 있다면, 작업하기 전에 최신 변경 사항을 반영해 주어야 한다. 
+이미 clone 되어 있는 subdmoule project가 있다면, 작업하기 전에 최신 변경 사항을 반영해 주어야 한다.
 
 ```bash
 # If you have submodule repo in local machine,
@@ -365,10 +356,9 @@ git submodule update --remote --merge
 
 #### Commit and push sub projects
 
-여러 sub project의 내용을 일괄 변경 하려면, main project에서 `git submodule foreach`를 사용하여 일괄 처리 해 주는 것이 편리하다. 
+여러 sub project의 내용을 일괄 변경 하려면, main project에서 `git submodule foreach`를 사용하여 일괄 처리 해 주는 것이 편리하다.
 
-※ 일괄 수정이 아니고 특정 sub project만 수정한다면, 해당 repo로 이동하여 일반적인 git project처럼 수정 후 commit과 push를 수행한다. 
-
+※ 일괄 수정이 아니고 특정 sub project만 수정한다면, 해당 repo로 이동하여 일반적인 git project처럼 수정 후 commit과 push를 수행한다.
 
 * Checkout new branch in sub projects ...
 
@@ -398,21 +388,17 @@ git submodule foreach git merge newfeature
 git submodule foreach git push
 ```
 
-
 #### Commit and push main project
 
-sub project에 새로운 commit이 생겨나면, main project에서 바라보고 있는 sub project의 commit도 바뀌어야 한다. 따라서 sub project를 모두 수정하고 push까지 완료하고 나면, main project를 commit 한 뒤에 push 한다. 
+sub project에 새로운 commit이 생겨나면, main project에서 바라보고 있는 sub project의 commit도 바뀌어야 한다. 따라서 sub project를 모두 수정하고 push까지 완료하고 나면, main project를 commit 한 뒤에 push 한다.
 
-※ 이 때 주의할 점은 sub project를 먼저 push 하고 나서 main project를 push 해야 한다는 점이다. 
+※ 이 때 주의할 점은 sub project를 먼저 push 하고 나서 main project를 push 해야 한다는 점이다.
 
 ```bash
 # in main project
 git commit -am "update main project"
 git push --recurse-submodules=check
 ```
-
-
-
 
 ## REF
 
