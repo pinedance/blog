@@ -18,7 +18,9 @@ url: "https://blog.pinedance.click" # the base hostname & protocol for your site
 author_name:     "Junho"
 author_email:    pinedance@gmail.com
 author_gravatar: fc746ff5d8579298993f87ac2bf84e48 # Gravatar md5 hash
+author_homepage_url: "https://pinedance.click" # Author homepage URL
 github_username: pinedance
+github_url:      "https://github.com/pinedance"
 
 # Site Settings
 # baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
