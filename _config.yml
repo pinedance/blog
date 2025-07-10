@@ -9,7 +9,7 @@
 title:              "지금의 흔적"
 description:        "생각격리실. 머리 속에 떠오르는 생각들, 피할 수 없었던 삽질들을 잊지 않도록 기록해 둔다."
 #google_verify:      epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o # Put your Google Verification here
-google_analytics:   UA-72863252-1 # Put your Google Analytics code
+google_analytics:   G-171HXRTBCJ # Put your Google Analytics code
 # url: "{{ site.baseurl }}" # the base hostname & protocol for your site
 url: "https://blog.pinedance.click" # the base hostname & protocol for your site
 #theme: "the plain (https://github.com/heiswayi/the-plain)"
