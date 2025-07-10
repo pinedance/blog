@@ -15,10 +15,11 @@ url: "https://blog.pinedance.click" # the base hostname & protocol for your site
 #theme: "the plain (https://github.com/heiswayi/the-plain)"
 
 # Author Info
-author_name:     "Junho"
-author_email:    pinedance@gmail.com
-author_gravatar: fc746ff5d8579298993f87ac2bf84e48 # Gravatar md5 hash
-author_homepage_url: "https://pinedance.click" # Author homepage URL
+author:
+  name:     "Junho"
+  email:    pinedance@gmail.com
+  homepage: "https://www.pinedance.click" # Author homepage URL
+  gravatar: fc746ff5d8579298993f87ac2bf84e48 # Gravatar md5 hash
 github_username: pinedance
 github_url:      "https://github.com/pinedance"
 
@@ -27,7 +28,7 @@ github_url:      "https://github.com/pinedance"
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
 permalink:          /:year/:month/:day/:title # Post permalink
 timezone:           Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-imgurl:             "/blog/assets/img"
+imgurl:             "/assets/img"
 
 # Build settings
 host: localhost

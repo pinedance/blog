@@ -5,7 +5,7 @@ title: About
 
 feel free to Contact me:
 
-* [Homepage]( {{ site.author_homepage_url }})
+* [Homepage]( {{ site.author.homepage }})
 * [Github Reopsitory]( {{ site.github_url }})
 
 ```javascript
@@ -20,7 +20,7 @@ const 사건들 = [
  { "원인": "욕심", "결과": "대박 혹은 쪽박"}
 ];
 
-function 삽질하기( 사건들 ){
+function 삽질하기(){
  return 사건들[ Math.floor(Math.random() * 사건들.length) ]
 }
 
