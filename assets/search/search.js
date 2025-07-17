@@ -8,8 +8,11 @@
   // Build the lunr index
   var idx = lunr(function () {
     // this.use(lunr.ko); // Use Korean language support
-    // this.use(lunr.ja); // Use Chinese language support
-    this.use(lunr.multiLanguage('en', 'zh', 'ko', 'ja'));
+    // this.use(lunr.zh); // Use Chinese language support
+    this.use(lunr.ngram);
+    // this.use(lunr.multiLanguage('en', 'zh', 'ko', 'ja'));
+    // this.use(lunr.multiLanguage('en', 'ngram'));
+    // this.use(lunr.multiLanguage('en', 'ngram', 'ko'));
     this.ref('url');
     this.field('title');
     this.field('body');
