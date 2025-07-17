@@ -7,7 +7,9 @@
 
   // Build the lunr index
   var idx = lunr(function () {
-    this.use(lunr.ko); // USE KOREAN
+    // this.use(lunr.ko); // Use Korean language support
+    // this.use(lunr.ja); // Use Chinese language support
+    this.use(lunr.multiLanguage('en', 'zh', 'ko', 'ja'));
     this.ref('url');
     this.field('title');
     this.field('body');
@@ -42,7 +44,7 @@
       clearSearch();
       return;
     }
-    
+
     searchClear.style.display = 'block';
     searchResults.style.display = 'block';
     var results = idx.search(query);
