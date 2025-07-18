@@ -2,7 +2,7 @@
 layout: post
 title:  "[Cookbook] Ubuntu, 이럴 때 이렇게 한다."
 categories: [코딩삽질기, Cookbook]
-tags: ['ruby', 'python', 'ubuntu', 'wsl', 'bash']
+tags: ['ruby', 'python', 'Ubuntu', 'WSL', 'bash']
 ---
 
 ## 초기 세팅

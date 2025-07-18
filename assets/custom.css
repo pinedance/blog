@@ -1,27 +1,227 @@
-blockquote p {
-	margin-block-start: 0.5em;
+/* --- Global Design Refresh --- */
+
+/* 1. Variables & Global Styles
+------------------------------------------------- */
+:root {
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --text-color: #333;
+  --text-color-light: #555;
+  --border-color: #e0e0e0;
+  --background-light: #f8f9fa;
+  --background-white: #fff;
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* 
 body {
-	// background-image: url("img/background1.jpg");
-	// background-color: #f2e7b1;
-
-}
- */
-
-/* 
-#___gcse_0 {
-	// background-color: #f2e7b1;
-}
- */
-
-pre[class*="language-"].line-numbers {
-	padding-left: 2.8em;
-	border-radius: 0.4em;
+  color: var(--text-color);
 }
 
-article ul li,
-article ol li {
-	list-style: disc;
+main {
+  /* Add some space below the nav bar */
+  margin-top: 2rem;
+}
+
+a {
+  color: var(--primary-color);
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--primary-color-hover);
+  text-decoration: none;
+}
+
+h2, h3 {
+  border-bottom-color: var(--border-color);
+}
+
+/* 2. Header: Search & Navigation
+------------------------------------------------- */
+
+/* Header Block */
+.header-block {
+  max-width: 500px;
+  margin: 0 auto 2rem; /* Center and add space below */
+  padding: 1.2rem;
+  background-color: var(--background-light);
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+/* Search Wrapper */
+.search-wrapper {
+  margin: 0 auto 0.8rem; /* Reduced bottom margin */
+}
+
+.search-container {
+  position: relative;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px 30px 10px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* Softer corners */
+  font-size: 1em;
+  background-color: var(--background-white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+#search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+#search-clear {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+  display: none;
+}
+
+/* Main Navigation */
+.main-nav {
+  /* border-bottom removed */
+}
+
+.nav-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0; /* Padding is now on header-block */
+  /* border-bottom removed */
+}
+
+.main-nav a {
+  margin: 0 0.5rem; /* Reduced margin */
+  padding: 0.5rem 1rem;
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-size: 1.05em;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.main-nav a:hover {
+  background-color: var(--background-white);
+  color: var(--primary-color);
+}
+
+/* Position search results below the search bar */
+#search-results {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: var(--background-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none; /* Managed by JS */
+}
+
+
+#search-results li {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#search-results li:last-child {
+  border-bottom: none;
+}
+
+#search-results a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: block;
+}
+
+#search-results a:hover {
+  color: var(--primary-color);
+}
+
+
+
+
+
+/* 3. Category Page
+------------------------------------------------- */
+.category-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  background-color: var(--background-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  color: var(--text-color);
+}
+
+.category-item .name {
+  font-weight: 600; /* Fira Sans has good weights */
+  font-size: 1.1em;
+}
+
+.category-item .count {
+  padding: 0.25rem 0.6rem;
+  background-color: var(--primary-color);
+  color: var(--background-white);
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+
+/* 4. Tags Page (Badge Style)
+------------------------------------------------- */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.tag-cloud a {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background-color: var(--background-light);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.tag-cloud a:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--background-white);
+  text-decoration: none;
 }

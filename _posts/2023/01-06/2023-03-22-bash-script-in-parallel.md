@@ -2,7 +2,7 @@
 layout: post
 title:  "Bash Shell Script 병렬 처리 하기"
 categories: 코딩삽질기
-tags: ['Bash', 'Parallel', '병렬 처리']
+tags: ['bash', 'Parallel', '병렬 처리']
 ---
 
 ## 배경
@@ -15,7 +15,7 @@ GUI 환경은 직관적이지만 마우스 클릭을 많이 해야 하고 반복
 
 ### 간단한 방법
 
-방법은 의외로 매우 간단하다. `&`와 `wait`을 사용하면 된다. 예를 들어 다운로드 받아야할 파일 목록이 `download_list.txt` 파일 속에 아래와 같이 있다고 해보자. 
+방법은 의외로 매우 간단하다. `&`와 `wait`을 사용하면 된다. 예를 들어 다운로드 받아야할 파일 목록이 `download_list.txt` 파일 속에 아래와 같이 있다고 해보자.
 
 ```bash
 https://www.remoterepository.com/001.zip
@@ -49,15 +49,14 @@ echo "All files are downloaded."
 
 ## 조금 복잡한 방법
 
-물론 위와 같이 하였을 때 너무 많은 작업이 동시에 일어나면 문제가 발생할 수 있다. 이럴 때는 병렬 처리 프로세스의 개수를 통제해 주어야 한다. 이 때는 [GNU parallel](https://www.gnu.org/software/parallel/)를 사용하자. 앞의 예제는 GNU parallel를 이용하여 다음과 같이 수행할 수 있다. 
+물론 위와 같이 하였을 때 너무 많은 작업이 동시에 일어나면 문제가 발생할 수 있다. 이럴 때는 병렬 처리 프로세스의 개수를 통제해 주어야 한다. 이 때는 [GNU parallel](https://www.gnu.org/software/parallel/)를 사용하자. 앞의 예제는 GNU parallel를 이용하여 다음과 같이 수행할 수 있다.
 
 ```bash
 parallel -j 4 curl -O -Q {} < download_list.txt
 ```
 
-
 ## REF
 
-위 내용은 아래 참고 문서의 내용을 거의 그대로 소개한 것이다. 자세한 내용은 아래 문서에 있으므로 참고하자. 
+위 내용은 아래 참고 문서의 내용을 거의 그대로 소개한 것이다. 자세한 내용은 아래 문서에 있으므로 참고하자.
 
 * [How to run command or code in parallel in bash shell under Linux or Unix](https://www.cyberciti.biz/faq/how-to-run-command-or-code-in-parallel-in-bash-shell-under-linux-or-unix/)

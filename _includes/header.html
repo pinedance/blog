@@ -14,3 +14,20 @@
 	<span class="logo-prompt">{{ prompt }}</span>
 
 </aside>
+
+<div class="header-block">
+  <div class="search-wrapper">
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search...">
+      <span id="search-clear">&times;</span>
+      <ul id="search-results"></ul>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <div class="nav-wrapper">
+      <a href="{{ '/categories' | prepend: site.baseurl }}">Categories</a>
+      <a href="{{ '/tags' | prepend: site.baseurl }}">Tags</a>
+    </div>
+  </nav>
+</div>

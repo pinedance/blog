@@ -2,7 +2,7 @@
 layout: post
 title:  "HTTPS를 위한 몸부림 (feat SSL, Apache, port-forwading)"
 categories: 코딩삽질기
-tags: ['HTTPS', 'SSL', 'Apache']
+tags: ['HTTPS', 'ssl', 'Apache']
 ---
 
 ## 배경

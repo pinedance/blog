@@ -2,7 +2,7 @@
 layout: post
 title:  "회사 SSL 인증서를 ubuntu에 설치하자"
 categories: 코딩삽질기
-tags: ['Bash', 'SSL']
+tags: ['bash', 'ssl']
 ---
 
 ## 배경

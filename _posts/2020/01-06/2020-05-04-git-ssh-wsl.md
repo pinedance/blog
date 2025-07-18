@@ -2,7 +2,7 @@
 layout: post
 title: "Windows WSL에서 git ssh 사용하기"
 categories: [코딩삽질기]
-tags: ["git", "ssh", "wsl", "windows"]
+tags: ["git", "SSH", "WSL", "Windows"]
 ---
 
 ## 배경

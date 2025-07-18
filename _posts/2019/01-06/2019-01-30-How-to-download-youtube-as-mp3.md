@@ -2,7 +2,7 @@
 layout: post
 title:  "youtube 동영상을 mp3로 다운로드 해보자. (feat youtube-dl)"
 categories: [생활자동화]
-tags: ['youtube', 'ubuntu']
+tags: ['youtube', 'Ubuntu']
 ---
 
 youtube에 올라온 영상 가운데, 출퇴근 시간에 귀로 듣고 싶은 것들이 있다. 이럴 때 데이터가 많다면 동영상 그대로 재생시켜 보거나 들어도 되지만, 가난한 나에게는 음성만 추출하여 핸드폰에 넣고 듣는 것이 최선이다.

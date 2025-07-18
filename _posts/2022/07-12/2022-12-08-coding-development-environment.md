@@ -2,7 +2,7 @@
 layout: post
 title:  "코딩 개발 환경 갖추기 feat OS, SSH, Tools"
 categories: 코딩삽질기
-tags: ['Ubuntu', 'Linux', 'VScode', 'WSL']
+tags: ['Ubuntu', 'Linux', 'vscode', 'WSL']
 ---
 
 ## 배경

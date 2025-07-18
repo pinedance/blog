@@ -2,7 +2,7 @@
 layout: post
 title:  "Windows Terminal을 사용해보자"
 categories: [코딩삽질기]
-tags: ["windows"]
+tags: ["Windows"]
 ---
 
 ## 배경
@@ -49,7 +49,7 @@ WT가 `schemes` 아래에 있는 여러가지 테마 중에서 하나를 선택�
     },
 ```
 
-## CondaShell을 추가해 보자.
+## CondaShell을 추가해 보자
 
 윈도우에서 anaconda python을 사용한다면 conda prompt를 사용해야 편리한 작업이 가능하다. WT에 이 conda prompt를 CondaShell이라는 이름으로 추가해보자.
 
@@ -57,11 +57,11 @@ WT가 `schemes` 아래에 있는 여러가지 테마 중에서 하나를 선택�
 
 ```js
 {
-	"guid": "{...}",
-	"name": "CondaShell",
-	"commandline": "",
-	"startingDirectory": ".",
-	"hidden": false
+ "guid": "{...}",
+ "name": "CondaShell",
+ "commandline": "",
+ "startingDirectory": ".",
+ "hidden": false
 }
 ```
 
