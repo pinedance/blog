@@ -104,16 +104,16 @@ proxychains도 tsocks와 비슷한 역할을 해 준다. 다만 proxychains는 �
 proxychains을 기반으로 proxychains4, [proxychains-ng](https://github.com/rofl0r/proxychains-ng) 등도 있다. 기능이 추가된 library인 듯하다.
 
 ```bash
-sudo apt-get install proxychains
+# sudo apt-get install proxychains  # 3.x 버전만 지원한다. 아래 proxychains-ng를 사용하자. 
 # sudo apt-get install proxychains4
-# sudo apt-get install proxychains-ng
+sudo apt-get install proxychains-ng
 ```
 
 `/etc/proxychains.conf` 파일을 다음과 같이 설정해 준다.
 
 ```bash
-# nano /etc/proxychains.conf
-socks5 localhost 8282
+# sudo nano /etc/proxychains.conf
+socks5 127.0.0.1 8282
 ```
 
 사용 방법은 아래와 같다.
