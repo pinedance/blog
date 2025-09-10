@@ -25,8 +25,8 @@ g-Score는 Dunning’s log-likelihood, g2-Value 등으로도 불리우는데, g-
 
 g-Score는 chi-Score에 비해 샘플 사이즈에 영향을 덜 받으며, 또한 p-Value를 도출해 낼 수 있다는 장점이 있다. 아래와 같이 구할 수 있다.
 
-* $O$ : observed value
-* $E$ : expected value
+* $O$ : observed value (observed frequency)
+* $E$ : expected value (expected frequency)
 
 |        | TERMa | TERM^a | MARGIN  |
 |:------:|:-----:|:------:|:--------:|
@@ -37,7 +37,7 @@ g-Score는 chi-Score에 비해 샘플 사이즈에 영향을 덜 받으며, 또�
 관찰값을 바탕으로 기대값을 구할 수 있다. 예를 들어 $E_{ab}$는 아래와 같이 구한다.
 
 $$
-E_{ab} = \left(\frac{A}{S}\right)\left(\frac{B}{S}\right)
+E_{ab} = S\left(\frac{A}{S}\right)\left(\frac{B}{S}\right)
 $$
 
 |        | TERMa | TERM^a | MARGIN  |
@@ -63,18 +63,30 @@ $$
 G  \thickapprox  \; 2 \left( O_{ab} \ln\left(\frac{O_{ab}}{E_{ab}}\right) - ( O_{ab} - E_{ab} ) \right)
 $$
 
+g-Score는 $O_{ab}$와 $E_{ab}$의 차이가 클 수록 커진다. $O_{ab}$가 $E_{ab}$보다 큰 경우에도 값이 커지지만, $O_{ab}$가 $E_{ab}$보다 작은 경우에도 값이 커진다. 그러나 공기어 문제에서는 $O_{ab}$가 $E_{ab}$보다 큰 경우에만 관심이 있다. 따라서 $O_{ab} < E_{ab}$인 경우에는 $O_{ab} > E_{ab}$와 구분하기 위해 g-Score에 -1을 곱하는 것이 좋다. 즉, 최종 g-Score는 다음과 같다.
+
+$$
+\text{g-Score}  =  \; \begin{cases}
+   G, & \text{if } O_{ab} \geq E_{ab} \\
+   -G, & \text{if } O_{ab} < E_{ab}
+  \end{cases}
+$$
+
+
 ## g-Score의 p-Value
 
 Ted Dunning의 "Accurate Methods for the Statistics of Surprise and Coincidence"에 따르면, 텍스트 collocation의 경우, g-Score 값은 자유도1의 chi-squared 분포에 근사한다.
 
-자유도1의 chi-squared 분포에서 p-Value가 0.05일 때 chi-score는 약 3.838이다. ( 확인은 [여기](http://www.statdistributions.com/chisquare?p=0.05&df=1)에서 ) 즉, g-Score가 3.838 이상인 사건은 상위 5%에 해당할 만큼 희소한 확률을 가진다.
+자유도1의 chi-squared 분포에서 p-Value가 0.05일 때 chi-score는 약 3.838이다. ( 확인은 [여기](http://www.statdistributions.com/chisquare?p=0.05&df=1)에서 ) 즉, g-Score가 3.838 이상인 사건은 상위 5%에 해당할 만큼 희소한 확률을 가진다. 이와 관련하여 더 자세한 내용은 [여기](http://ucrel.lancs.ac.uk/llwizard.html)에 있다. 
 
-이와 관련하여 더 자세한 내용은 [여기](http://ucrel.lancs.ac.uk/llwizard.html)에 있다. p-Value에 따른 g-Score 값은 아래와 같다.
+p-Value에 따른 g-Score 값은 아래와 같다.
 
 * 95th percentile; 5% level; p < 0.05; critical value = 3.84
 * 99th percentile; 1% level; p < 0.01; critical value = 6.63
 * 99.9th percentile; 0.1% level; p < 0.001; critical value = 10.83
 * 99.99th percentile; 0.01% level; p < 0.0001; critical value = 15.13
+
+보통 공기어 문제에서는 g-Score가 높은 경우가 많이 나타난다. 따라서 hueristic하게 g-Score의 cutoff 기준을 정해야 할 때는 g-Score 10.83 (p-Value 0.001 )에서 시작하는 것이 좋다. 
 
 ## REF
 
